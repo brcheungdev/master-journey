@@ -10,17 +10,17 @@
 
 ## ⚪ Lecture Overview 
 - Limits of **shared-medium Ethernet (CSMA/CD)**: collisions & efficiency (~50%) vs **token** systems (~95%).  
-  共享介质以太网（CSMA/CD）的局限：碰撞多、吞吐最高约 50%，对比令牌网可达约 95%。 :contentReference[oaicite:1]{index=1}
+  共享介质以太网（CSMA/CD）的局限：碰撞多、吞吐最高约 50%，对比令牌网可达约 95%。 
 - Non-Ethernet/Wi-Fi data links: **ATM, FDDI, Fibre Channel, IEEE1394, USB, HDMI, iSCSI, InfiniBand** — roles, speeds, media.  
-  以太/无线之外的数据链路：各自用途、速率与介质。 :contentReference[oaicite:2]{index=2}
+  以太/无线之外的数据链路：各自用途、速率与介质。 
 - **Global IP** assignment: **ICANN → JPNIC → ISP → user**；**Dynamic vs Static** globals & **DDNS** for servers.  
-  全球 IP 分配链；动态/固定公网 IP 及 DDNS 场景。 :contentReference[oaicite:3]{index=3}
+  全球 IP 分配链；动态/固定公网 IP 及 DDNS 场景。
 - **IPv6** addressing & header fields; notation & abbreviation.  
-  IPv6 地址与首部，表示与省略规则。 :contentReference[oaicite:4]{index=4}
+  IPv6 地址与首部，表示与省略规则。
 - L2/L3 devices: **Repeater, Bridge, Switching Hub (L2), Router, L3 Switch**；**learning & forwarding**；**flow control (PAUSE)**。  
-  二层/三层设备与学习转发、拥塞控制（暂停帧）。 :contentReference[oaicite:5]{index=5}
+  二层/三层设备与学习转发、拥塞控制（暂停帧）。 
 - **VLAN** basics, **Trunk** & **802.1Q tag** (TPID/PCP/CFI/VID)，跨交换机的多 VLAN 传输。  
-  VLAN 与干道、标签字段与跨设备传递。 :contentReference[oaicite:6]{index=6}
+  VLAN 与干道、标签字段与跨设备传递。
 
 ---
 
@@ -29,33 +29,33 @@
 ### 1) Issues with Shared-medium Ethernet / 共享介质以太网的问题
 - 普及导致单段主机多（可至 **≈100** 台），**冲突**频发；高负载时“总在发送”，**效率最多约 50%**。  
   Token Bus/Token Ring 在饱和下效率可达 **≈95%**。  
-  *High-level:* more hosts → more collisions; contention collapses throughput vs token passing. :contentReference[oaicite:7]{index=7}
+  *High-level:* more hosts → more collisions; contention collapses throughput vs token passing. 
 
 ---
 
 ### 2) Data Links beyond Ethernet/Wi-Fi / 以太与无线之外的链路
 - **ATM**（Asynchronous Transfer Mode）  
-  固定长 **53-byte cell = 5B header + 48B payload**；无内建拥塞控制功能。 :contentReference[oaicite:8]{index=8}
+  固定长 **53-byte cell = 5B header + 48B payload**；无内建拥塞控制功能。
 - **FDDI**（Fiber Distributed Data Interface）  
-  光纤令牌环；**100 Mbps**；**双环**具备故障备援；**≤500** 站、**最远 100 km**（MMF 点到点 **≤2 km**）。 :contentReference[oaicite:9]{index=9}
+  光纤令牌环；**100 Mbps**；**双环**具备故障备援；**≤500** 站、**最远 100 km**（MMF 点到点 **≤2 km**）。 
 - **Fibre Channel**（SAN）  
-  面向存储区域网；速率至 **128 Gbps**；高可靠。 :contentReference[oaicite:10]{index=10}
+  面向存储区域网；速率至 **128 Gbps**；高可靠。
 - **IEEE1394（FireWire/i.Link）**  
-  最高 **3.2 Gbps**；家用 AV 互联。 :contentReference[oaicite:11]{index=11}
+  最高 **3.2 Gbps**；家用 AV 互联。
 - **USB**  
-  最高 **40 Gbps（USB4）**。 :contentReference[oaicite:12]{index=12}
+  最高 **40 Gbps（USB4）**。
 - **HDMI**  
-  一线传输音视频；具版权保护；**1.4 起可承载 TCP/IP**（以太 over HDMI 生态）。 :contentReference[oaicite:13]{index=13}
+  一线传输音视频；具版权保护；**1.4 起可承载 TCP/IP**（以太 over HDMI 生态）。
 - **iSCSI**  
-  将 **SCSI** 命令封装在 **TCP/IP**；最高 **40 Gbps**；与 FC 类似但更低成本。 :contentReference[oaicite:14]{index=14}
+  将 **SCSI** 命令封装在 **TCP/IP**；最高 **40 Gbps**；与 FC 类似但更低成本。
 - **InfiniBand**  
-  最高 **600 Gbps**；面向服务器/集群，**高带宽、低时延**。 :contentReference[oaicite:15]{index=15}
+  最高 **600 Gbps**；面向服务器/集群，**高带宽、低时延**。
 
 ---
 
 ### 3) Global IP Address Assignment / 全球 IP 地址分配
 - **ICANN** 负责全球资源；**JPNIC** 负责日本的分配事项（唯一合法机构）。  
-  用户并不直接向 JPNIC 申请；由 **ISP** 代表用户向 JPNIC 申请并分配。 :contentReference[oaicite:16]{index=16}
+  用户并不直接向 JPNIC 申请；由 **ISP** 代表用户向 JPNIC 申请并分配。 
 - 出网需使用**全球唯一**的 **Global IP**；**私有 IP** 需经 **NAT** 转换后上网：  
   ```
   Private LAN  --(NAT on Router)-->  Global Internet
@@ -141,3 +141,14 @@ Note: Trunk 间传输带标签；接入端口（Access）向主机送达的帧�
 - **L2/L3 设备**：Repeater（L1 放大）/Bridge（L2 过滤）/Switch（学习转发）/Router（L3 转发）/L3 Switch（内置路由）。
 - 无碰撞以太：交换机 + 双绞线 全双工；拥塞时可 PAUSE；
 - **VLAN**：L2 逻辑分段；Trunk 用**802.1Q（TPID=0x8100, PCP, CFI, VID）**跨交换机承载多 VLAN。
+---
+
+## ※※ Supplementary Cheat Sheets | 速查单
+
+### IPv6 & VLAN Quick Reference
+- [IPv6 Header Fields | IPv6 首部字段速查表](./figs/lecture08_ipv6_header_fields.md)  
+  *IPv6 首部结构、字段含义与地址表示规则*
+
+- [IEEE 802.1Q VLAN Tag | VLAN 标签与端口模式](./figs/lecture08_vlan_8021q_tag.md)  
+  *802.1Q 标签字段、Trunk/Access 概念与帧结构示意*
+
