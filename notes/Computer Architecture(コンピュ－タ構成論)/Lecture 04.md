@@ -10,13 +10,20 @@ Repetition Statements, Arrays, String Operations, Sorting Algorithms <br/>
 
 ---
 ## ⚪ Lecture Overview 
-- Repetition Statements: for, while, do-while
-- One-dimensional and Two-dimensional Arrays
-- String Handling with string.h
-- Array Applications: Sum, Product, Max/Min
-- Sorting Algorithms: Bubble Sort
-- Report Assignment: Max/Min with Multiple Indices
+- Repetition Statements: for, while, do-while  
+  重复语句：for、while、do-while  
+- One-dimensional and Two-dimensional Arrays  
+  一维和二维数组  
+- String Handling with string.h  
+  使用 string.h 进行字符串处理  
+- Array Applications: Sum, Product, Max/Min  
+  数组应用：求和、乘积、最大值/最小值  
+- Sorting Algorithms: Bubble Sort  
+  排序算法：冒泡排序  
+- Report Assignment: Max/Min with Multiple Indices  
+  报告作业：带多个索引的最大/最小值问题  
 
+---
 ## ⚪ Lecture Content 讲座内容
 ### 1) Repetition Statements – Loops      重复语句 - 循环
 For loop (known iteration count):         “for”循环（已知迭代次数）：
@@ -157,7 +164,11 @@ int main(void) {
 
 ---
 ### Key Points
-- for, while, do-while repetition statements
-- One & two-dimensional arrays, string operations
-- Array applications: sum, product, max, min, sorting
-- Handling duplicates in arrays & bubble sort basics
+- for, while, do-while repetition statements  
+  for、while、do-while 三种循环语句  
+- One & two-dimensional arrays, string operations  
+  一维和二维数组，字符串操作  
+- Array applications: sum, product, max, min, sorting  
+  数组应用：求和、乘积、最大值、最小值、排序  
+- Handling duplicates in arrays & bubble sort basics  
+  处理数组中的重复元素与冒泡排序基础  
