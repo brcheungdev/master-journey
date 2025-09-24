@@ -10,7 +10,7 @@
 - Development Environment: **Visual Studio Community 2022** 开发环境
  
 ---
-- ## ⚪ Lecture Content 讲座内容
+## ⚪ Lecture Content 讲座内容
 - ### 1. Computer System Hierarchy  计算机系统层次结构
 1. Application Level  
 2. High-level Language Level  
