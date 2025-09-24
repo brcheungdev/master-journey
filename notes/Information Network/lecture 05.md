@@ -263,3 +263,10 @@ L \le 585.2\,m
 - **CSMA/CD 实务**：IFG=9.6 μs（10 Mb/s），slot=51.2 μs；二进制指数退避（n≤10→k=n，n≥11→k=10；n=16 放弃）。  
 - **10BASE5 500 m**：基于“最小帧内必须能探测远端冲突”的物理约束 + 传播/中继延迟推导并留出衰减余量。  
 
+---
+
+## ※※ Supplementary Notes (Lecture 5)  
+- [Collision Timing & 10BASE5 Length Derivation](./figs/lecture_05_collision_timing.md)  
+- [CSMA/CD Operation Flow & Timing](./figs/lecture_csma_cd_flow.md)
+
+---
