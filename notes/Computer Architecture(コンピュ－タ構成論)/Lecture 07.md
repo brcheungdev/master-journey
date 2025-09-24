@@ -9,17 +9,27 @@ Bits & bytes, positional notation, base conversion, exponent/log rules, data enc
 位与字节、位置表示法、基数转换、指数/对数规则、数据编码、二进制补码、整数加/减及溢出处理、IEEE-754 浮点数、C 语言常量
 ---
 
-## ⚪ Lecture Overview
-- Bit/Byte, MSB/LSB, positional notation  比特/字节、最高有效位/最低有效位、位置表示法
-- Base conversion: binary ↔ octal/hex/decimal; integers & fractions  基数转换：二进制 ↔ 八进制/十六进制/十进制；整数与小数
-- Exponent & logarithm laws (review)  指数与对数定律（复习）
-- What bits can represent: numbers, text codes (ASCII/Unicode), booleans, patterns, RGB images  位所能表示的内容：数字、文本编码（ASCII/Unicode）、布尔值、模式、RGB 图像
-- SI prefixes (decimal/binary) & typical HW/OS scale  国际单位制前缀（十进制/二进制）及典型硬件/操作系统规模
-- Numeric data representation: fixed-point vs floating-point  数值数据表示：定点与浮点
-- Negative numbers: sign-magnitude, 1’s complement, 2’s complement  负数：符号位表示法、1 的补码、2 的补码
-- Integer add/sub algorithms & **overflow** detection  整数加/减算法及**溢出**检测
-- IEEE-754: single/double (NaN/∞/denorm), half/quad (overview)  IEEE-754：单精度/双精度（非数/无穷大/微不足道数），半精度/四分之一精度（概述）
-- C numeric literals in multiple bases多种进制下的 C 语言数值常量
+## ⚪ Lecture Overview 
+- Bit/Byte, MSB/LSB, positional notation  
+  比特/字节、最高有效位/最低有效位、位置表示法  
+- Base conversion: binary ↔ octal/hex/decimal; integers & fractions  
+  基数转换：二进制 ↔ 八进制 / 十六进制 / 十进制；整数与小数  
+- Exponent & logarithm laws (review)  
+  指数与对数定律（复习）  
+- What bits can represent: numbers, text codes (ASCII/Unicode), booleans, patterns, RGB images  
+  位所能表示的内容：数字、文本编码（ASCII/Unicode）、布尔值、模式、RGB 图像  
+- SI prefixes (decimal/binary) & typical HW/OS scale  
+  国际单位制前缀（十进制 / 二进制）及典型硬件 / 操作系统规模  
+- Numeric data representation: fixed-point vs floating-point  
+  数值数据表示：定点与浮点  
+- Negative numbers: sign-magnitude, 1’s complement, 2’s complement  
+  负数：符号位表示法、1 的补码、2 的补码  
+- Integer add/sub algorithms & **overflow** detection  
+  整数加 / 减算法及 **溢出** 检测  
+- IEEE-754: single/double (NaN/∞/denorm), half/quad (overview)  
+  IEEE-754：单精度 / 双精度（非数 / 无穷大 / 非正规数），半精度 / 四分之一精度（概述）  
+- C numeric literals in multiple bases  
+  多种进制下的 C 语言数值常量  
 
 ---
 
@@ -140,9 +150,14 @@ int main(void) {
 ```
 
 ---
-Key Points
-- 掌握位权制与二/八/十六进制间的分组转换
-- 牢记指数/对数的基本恒等式（程序复杂度/数值尺度估算很常用）
-- 负数用补码统一加减（硬件实现高效），溢出用进位 XOR或符号规则判别
-- IEEE-754 的规格/特殊值/舍入会影响数值计算结果
-- 在 C 中正确书写与打印不同类型的数值
+### Key Points 关键要点
+- Master positional notation and base conversion between binary, octal, decimal, and hexadecimal  
+  掌握位权制与二 / 八 / 十六进制之间的分组转换  
+- Remember basic exponent/logarithm identities (useful in complexity estimation and numeric scaling)  
+  牢记指数 / 对数的基本恒等式（在程序复杂度与数值尺度估算中常用）  
+- Use two’s complement for unified add/sub of negative numbers; detect overflow via carry XOR or sign rules  
+  负数用补码统一加减（硬件实现高效），溢出用进位 XOR 或符号规则判别  
+- IEEE-754 formats, special values, and rounding affect numeric computation results  
+  IEEE-754 的规格 / 特殊值 / 舍入会影响数值计算结果  
+- Correctly write and print numeric literals of various types in C  
+  在 C 中正确书写与打印不同类型的数值  
