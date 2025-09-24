@@ -8,7 +8,7 @@
 - Data Types, Binary & Hexadecimal, Control Statements, Arrays, Quadratic Equation Solver
  
 ---
-- ## ⚪ Lecture Overview 
+## ⚪ Lecture Overview 
 1. Bits, Bytes, and Number Systems
 2. C Language Program Structure and Data Types  
 3. Arithmetic, Logical, and Conditional Statements 
@@ -16,7 +16,7 @@
 5. Arrays and Applications (Sum, Min, Max)  
 6. Quadratic Equation Solver Program
 
-- ## ⚪ Lecture Content 讲座内容
+## ⚪ Lecture Content 讲座内容
 ### 1) Bits, Bytes, and Number Systems    位、字节与数制系统
 - Bit: binary digit, one binary digit (0 or 1)
 - Byte: 8 bits = 1 byte
