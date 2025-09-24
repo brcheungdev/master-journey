@@ -68,8 +68,9 @@ CPU/Memory/I-O, fetch–decode–execute, byte addressing & endianness, conditio
 
 ### 5) LOAD/STORE & ALU Encoding 示例
 **LOAD/STORE（示例）**
-Mnemonic Hex encoding Note
+
 ```
+Mnemonic Hex encoding Note
 LOAD R0, A 0 0 30 A at address 0x30
 STORE R1, B 2 1 34 B at address 0x34
 ```
