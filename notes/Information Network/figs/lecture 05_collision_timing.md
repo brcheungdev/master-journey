@@ -64,7 +64,7 @@ t_{total} \le T_{min}
 ---
 
 ## ⚪ ASCII Timing Diagram 时间线示意
-```
+
 A: |---- Send Frame ----->|         (collision)          |
                           v                             |
 B:                         X <- Detect Collision -> Jam -|
@@ -73,7 +73,7 @@ A: <----------------------|--------- Jam ---------------|
           t1                        t2
 Total = t1 + t2  ≤  T_min (64B sending time)
 
-```
+
 
 ---
 
