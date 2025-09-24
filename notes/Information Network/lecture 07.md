@@ -172,3 +172,17 @@ Range: 202.244.160.1  …  202.244.167.254
 - 私有地址：10/8, 172.16/12, 192.168/16；Internet 不路由，常配合 NAT 使用。
 - 子网掩码把“主机位的一部分”变为“网络位”；路由器用 IP AND Mask 求网络地址。
 - CIDR 用 /prefix 显式指定网络位数，可聚合连续网段（/23、/21 等），比 classful 更灵活、节省地址空间。
+
+---
+
+## ※※ Supplementary Cheat Sheets | 速查单
+
+###  IPv4 Subnet & CIDR Quick Reference
+- [Subnet Mask Calculation Steps | 子网掩码按位与计算步骤](./figs/lecture07_ipv4_subnet_calc.md)  
+  *如何通过 IP 和掩码求网络地址、广播地址、主机范围*
+
+- [CIDR Prefix vs Host Count Table | CIDR 前缀与主机数对照表](./figs/lecture07_ipv4_cidr_table.md)  
+  *不同前缀长度对应的可用主机数、掩码与示例网络*
+
+
+
