@@ -9,15 +9,23 @@ Recursive functions & iteration, time measurement, `printf/scanf_s`, structs, dy
 递归函数与迭代、时间测量、`printf/scanf_s` 函数、结构体、动态内存、列表、范式（过程式/声明式、Lisp）、编译器与解释器
 ---
 
-## ⚪ Lecture Overview
-- What recursion is; factorial & divide-and-conquer sum
-- Recursion vs iteration: **performance measurement**
-- `printf` format specifiers & `scanf_s` (safe input in VS)
-- **Structs** (`typedef`, dot/arrow), struct-in-struct, array of structs
-- **Dynamic memory**: `malloc/calloc/free` and pointer basics
-- **Linked lists** (self-referential structs) & node insertion
-- Programming paradigms: procedural vs declarative (SQL/Prolog), functional (Lisp)
-- High-level language processing: compiler vs interpreter, macros, split compilation
+## ⚪ Lecture Overview 
+- What recursion is; factorial & divide-and-conquer sum  
+  递归的概念；阶乘与分治求和  
+- Recursion vs iteration: **performance measurement**  
+  递归与迭代：**性能比较**  
+- `printf` format specifiers & `scanf_s` (safe input in VS)  
+  `printf` 格式控制符与 `scanf_s`（Visual Studio 中的安全输入）  
+- **Structs** (`typedef`, dot/arrow), struct-in-struct, array of structs  
+  **结构体**（`typedef`，点 / 箭头操作符）、结构体嵌套、结构体数组  
+- **Dynamic memory**: `malloc/calloc/free` and pointer basics  
+  **动态内存**：`malloc/calloc/free` 及指针基础  
+- **Linked lists** (self-referential structs) & node insertion  
+  **链表**（自引用结构体）与节点插入  
+- Programming paradigms: procedural vs declarative (SQL/Prolog), functional (Lisp)  
+  编程范式：命令式 vs 声明式（SQL / Prolog），函数式（Lisp）  
+- High-level language processing: compiler vs interpreter, macros, split compilation  
+  高级语言处理：编译器 vs 解释器，宏，分离编译  
 
 ---
 
@@ -192,10 +200,16 @@ printf("Inner product = %d\n", s1+s2);
 ```
 
 ---
-### Key Points 
-- 递归 = 基例 + 缩小问题规模；迭代通常更高效
-- 用 clock()/difftime 测量程序时间
-- scanf_s：数值要 &var；字符串要长度
-- 结构体的 dot/arrow，结构体数组与嵌套结构
-- 动态内存与单链表的基本操作
-- 了解编程范式与编译/解释差异
+### Key Points 关键要点
+- Recursion = base case + smaller subproblems; iteration is usually more efficient  
+  递归 = 基例 + 缩小问题规模；迭代通常更高效  
+- Use `clock()` / `difftime` to measure program execution time  
+  用 `clock()` / `difftime` 测量程序运行时间  
+- In `scanf_s`, numbers require `&var`; strings require buffer length  
+  在 `scanf_s` 中，数值参数需 `&var`，字符串需指定缓冲区长度  
+- Struct access: dot (`.`) for variables, arrow (`->`) for pointers; nested structs & struct arrays  
+  结构体访问：点 (`.`) 用于变量，箭头 (`->`) 用于指针；支持嵌套结构体与结构体数组  
+- Basic operations of dynamic memory allocation and singly linked lists  
+  动态内存分配与单链表的基本操作  
+- Understand programming paradigms and differences between compilation & interpretation  
+  了解编程范式与编译 / 解释的差异 
