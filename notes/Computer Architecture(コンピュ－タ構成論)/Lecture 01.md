@@ -5,19 +5,26 @@
 
 ---
 ## Lecture 1
-- Understanding the **Hierarchy of Computer Systems** 理解计算机系统的层级结构
+- Understanding the **Hierarchy of Computer Systems** <br/>
+理解计算机系统的层级结构
 - C++
 - Development Environment: **Visual Studio Community 2022** 开发环境
  
 ---
-## ⚪ Lecture Content 讲座内容
+## ⚪ Lecture Content 
 ### 1. Computer System Hierarchy  计算机系统层次结构
 1. Application Level  
+   应用层  
 2. High-level Language Level  
+   高级语言层  
 3. Machine Instruction Level (with OS)  
+   机器指令层（含操作系统）  
 4. Register Transfer Level  
+   寄存器传输层  
 5. Gate Level (Logic Design)  
-6. Device Level (MOS Device Design)
+   门级（逻辑设计）  
+6. Device Level (MOS Device Design)  
+   器件层（MOS 器件设计） 
 
  - **Software Layers**: Application, High-level Language, OS, Machine Instructions  软件层
  - **Hardware Layers**: Register Transfer, Gate, Device Levels                      硬件层
@@ -54,10 +61,10 @@
   
 ---
 ### Key Points 
-
-Understand software/hardware layering
-
-Learn C as a bridge between high-level programming and system architecture
-
-Practice with Visual Studio environment
+- Understand software/hardware layering  
+  理解软硬件分层结构  
+- Learn C as a bridge between high-level programming and system architecture  
+  学习 C 语言作为高级编程与系统体系结构之间的桥梁  
+- Practice with Visual Studio environment  
+  在 Visual Studio 环境中进行实践
 
