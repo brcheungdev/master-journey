@@ -42,21 +42,19 @@ Stored-program concept, ENIAC/EDSAC, microprocessor evolution, memory & endianne
   3) **Low-level, fast** instructions with wide applicability  
   4) **Linear memory** suits sequential control  
   5) **Binary** representation  
-- **Why it persisted**: backward **compatibility** (IBM/360 1964, Intel 8086 1978, IA-32/80386 1985), **semiconductor advances**, and **architectural simplicity**. :contentReference[oaicite:1]{index=1}
-
+- **Why it persisted**: backward **compatibility** (IBM/360 1964, Intel 8086 1978, IA-32/80386 1985), **semiconductor advances**, and **architectural simplicity**. 
 ---
 
 ### 2) Wired Programming vs Stored-Program  接线式 vs 程序内置
 - **Wired (Plug-board)**: 手动布线数据与控制脉冲（例：计算  E=(A+B)×(C+D)  要通过开关与线缆连接加/乘单元及显示），更改“程序”=重新布线。  
-- **Stored**: 以**电子速度**装/改程序与数据，易于复用与扩展。 :contentReference[oaicite:2]{index=2}
-
+- **Stored**: 以**电子速度**装/改程序与数据，易于复用与扩展。 
 ---
 
 ### 3) ENIAC (1946)  概览
 - ~**17,468 真空管**, 7,200 二极管, 1,500 继电器, 70,000 电阻, 10,000 电容；约 **30 m × 2.4 m × 0.9 m**, **27 吨**, **150 kW**。  
 - **十进制** 10 位环形计数器；**10 的补数**表示（符号位 0 正 / 9 负）；I/O 采用打孔卡与打印。  
 - 约 **5,000 次/s** 加/减，**385 次/s** 乘，**40 次/s** 除；时钟 **100 kHz**（加法 ~20 周期≈200 μs）。  
-- 以**程序盘/线路**组织：可实现**循环、分支、子程序**，但**非存储程序机**。 :contentReference[oaicite:3]{index=3}
+- 以**程序盘/线路**组织：可实现**循环、分支、子程序**，但**非存储程序机**。
 
 ---
 
@@ -64,7 +62,7 @@ Stored-program concept, ENIAC/EDSAC, microprocessor evolution, memory & endianne
 - **Mercury delay-line memory**；**17-bit word**, **1,024 words**；同步 500 kHz；加/减 ~1.5 ms；乘 ~6 ms。  
 - 指令 **17 位**：**5-bit opcode + 10-bit address + 1-bit operand-length + 1 保留**；初期**无无条件分支/子程序调用**。  
 - **71-bit accumulator**, 35-bit multiplier register；最初**无索引寄存器**（后由 D. Wheeler 加入）；**二补数**表示。  
-- I/O：纸带 / 电传打字机。常见指令：**A/S/H/V/N/T/U/C/R/L/E/G/I/O/F/Y/Z**（加/减/乘寄存器搬运/乘加/乘减/存储/与/移位/条件跳转/IO/停止等）。 :contentReference[oaicite:4]{index=4}
+- I/O：纸带 / 电传打字机。常见指令：**A/S/H/V/N/T/U/C/R/L/E/G/I/O/F/Y/Z**（加/减/乘寄存器搬运/乘加/乘减/存储/与/移位/条件跳转/IO/停止等）。
 
 ---
 
@@ -72,13 +70,13 @@ Stored-program concept, ENIAC/EDSAC, microprocessor evolution, memory & endianne
 - **Byte addressing**；例：**1 MB** 需 **20-bit** 地址，十六进制 5 位 `00000–FFFFF`。  
 - **R/W** 术语：**Load**（读）/**Store**（写）。  
 - **Endianness**：**Little-endian** vs **Big-endian**（多字节整数在内存的高/低位顺序）。  
-- **Linear vs Associative** memory：按地址访问 vs 按**内容匹配**返回地址。 :contentReference[oaicite:5]{index=5}
+- **Linear vs Associative** memory：按地址访问 vs 按**内容匹配**返回地址。{index=5}
 
 ---
 
 ### 6) Clocked Execution & Pipelining  同步与流水线
 - 典型阶段：**取指 → 译码 → 访存/执行 → 回写/结束**。  
-- 示例：**1 GHz** 时钟，**1 ns**/周期；指令执行可为 **4–5 阶段**。流水化后同一时刻多条指令**分布在不同阶段**。 :contentReference[oaicite:6]{index=6}
+- 示例：**1 GHz** 时钟，**1 ns**/周期；指令执行可为 **4–5 阶段**。流水化后同一时刻多条指令**分布在不同阶段**。 
 
 ---
 
@@ -90,21 +88,21 @@ Stored-program concept, ENIAC/EDSAC, microprocessor evolution, memory & endianne
   - **Register-Memory**：`Rd ← Rd op Ms` / `Md ← Rs`  
   - **Load-Store**：`Rd ← Rs1 op Rs2`；`Rd ← Ms` / `Md ← Rs`  
 - **0-address (Stack)**：`PUSH Ms`, `OP`（对栈顶/次顶），`POP Md`。  
-- 真实系统案例：**VAX-11/780 (3-addr)**、**IBM 360/Intel 80386 (1-addr, reg-mem)**、**MIPS/ SPARC (load-store)**、**Burroughs 5000 / Java VM (0-addr)**。 :contentReference[oaicite:7]{index=7}
+- 真实系统案例：**VAX-11/780 (3-addr)**、**IBM 360/Intel 80386 (1-addr, reg-mem)**、**MIPS/ SPARC (load-store)**、**Burroughs 5000 / Java VM (0-addr)**。
 
 ---
 
 ### 8) Stack Machines & Polish Notation  栈机与波兰/逆波兰
 - **LIFO 栈**：表达式求值常用。  
 - **中缀 → 逆波兰**：`(2+3)*(4+5)` → `23+45+*`。  
-- 计算流程：读到数则 **PUSH**；读到运算符则对 **栈顶两数**运算并 **PUSH 结果**。 :contentReference[oaicite:8]{index=8}
+- 计算流程：读到数则 **PUSH**；读到运算符则对 **栈顶两数**运算并 **PUSH 结果**。 
 
 ---
 
 ### 9) CISC vs RISC  复杂/精简指令集
 - **CISC**：可变长，多寻址方式，复杂指令（例：**VAX**）。  
 - **RISC**：**固定长、少寻址、硬布线控制、Load-Store、寄存器多**；强调编译器优化与芯片资源（寄存器/Cache）。  
-- RISC 系谱：**IBM 801 (John Cocke)**、**Berkeley RISC (Patterson)**、**MIPS (Hennessy)**、**SPARC**；现代 x86 亦大量采用 RISC-like 内核+译码前端。 :contentReference[oaicite:9]{index=9}
+- RISC 系谱：**IBM 801 (John Cocke)**、**Berkeley RISC (Patterson)**、**MIPS (Hennessy)**、**SPARC**；现代 x86 亦大量采用 RISC-like 内核+译码前端。 
 
 ---
 
@@ -114,7 +112,7 @@ Stored-program concept, ENIAC/EDSAC, microprocessor evolution, memory & endianne
 - **80386 (1985)**：**32-bit**，分页支持，4 阶段流水。  
 - **Pentium 4 (2000)**：**42M** 晶体管，**1.4 GHz**，NetBurst，超线程/多媒体 SIMD。  
 - **Core i7 (2008)**：**731M** 晶体管，**3.2 GHz**，Nehalem，L1/L2/L3 多级缓存，4 核 8 线程。  
-- **Apple M1 (2020)**：**5 nm**，**160 亿**晶体管，**8 CPU 核（4P+4E）**，大容量 L1/L2，**8-core GPU (~2.6 TFLOPS)**，**16-core Neural Engine**。 :contentReference[oaicite:10]{index=10}
+- **Apple M1 (2020)**：**5 nm**，**160 亿**晶体管，**8 CPU 核（4P+4E）**，大容量 L1/L2，**8-core GPU (~2.6 TFLOPS)**，**16-core Neural Engine**。
 
 ---
 
@@ -123,20 +121,19 @@ Stored-program concept, ENIAC/EDSAC, microprocessor evolution, memory & endianne
 - **Memory hierarchy**：多级 Cache + 主存；**局部性**驱动。  
 - **Local parallel**：单芯片多核、SIMD/向量（**CRAY-1、GPU**）。  
 - **Global parallel**：大规模并行（**Fugaku**），约 **0.4 EFLOPS**，内存 **32 GB × 153,600** 节点，功耗 **30–40 MW**。  
-- 趋势：算力提升受制于**功耗**与**存储墙**，架构/软件协同优化更关键。 :contentReference[oaicite:11]{index=11}
-
+- 趋势：算力提升受制于**功耗**与**存储墙**，架构/软件协同优化更关键。 
 ---
 
 ### 12) System Hierarchy & Design Levels  系统层级
 1) 应用层　2) 高级语言层　3) 机器指令层/OS　4) **寄存器传输**层  
 5) **门电路逻辑**层　6) **器件（MOS/CMOS）**层  
-- RT 层示例：`ADD R3,R1,R2` 的控制/数据通路；门级：与/或/非、**XOR**、触发器（亚稳态注意）；器件级：**MOS/CMOS** 反相/与非/或非实现。 :contentReference[oaicite:12]{index=12}
+- RT 层示例：`ADD R3,R1,R2` 的控制/数据通路；门级：与/或/非、**XOR**、触发器（亚稳态注意）；器件级：**MOS/CMOS** 反相/与非/或非实现。
 
 ---
 
 ### 13) Analog vs Digital；Non-von-Neumann  模式与新范式
 - **Analog vs Digital**：采样定理（`Δt = 1/(2ν_M)`），A/D、D/A；模拟计算（运放/接线） vs 数字算法。  
-- **Non-von-Neumann**：数据流、**神经网络**、**光/量子**计算（国内外研究机构、D-Wave 等）。 :contentReference[oaicite:13]{index=13}
+- **Non-von-Neumann**：数据流、**神经网络**、**光/量子**计算（国内外研究机构、D-Wave 等）。 
 
 ---
 
