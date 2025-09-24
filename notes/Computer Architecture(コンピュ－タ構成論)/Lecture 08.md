@@ -9,13 +9,19 @@ CPU/Memory/I-O, fetch–decode–execute, byte addressing & endianness, conditio
 中央处理器/内存/输入/输出、取数-解码-执行流程、字节寻址与字节序、条件代码、一个简单的 2 字节指令集、汇编语言与机器代码之间的转换、分支操作
 ---
 
-## ⚪ Lecture Overview
-- Computer components & data paths: **Control/ALU/Main Memory/I-O**  计算机组件及数据路径：**控制/算术逻辑单元/主存储器/输入输出**
-- **Main memory & addressing**: byte addressing, **little/big endian**, program/data layout  **主存储器及寻址方式**：字节寻址，**小端/大端格式**，程序/数据布局
-- **Control Unit** cycle: **Fetch → Decode → Execute**, PC update  **控制单元**周期：**取指 → 解码 → 执行**，程序计数器更新
-- **ALU ops** & condition codes (**Z/N/V/C**); shifts, logic, compare   **算术逻辑单元操作**及条件代码（**零/非/溢出/条件**）；移位、逻辑运算、比较
-- A **tiny 2-byte fixed-length ISA**: LOAD/STORE, ADD/SUB/MUL/DIV, BRU/BRCC  一个**小型的 2 字节固定长度指令集**：加载/存储、加法/减法/乘法/除法、跳转/条件跳转
-- **Write & read** short machine programs; mapping to C  **写入与读取**简短的机器程序；转换为 C 语言
+## ⚪ Lecture Overview 
+- Computer components & data paths: **Control / ALU / Main Memory / I-O**  
+  计算机组件及数据路径：**控制 / 算术逻辑单元 / 主存储器 / 输入输出**  
+- **Main memory & addressing**: byte addressing, **little/big endian**, program/data layout  
+  **主存储器及寻址方式**：字节寻址，**小端 / 大端格式**，程序 / 数据布局  
+- **Control Unit** cycle: **Fetch → Decode → Execute**, PC update  
+  **控制单元**周期：**取指 → 解码 → 执行**，程序计数器更新  
+- **ALU ops** & condition codes (**Z / N / V / C**); shifts, logic, compare  
+  **算术逻辑单元操作**及条件代码（**零 / 非零 / 溢出 / 进位**）；移位、逻辑运算、比较  
+- A **tiny 2-byte fixed-length ISA**: LOAD / STORE, ADD / SUB / MUL / DIV, BRU / BRCC  
+  一个**小型的 2 字节固定长度指令集**：加载 / 存储、加法 / 减法 / 乘法 / 除法、无条件 / 条件跳转  
+- **Write & read** short machine programs; mapping to C  
+  **编写与读取**简短的机器程序；与 C 语言的映射关系  
 
 ---
 
@@ -144,9 +150,14 @@ else       e = a * b * c;
 - 控制方式：DMA、Memory-Mapped I/O、Interrupt/Poling
 
 ---
-### Key Points
-- Fetch–Decode–Execute：PC 指向的 2-byte 指令按序执行，分支改写 PC
-- 字节寻址 & 端序：理解多字节整数的内存布局很关键
-- Z/N/V/C 状态承接到 BRCC 的条件判定；DIV 产 商/余数
-- 将公式/分支逻辑翻译成LOAD/STORE + ALU + BR 的序列
-- 通过“符号→十六进制”的一一对应，验证机器程序装载是否正确
+### Key Points 
+- **Fetch–Decode–Execute**: PC 指向的 2 字节指令按序执行，分支改写 PC  
+  **取指 – 解码 – 执行**：PC 所指的 2 字节指令按顺序执行，分支跳转会修改 PC  
+- **Byte addressing & endianness**: understanding multi-byte integer layout is essential  
+  **字节寻址与端序**：理解多字节整数的内存布局至关重要  
+- **Z / N / V / C** status flags feed into **BRCC** for conditional branching; **DIV** yields quotient & remainder  
+  **Z / N / V / C** 状态标志用于 **BRCC** 条件分支；**DIV** 指令产生商与余数  
+- Translate formulas / branch logic into a sequence of **LOAD / STORE + ALU + BR**  
+  将公式 / 分支逻辑翻译成 **LOAD / STORE + ALU + BR** 的指令序列  
+- Verify correctness by mapping symbols to hexadecimal in the machine program  
+  通过“符号 → 十六进制”的一一对应，验证机器程序装载是否正确  
