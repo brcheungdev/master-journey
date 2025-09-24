@@ -5,7 +5,7 @@
 
 ---
 # Lecture 9: From C to Machine Code on a Tiny ISA  
-Translating C to machine code, register allocation, loops/arrays, index addressing, BAL/RTN function calls, parameter passing (value/reference)(br/)
+Translating C to machine code, register allocation, loops/arrays, index addressing, BAL/RTN function calls, parameter passing (value/reference)<br/>
 将 C 语言翻译成机器代码、寄存器分配、循环/数组、索引寻址、BAL/RTN 函数调用、参数传递（值/引用）
 ---
 
