@@ -126,3 +126,16 @@ Operation | Version | Address Family Identifier | IP Address | Metric
 - **静态路由**：配置简单但**不随拓扑自适应**；**动态路由**：协议定期**交换信息**，可**自动绕行**，适合大规模网络。
 - **AS/IGP/EGP**：AS 内常用**RIP/RIP2/OSPF/IS-IS**；AS 间用**BGP**。
 - **RIP**：**30 s** 定期更新、**度量=跳数**、**最大=16**；**180 s** 超时标记失效、**120 s **垃圾回收删除；存在**无穷计数问题**（以上限 16 抑制但仍有收敛开销）。
+- 
+---
+
+## ※※ Supplementary Cheat Sheets | 速查单
+
+### STP & RIP Quick Reference
+- [STP Port Roles & Convergence | STP 端口角色与收敛流程](./figs/lecture09_stp_port_roles.md)  
+  *生成树协议的根桥选举、端口角色、收敛过程与定时器*
+
+- [RIP Timers & Metrics | RIP 定时器与度量](./figs/lecture09_rip_timers_metrics.md)  
+  *RIP 协议的定时器、最大跳数、无穷计数问题与报文字段*
+
+
