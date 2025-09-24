@@ -4,7 +4,7 @@
 - Instructor:Prof. Shinji Tomita (富田眞治)  
 
 ---
-## 1
+## Lecture 1
 - Understanding the **Hierarchy of Computer Systems** 理解计算机系统的层级结构
 - C++
 - Development Environment: **Visual Studio Community 2022** 开发环境
