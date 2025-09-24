@@ -5,7 +5,7 @@
 
 ---
 ## Lecture 4
-- Repetition Statements, Arrays, String Operations, Sorting Algorithms
+Repetition Statements, Arrays, String Operations, Sorting Algorithms <br/>
  重复语句、数组、字符串操作、排序算法
 
 ---
