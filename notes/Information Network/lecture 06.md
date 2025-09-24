@@ -9,15 +9,14 @@
 ---
 
 ## ⚪ Lecture Overview 
-- **Where IP sits**: TCP/IP 的 **Internet 层**；OSI 的 **第3层（网络层）**；职责是把数据从**非直连**的发送主机送达**目的主机**，跨越多个网段与路由器。:contentReference[oaicite:0]{index=0}  
-- **Segment 的两层含义**：① 传输层 TCP 发送单元（“TCP segment”）；② 被路由器划分的网络/主机集合（网络“段”）。:contentReference[oaicite:1]{index=1}  
-- **IP 的性质**：对下层数据链路差异（Ethernet/FDDI/ATM…）进行**抽象**；**无连接（connectionless）**；**不可靠（best-effort）**，丢失不重传，可靠性交给 **TCP**。:contentReference[oaicite:2]{index=2}  
-- **IPv4 头部结构**与字段：Version/IHL/TOS(TOS→DSCP, ECN)/Total Length/Identification/Flags/Fragment Offset/TTL/Protocol/Header Checksum/Src/Dst/Options/Padding/Data。:contentReference[oaicite:3]{index=3}  
-- **字段要点**：IHL 以 32bit 为单位；Total Length 为 16bit（上限 65,535 字节）；分片用 Identification/Flags/FO；TTL 每过一跳减 1，至 0 丢弃；Protocol 指示上层（如 ICMP=1, TCP=6, UDP=17）。:contentReference[oaicite:4]{index=4}  
-- **IP 的三大角色**：①IP 地址分配；②到终点主机的包转发；③分片与重组。:contentReference[oaicite:5]{index=5}  
-- **IPv4 地址**：32 位无符号整数，点分十进制；不同链路（以太网/FDDI/ATM…）格式一致；LAN 用私有地址、Internet 用全球地址；**L1/L2 设备**（中继器/桥/交换机）**不需要 IP**。:contentReference[oaicite:6]{index=6}  
-- **Windows 查询**：`ipconfig /all | more`。**二进制↔十进制**换算示例与步骤（172.20.1.1 等）。:contentReference[oaicite:7]{index=7}
-
+- **Where IP sits**: TCP/IP 的 **Internet 层**；OSI 的 **第3层（网络层）**；职责是把数据从**非直连**的发送主机送达**目的主机**，跨越多个网段与路由器。
+- **Segment 的两层含义**：① 传输层 TCP 发送单元（“TCP segment”）；② 被路由器划分的网络/主机集合（网络“段”）。
+- **IP 的性质**：对下层数据链路差异（Ethernet/FDDI/ATM…）进行**抽象**；**无连接（connectionless）**；**不可靠（best-effort）**，丢失不重传，可靠性交给 **TCP**。:  
+- **IPv4 头部结构**与字段：Version/IHL/TOS(TOS→DSCP, ECN)/Total Length/Identification/Flags/Fragment Offset/TTL/Protocol/Header Checksum/Src/Dst/Options/Padding/Data。
+- **字段要点**：IHL 以 32bit 为单位；Total Length 为 16bit（上限 65,535 字节）；分片用 Identification/Flags/FO；TTL 每过一跳减 1，至 0 丢弃；Protocol 指示上层（如 ICMP=1, TCP=6, UDP=17）。
+- **IP 的三大角色**：①IP 地址分配；②到终点主机的包转发；③分片与重组。
+- **IPv4 地址**：32 位无符号整数，点分十进制；不同链路（以太网/FDDI/ATM…）格式一致；LAN 用私有地址、Internet 用全球地址；**L1/L2 设备**（中继器/桥/交换机）**不需要 IP**。
+- **Windows 查询**：`ipconfig /all | more`。**二进制↔十进制**换算示例与步骤（172.20.1.1 等）。
 ---
 
 ## ⚪ Lecture Content 
@@ -25,20 +24,20 @@
 ### 1) IP in the Stack / 协议栈中的 IP
 - **TCP/IP**：IP 定义在 **Internet 层**；  
   **OSI**：对应 **网络层（L3）**。  
-  作用：从**非直连**的源主机到目的主机，跨越一个或多个网段进行数据递送；**下层数据链路（L2）**只负责**直连设备**之间的通信。:contentReference[oaicite:8]{index=8}
+  作用：从**非直连**的源主机到目的主机，跨越一个或多个网段进行数据递送；**下层数据链路（L2）**只负责**直连设备**之间的通信。
 
 ---
 
 ### 2) “Segment”的两种用法 / Two Meanings of “Segment”
 - **定义 1（传输层）**：TCP 发送的数据单位（TCP segment）。  
-- **定义 2（网络拓扑）**：被路由器分隔的主机/网络设备组（一个“网段”）。:contentReference[oaicite:9]{index=9}
+- **定义 2（网络拓扑）**：被路由器分隔的主机/网络设备组（一个“网段”）。
 
 ---
 
 ### 3) IP 的设计性质 / Properties of IP
 - **屏蔽链路差异**：以太网、FDDI、ATM 等差异对上层**透明**，上层实现无需关心具体 L2。  
 - **无连接（Connectionless）**：发送前不建立连接。  
-- **不保证送达（Unreliable/Best-effort）**：即使未到达也**不重传**；可靠性交由上层 **TCP（面向连接）** 负责。:contentReference[oaicite:10]{index=10}
+- **不保证送达（Unreliable/Best-effort）**：即使未到达也**不重传**；可靠性交由上层 **TCP（面向连接）** 负责。
 
 ---
 
