@@ -5,16 +5,25 @@
 
 ---
 ## Lecture 3
-- Data Types, Binary & Hexadecimal, Control Statements, Arrays, Quadratic Equation Solver
+- Data Types, Binary & Hexadecimal, Control Statements, Arrays, Quadratic Equation Solver<br/>
+  数据类型、二进制与十六进制、控制语句、数组、二次方程求解  
  
 ---
 ## ⚪ Lecture Overview 
-1. Bits, Bytes, and Number Systems
+1. Bits, Bytes, and Number Systems  
+   位、字节与数制系统  
 2. C Language Program Structure and Data Types  
-3. Arithmetic, Logical, and Conditional Statements 
-4. Repetition Structures: For & While
+   C 语言程序结构与数据类型  
+3. Arithmetic, Logical, and Conditional Statements  
+   算术、逻辑与条件语句  
+4. Repetition Structures: For & While  
+   循环结构：For 和 While  
 5. Arrays and Applications (Sum, Min, Max)  
-6. Quadratic Equation Solver Program
+   数组及其应用（求和、最大值、最小值）  
+6. Quadratic Equation Solver Program  
+   二次方程求解程序  
+
+---
 
 ## ⚪ Lecture Content 讲座内容
 ### 1) Bits, Bytes, and Number Systems    位、字节与数制系统
@@ -135,9 +144,15 @@ int main() {
 
 ---
 ### Key Points
-- Bits, bytes, binary, and hexadecimal systems
-- C program structure: #include, declarations, main body
-- Data types and operators
-- Conditional and loop constructs
-- Arrays, sum, min, max programs
-- Quadratic equation solver using math.h
+- Bits, bytes, binary, and hexadecimal systems  
+  位、字节、二进制与十六进制系统  
+- C program structure: #include, declarations, main body  
+  C 程序结构：#include、声明部分、主函数体  
+- Data types and operators  
+  数据类型与运算符  
+- Conditional and loop constructs  
+  条件语句与循环结构  
+- Arrays, sum, min, max programs  
+  数组的求和、最大值、最小值程序  
+- Quadratic equation solver using math.h  
+  使用 math.h 进行二次方程求解 
