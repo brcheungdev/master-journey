@@ -266,7 +266,9 @@ L \le 585.2\,m
 ---
 
 ## ※※ Supplementary Notes (Lecture 5)  
-- [Collision Timing & 10BASE5 Length Derivation](./figs/lecture05_collision_timing.md)  
+- [Collision Timing & 10BASE5 Length Derivation](./figs/lecture05_collision_timing.md)
+  *10BASE5 段长推导与最小帧内碰撞检测原理*
 - [CSMA/CD Operation Flow & Timing](./figs/lecture05_csma_cd_flow.md)
+  *CSMA/CD 工作流程、退避算法与时序图解*
 
 ---
