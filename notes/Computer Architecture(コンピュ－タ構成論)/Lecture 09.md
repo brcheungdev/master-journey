@@ -9,25 +9,26 @@ Translating C to machine code, register allocation, loops/arrays, index addressi
 将 C 语言翻译成机器代码、寄存器分配、循环/数组、索引寻址、BAL/RTN 函数调用、参数传递（值/引用）
 ---
 
-## ⚪ Lecture Overview
+## ⚪ Lecture Overview 
 - How a C program is **lowered** into the toy 2-byte instruction set  
+  如何将 C 程序**转换**为简化的 2 字节指令集  
 - **Register allocation** strategy and label design  
+  **寄存器分配**策略与标签设计  
 - Classic tasks in both C and assembly:  
+  C 和汇编中的典型练习：  
   1) `E = (A+B) * (C+D)`  
+     计算表达式 `E = (A+B) * (C+D)`  
   2) `if (A>B) E=A+B+C; else E=A*B*C;`  
+     分支结构：若 A>B，E=A+B+C，否则 E=A*B*C  
   3) **Sum 1..10** with a loop  
+     使用循环求 1..10 的和  
   4) **Sum of A[0..9]** in three styles: naïve / dangerous self-modifying / index addressing  
+     三种风格求 A[0..9] 的和：普通 / 危险自修改 / 索引寻址  
   5) **Repeat** a sum many times: naïve vs **function call** with `BAL/RTN`  
-- **Parameter passing**: call-by-value vs call-by-reference on the model ISA
+     多次重复求和：普通方式 vs 使用 `BAL/RTN` 的函数调用  
+- **Parameter passing**: call-by-value vs call-by-reference on the model ISA  
+  **参数传递**：在模型 ISA 上的值传递 vs 引用传递  
 
-- 如何将 C 程序“降级”为简易的 2 字节指令集
-- 寄存器分配策略和标签设计
-- C 语言和汇编语言中的经典任务：
-  1) `E = (A+B) * (C+D)`
-  2) `if (A>B) E=A+B+C; else E=A*B*C;`  
-  3) 使用循环进行 1 到 10 的求和
-  4) 以三种方式计算 A[0 到 9] 的总和：原始方法/危险的自修改方法/索引寻址方法
-  5) 多次重复求和：原始方法与使用“BAL/RTN”进行函数调用的对比 - 参数传递：按值传递与按引用传递在模型指令集中的情况对比
 ---
 
 ## ⚪ Lecture Content 讲座内容
@@ -253,8 +254,12 @@ LOADX R5, 0         ; R5 = *(&C) = C
 
 ---
 
-## Key Points 
-- 学会把 C 程序拆成：**数据区**、**寄存器分配**、**控制流（标签/分支）**、**算术/访存指令**  
-- **索引寻址 (`LOADX/STOREX`)** 才是可扩展的数组遍历方式；**自修改代码**有可移植性与安全风险  
-- 使用 `BAL/RTN` 做**函数化**可显著减少重复代码；注意**寄存器保存/恢复**  
-- **值传递**传拷贝，**引用传递**传地址；在模型 ISA 上可通过 `LOADA` 或 **指针变量** + `R15`/`LOADX` 实现
+### Key Points 关键要点
+- Learn to decompose C programs into: **data area**, **register allocation**, **control flow (labels/branches)**, **arithmetic/memory instructions**  
+  学会将 C 程序拆分成：**数据区**、**寄存器分配**、**控制流（标签/分支）**、**算术/访存指令**  
+- **Indexed addressing (`LOADX/STOREX`)** is the scalable array traversal method; **self-modifying code** has portability and security risks  
+  **索引寻址 (`LOADX/STOREX`)** 才是可扩展的数组遍历方式；**自修改代码**存在可移植性与安全隐患  
+- Using `BAL/RTN` for **function calls** significantly reduces repeated code; remember **register save/restore**  
+  使用 `BAL/RTN` 进行**函数化**可显著减少重复代码；注意**寄存器保存与恢复**  
+- **Call-by-value** passes copies, **call-by-reference** passes addresses; on the model ISA, can be done via `LOADA` or pointer variables + `R15`/`LOADX`  
+  **值传递**传递的是值的副本，**引用传递**传递的是地址；在模型 ISA 中可用 `LOADA` 或指针变量 + `R15`/`LOADX` 实现  
