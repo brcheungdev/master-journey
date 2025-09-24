@@ -11,7 +11,7 @@
  
 ---
 ## ⚪ Lecture Content 讲座内容
-- ### 1. Computer System Hierarchy  计算机系统层次结构
+### 1. Computer System Hierarchy  计算机系统层次结构
 1. Application Level  
 2. High-level Language Level  
 3. Machine Instruction Level (with OS)  
