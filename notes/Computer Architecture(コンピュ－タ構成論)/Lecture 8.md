@@ -10,12 +10,12 @@ CPU/Memory/I-O, fetch–decode–execute, byte addressing & endianness, conditio
 ---
 
 ## ⚪ Lecture Overview
-- Computer components & data paths: **Control/ALU/Main Memory/I-O**
-- **Main memory & addressing**: byte addressing, **little/big endian**, program/data layout
-- **Control Unit** cycle: **Fetch → Decode → Execute**, PC update
-- **ALU ops** & condition codes (**Z/N/V/C**); shifts, logic, compare
-- A **tiny 2-byte fixed-length ISA**: LOAD/STORE, ADD/SUB/MUL/DIV, BRU/BRCC
-- **Write & read** short machine programs; mapping to C
+- Computer components & data paths: **Control/ALU/Main Memory/I-O**  计算机组件及数据路径：**控制/算术逻辑单元/主存储器/输入输出**
+- **Main memory & addressing**: byte addressing, **little/big endian**, program/data layout  **主存储器及寻址方式**：字节寻址，**小端/大端格式**，程序/数据布局
+- **Control Unit** cycle: **Fetch → Decode → Execute**, PC update  **控制单元**周期：**取指 → 解码 → 执行**，程序计数器更新
+- **ALU ops** & condition codes (**Z/N/V/C**); shifts, logic, compare   **算术逻辑单元操作**及条件代码（**零/非/溢出/条件**）；移位、逻辑运算、比较
+- A **tiny 2-byte fixed-length ISA**: LOAD/STORE, ADD/SUB/MUL/DIV, BRU/BRCC  一个**小型的 2 字节固定长度指令集**：加载/存储、加法/减法/乘法/除法、跳转/条件跳转
+- **Write & read** short machine programs; mapping to C  **写入与读取**简短的机器程序；转换为 C 语言
 
 ---
 
