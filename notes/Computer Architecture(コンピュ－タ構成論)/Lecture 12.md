@@ -145,3 +145,6 @@ IF D EX MA S ; notify IF earlier → ~2 bubbles
   旁路/转发是应对近距离依赖的关键。 
 - **Branch prediction**：从简单到二级自适应/混合（gshare/GAs/PAs/Perceptron/TAGE），误判率显著下降。  
   分岐预测是现代高性能流水线不可或缺的组成。
+
+---
+lecture12_branch_counter_fsm.md
