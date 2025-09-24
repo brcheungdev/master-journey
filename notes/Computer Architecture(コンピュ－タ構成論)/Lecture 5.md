@@ -5,7 +5,7 @@
 
 ---
 # Lecture 5: Functions, Parameter Passing & Pointers in C  
-Functions, parameter passing (by value / by reference), pointers, globals, arrays & strings  函数、参数传递（按值传递/按引用传递）、指针、全局变量、数组和字符串
+Functions, parameter passing (by value / by reference), pointers, globals, arrays & strings <br/> 函数、参数传递（按值传递/按引用传递）、指针、全局变量、数组和字符串
 
 ---
 
