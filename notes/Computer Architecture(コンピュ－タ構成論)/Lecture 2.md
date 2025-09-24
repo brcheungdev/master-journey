@@ -7,7 +7,7 @@
 ## Lecture 2
 
 ---
-- ## ⚪ Lecture Content   讲座内容
+## ⚪ Lecture Content   讲座内容
 C Programming Structure, Integer Arithmetic, Debugging in Visual Studio
 - C Program Structure
 - Integer Addition and Division Examples
