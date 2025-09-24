@@ -149,5 +149,5 @@ IF D EX MA S ; notify IF earlier → ~2 bubbles
 ---
 ## ※※ Supplementary Notes (Lecture 12)  
 - [1-bit vs 2-bit Saturating Counter FSM](./figs/lecture12_branch_counter_fsm.md)  
-- [CSMA/CD Operation Flow & Timing](./figs/lecture05_csma_cd_flow.md)
+- [Two-level Branch Predictors](./figs/lecture12_two_level_predictors.md)
 
