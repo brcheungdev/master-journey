@@ -9,15 +9,23 @@ Functions, parameter passing (by value / by reference), pointers, globals, array
 
 ---
 
-## ⚪ Lecture Overview
+## ⚪ Lecture Overview 
 - What is a **function** and why we use it  
+  什么是**函数**以及我们为什么要使用它  
 - Function **declaration** & **return values**; structure of `main`  
+  函数的**声明**与**返回值**；`main` 函数的结构  
 - **Parameter passing**: Call by Value vs Call by Reference  
+  **参数传递**：值传递 vs 引用传递  
 - **Pointers**: address, dereference, pointer arithmetic  
+  **指针**：地址、解引用、指针算术运算  
 - **Arrays** as function parameters (implicit by reference)  
+  **数组**作为函数参数（默认按引用传递）  
 - `scanf_s` input: numeric vs string arguments  
+  `scanf_s` 输入：数字参数 vs 字符串参数  
 - **Global variables**: usage, pros & cons  
-- Multiple ways to **return results** from functions
+  **全局变量**：使用方法、优点与缺点  
+- Multiple ways to **return results** from functions  
+  多种函数返回结果的方式  
 
 ---
 
@@ -220,9 +228,15 @@ int main(void) {
 
 ---
 ### Key Points 
-- 掌握函数的声明/调用/返回与 main 的规范写法
-- 理解 值传递 与 引用传递 的本质（拷贝 vs 地址）
-- 熟悉 指针 与 数组 的关系及指针算术
-- 记住 scanf_s 在 数字与字符串参数上的不同写法
-- 使用 数组作形参 时默认按引用传递；携带长度参数更通用
-- 谨慎使用 全局变量；优先考虑返回值/引用返回
+- Master function declaration, calling, return values, and standard `main` structure  
+  掌握函数的声明、调用、返回以及 `main` 函数的规范写法  
+- Understand the essence of Call by Value vs Call by Reference (copy vs address)  
+  理解值传递与引用传递的本质（拷贝 vs 地址）  
+- Familiarize with relationship between pointers and arrays, plus pointer arithmetic  
+  熟悉指针与数组的关系以及指针算术运算  
+- Remember the difference in `scanf_s` for numeric vs string arguments  
+  记住 `scanf_s` 在数字与字符串参数上的不同写法  
+- Arrays as function parameters default to call by reference; passing length is more flexible  
+  数组作为函数形参时默认按引用传递；同时传递长度参数更通用  
+- Use global variables cautiously; prefer return values or reference returns  
+  谨慎使用全局变量；优先考虑返回值或引用返回  
