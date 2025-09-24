@@ -35,7 +35,7 @@
 - **Standardization**: led by **ISO** and **CCITT→ITU-T**; **Hubert Zimmermann (1980)** proposed OSI RM.  
   **标准化**：由 **ISO** 与 **CCITT→ITU-T** 推进；**Hubert Zimmermann (1980)** 提出 OSI 参照模型。  
 - **OSI = Open Systems Interconnection**; aim: interoperable open systems.  
-  **OSI** 全称 **Open Systems Interconnection**；目标：实现开放系统互连。  :contentReference[oaicite:1]{index=1}
+  **OSI** 全称 **Open Systems Interconnection**；目标：实现开放系统互连。 
 
 ---
 
@@ -47,8 +47,7 @@
 - Provide a **reference model** to **map** existing architectures (e.g., position **TCP/IP** within OSI).  
   提供可与现有体系结构**对照**的**参考模型**（如将 **TCP/IP** 放入 OSI 框架）。  
 - Clarify where **various standards** fit in the OSI layers.  
-  明确**各类标准**应归属的 OSI 层级。  :contentReference[oaicite:2]{index=2}
-
+  明确**各类标准**应归属的 OSI 层级。 
 ---
 
 ### 3) OSI 7 Layers — Roles & Examples / OSI 七层：功能与示例
@@ -88,8 +87,7 @@
      面向应用的协议（文件传输、邮件等）。  
 
 > (8) **Application Program / 应用程序**：用户程序与中间件。  
-> 讲义中额外标注应用程序实体以区分于第7层“应用层接口”。  :contentReference[oaicite:3]{index=3}
-
+> 讲义中额外标注应用程序实体以区分于第7层“应用层接口”。
 ---
 
 ### 4) Encapsulation & Decapsulation / 封装与解封装
@@ -98,8 +96,7 @@
 - **Up the stack**: each layer **removes its header** from the data.  
   **向上传递**：每上一层**剥离该层首部**。  
 - Applies on **end hosts** and **on-path devices** (e.g., routers handle L3/L2).  
-  既适用于**端系统**也适用于**中间设备**（如路由器处理 L3/L2）。  :contentReference[oaicite:4]{index=4}
-
+  既适用于**端系统**也适用于**中间设备**（如路由器处理 L3/L2）。
 ---
 
 ### 5) Pros & Cons of Layered Architecture / 分层体系的利与弊
@@ -112,8 +109,7 @@
   - **Overhead**: add/remove headers at each layer; extra interfaces & control signals.  
     **开销**：层层加/解首部；需要接口与控制信号。  
   - **Implementation difficulty**: optimizing, changing, compacting can be hard; depends on chosen layering.  
-    **实现挑战**：高效化、演进、紧凑化不易；与层次设计相关。  :contentReference[oaicite:5]{index=5}
-
+    **实现挑战**：高效化、演进、紧凑化不易；与层次设计相关。 
 ---
 
 ### 6) International Protocols & De Facto Standards / 国际协议与事实标准
@@ -127,8 +123,7 @@
   - Start **interoperability tests early** once specs are roughly set;  
     规范雏形即开展**互通试验**；  
   - **Iteratively fix** programs, protocols, documents “while in use”.  
-    **边用边改**程序/协议/文档。  :contentReference[oaicite:6]{index=6}
-
+    **边用边改**程序/协议/文档。
 ---
 
 ### 7) TCP/IP: Organization, History, Layering / TCP-IP：组织、历史与分层
@@ -149,7 +144,7 @@
   - OSI **L3** ↔ TCP/IP **Internet**；  
     OSI **网络层** ↔ TCP/IP **网际层**；  
   - OSI **L1–L2** ≈ TCP/IP **Network Interface** (sometimes bundled).  
-    OSI **物理+链路** ≈ TCP/IP **网络接口层**（有时合并表述）。  :contentReference[oaicite:7]{index=7}
+    OSI **物理+链路** ≈ TCP/IP **网络接口层**（有时合并表述）。
 
 ---
 
@@ -165,7 +160,7 @@
   2) Community **comments**；社区**评论**  
   3) Provide **revised** versions；发布**修订**稿  
   4) Becomes **implicitly recognized** and **widely used**（de facto）。  
-     **被广泛认可与使用**（事实标准）。  :contentReference[oaicite:8]{index=8}
+     **被广泛认可与使用**（事实标准）。
 
 ---
 
@@ -177,7 +172,7 @@
 - **IPX/SPX (NetWare)**: IPX, SPX, N?C (讲义记法；常见为 **NCP**) …  
   **IPX/SPX**：IPX、SPX、N?C（讲义记法；常见 **NCP**）等。  
 - **AppleTalk**: DDP, RTMP, AEP, ATP, ZIP …；**DECnet**: DRP, NSP, SCP …；**XNS**: IDP, SPP, PEP …  
-  **AppleTalk**：DDP、RTMP、AEP、ATP、ZIP…；**DECnet**：DRP、NSP、SCP…；**XNS**：IDP、SPP、PEP…  :contentReference[oaicite:9]{index=9}
+  **AppleTalk**：DDP、RTMP、AEP、ATP、ZIP…；**DECnet**：DRP、NSP、SCP…；**XNS**：IDP、SPP、PEP…  
 
 ---
 
@@ -193,7 +188,7 @@
   - Each send is an **independent** transmission; **no delivery confirmation**; may skip connection setup.  
     每次发送**相互独立**；**无送达确认**；可不经建联流程。  
   - **Best-effort**; loss & reordering possible; **upper layers** must add reliability if needed (e.g., IP + TCP).  
-    **尽力而为**；可能丢包/乱序；需由**上层**补足可靠性（如在 IP 之上用 TCP）。  :contentReference[oaicite:10]{index=10}
+    **尽力而为**；可能丢包/乱序；需由**上层**补足可靠性（如在 IP 之上用 TCP）。  
 
 ---
 
@@ -207,7 +202,7 @@
 - **Datagram**：**网络层及以上**的简单数据单元；**不保证重传与顺序**（如 **IP/UDP**）。  
   **数据报**：**L3 及以上**，不含重传/顺序控制（IP/UDP 等）。  
 - **Frame**：**数据链路层** 的发送单位。  
-  **帧**：**L2** 单位。  :contentReference[oaicite:11]{index=11}
+  **帧**：**L2** 单位。 
 
 ---
 
@@ -218,8 +213,7 @@
   **结果**：**丢包**、**时延增加**、通信质量下降。  
 - **User symptoms**:  
   - Web pages **slow** to load after clicking links（延迟）；  
-  - **Audio/video** stutter or stop（数据缺落）。  :contentReference[oaicite:12]{index=12}
-
+  - **Audio/video** stutter or stop（数据缺落）。 
 ---
 
 ### 13) Best-effort Service / 尽力而为服务
@@ -229,7 +223,7 @@
   **可靠性**由 **TCP（传输层）**在 IP 之上提供。  
 - **Access speeds** marketed by ISPs (e.g., “1 Gbps fiber”) are **best-effort**:  
   actual throughput may be far lower depending on congestion (e.g., ~10 Mbps under heavy load).  
-  运营商宣称的接入速率（如“1 Gbps 光纤”）也是**尽力而为**：拥塞时实际吞吐可能显著低于标称（如仅 ~10 Mbps）。  :contentReference[oaicite:13]{index=13}
+  运营商宣称的接入速率（如“1 Gbps 光纤”）也是**尽力而为**：拥塞时实际吞吐可能显著低于标称（如仅 ~10 Mbps）。 
 
 ---
 
