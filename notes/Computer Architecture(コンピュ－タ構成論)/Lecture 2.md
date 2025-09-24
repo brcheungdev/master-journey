@@ -34,9 +34,11 @@ int main(void) {
     printf("Sum = %d\n", c);  // output
     return 0;
 }
+```
 ※ /* ... */ 为块注释；\n 是下排的反斜杠换行；双引号必须是标准 ASCII "（不要用 Word 的弯引号）
 
 ### 2) Integer Arithmetic   整数运算：加法 / 除法 / 取余
+```c
 #include <stdio.h>
 int main(void){
     int a=5, b=2, q, r;
@@ -45,6 +47,7 @@ int main(void){
     printf("Quotient = %d, Remainder = %d\n", q, r); // 2, 1
     return 0;
 }
+```
 ※公式：被除数 = 商 × 除数 + 余数（例如 5 = 2×2 + 1） 错误示例：b=0 会触发“除以 0”异常（runtime exception）。
 
 ### 3) Visual Studio Terms   VS术语速记
@@ -64,6 +67,7 @@ int main(void){
     - Local（局部）：当前函数内的局部变量
 
 ### 5) Keyboard Input 键盘输入示例（scanf_s）
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -78,15 +82,18 @@ int main(void){
     printf("Sum = %d\n", c);
     return 0;
 }
+```
 一次输入两个值：
+```c
 scanf_s("%d%d", &a, &b);
 printf("a=%d, b=%d\n", a, b);
-
+```
 ### 6) Report Task   作业
 - 从键盘输入 a=2, b=3
 - 计算 c = a^3 + b^4（使用 pow() 需要 #include <math.h>）
 - 输出 c / 8 的商和余数
-
+  
+```c
 #include <stdio.h>
 #include <math.h>
 
@@ -104,7 +111,7 @@ int main(void){
     printf("c/8 => quotient=%d, remainder=%d\n", q, r);
     return 0;
 }
-
+```
 ---
 ### Key Points
 - 掌握 C 程序三段式：include → 声明 → main
