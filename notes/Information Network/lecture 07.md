@@ -29,7 +29,7 @@
 - An IPv4 address consists of **Network part** (identifies the subnet/segment) and **Host part** (unique within the subnet).  
   IPv4 由**网络部**（标识网段/子网）与**主机部**（在子网内唯一）组成。  
 - Router looks at the **network part** of the destination address, compares with its **routing table**, and forwards to the proper next hop.  
-  路由器检查目的地址的**网络部**并与**路由表**比对，转发到相应下一跳。 :contentReference[oaicite:1]{index=1}
+  路由器检查目的地址的**网络部**并与**路由表**比对，转发到相应下一跳。
 
 ---
 
@@ -43,24 +43,22 @@
   计算范围 `0.0.0.0`–`127.255.255.255`；讲义中的全球可用段示例排除了保留块  
 - **Usable host count**: `2^24 − 2 = 16,777,214`（减去全 0 网络地址与全 1 广播地址）  
   可分配主机数 `2^24 − 2`  
-- **Special**: `127.0.0.0/8` 为 loopback（回环）保留。 :contentReference[oaicite:2]{index=2}
+- **Special**: `127.0.0.0/8` 为 loopback（回环）保留。 
 
 #### Class B
 - **Leading bits**: `10`（2 bits） → Network = **16 bits**, Host = **16 bits**  
 - **Range (theoretical)**: `128.0.0.0` – `191.255.255.255`  
 - **Usable hosts per network**: `2^16 − 2 = 65,534`  
-- **Global range**（slides示例）: `128.0.0.0–172.15.255.255`, `172.32.0.0–191.255.255.255`（中间空缺用于保留/私有）。 :contentReference[oaicite:3]{index=3}
-
+- **Global range**（slides示例）: `128.0.0.0–172.15.255.255`, `172.32.0.0–191.255.255.255`（中间空缺用于保留/私有）。
 #### Class C
 - **Leading bits**: `110`（3 bits） → Network = **24 bits**, Host = **8 bits**  
 - **Range (theoretical)**: `192.0.0.0` – `223.255.255.255`  
 - **Usable hosts**: `2^8 − 2 = 254`  
-- **Global range**（slides示例）: `192.0.0.0–192.167.255.255` 与 `192.169.0.0–223.255.255.255`（中间空缺用于保留/私有）。 :contentReference[oaicite:4]{index=4}
-
+- **Global range**（slides示例）: `192.0.0.0–192.167.255.255` 与 `192.169.0.0–223.255.255.255`（中间空缺用于保留/私有）。
 #### Class D (Multicast)
 - **Leading bits**: `1110`（4 bits） → **Used for multicast**, **no host part**  
   首四比特 `1110`；用于 **多播**，**无主机部**  
-- **Range**: `224.0.0.0` – `239.255.255.255`；host 不按传统方式分配。 :contentReference[oaicite:5]{index=5}
+- **Range**: `224.0.0.0` – `239.255.255.255`；host 不按传统方式分配。
 
 ---
 
@@ -71,10 +69,10 @@
   Example: Class A broadcast  0.255.255.255
            Class A top        127.255.255.255
   ```
-- Unicast address: destination is a single host (normal case).
-单播地址：指向单一主机（常见场景）。
-- Loopback: 127.0.0.1 reserved; packets loop back to self.
-回环地址：127.0.0.1；发往本机自身。
+- **Unicast address**: destination is a single host (normal case).
+**单播地址**：指向**单一主机**（常见场景）。
+- **Loopback**:`127.0.0.1` reserved; packets loop back to self.
+**回环地址**：`127.0.0.1`；发往本机自身。
 
 ---
 ### 4) Multicast (Class D) / 多播（D 类）
@@ -85,13 +83,13 @@
 ---
 ### 5) Private Address Ranges / 私有地址段
  私有地址只在 LAN/组织内部使用，Internet 不可路由（需 NAT）。
-- Class A: 10.0.0.0 – 10.255.255.255（10.0.0.0/8）
-可分配主机数：2^24 − 2 = 16,777,214
-- Class B: 172.16.0.0 – 172.31.255.255（172.16.0.0/12）
-可分配主机数：2^16 − 2 = 65,534
-- Class C: 192.168.0.0 – 192.168.255.255（192.168.0.0/16）
-可分配主机数：2^8 − 2 = 254
-（上述主机数均为每个网络的可用数，扣除了**网络地址**与**广播地址**。）
+- **Class A**:`10.0.0.0 – 10.255.255.255`（`10.0.0.0/8`）
+可分配主机数：`2^24 − 2 = 16,777,214`
+- **Class B**:`172.16.0.0 – 172.31.255.255`（`172.16.0.0/12`）
+可分配主机数：`2^16 − 2 = 65,534`
+- **Class C**:`192.168.0.0 – 192.168.255.255`（`192.168.0.0/16`）
+可分配主机数：`2^8 − 2 = 254`
+（上述主机数均为**每个网络**的可用数，扣除了**网络地址**与**广播地址**。）
 
 ---
 ### 6) Subnet Mask — Concept & Notation / 子网掩码：概念与记法
@@ -105,10 +103,10 @@
 
 ---
 ### 7) Worked Example with Subnet Mask / 子网掩码完整示例
-- Given:
-IP address 172.20.100.52
-Subnet mask 255.255.254.0
-- Ask: network address? broadcast address? host range & count?
+- **Given**:
+IP address `172.20.100.52`
+Subnet mask `255.255.254.0`
+- **Ask**: network address? broadcast address? host range & count?
 
 **Binary view**（二进制视图）
 ```
@@ -137,27 +135,27 @@ Usable = 2^9 − 2 = 512 − 2 = 510
 Range = 172.20.100.1  …  172.20.101.254
 
 ```
-（与讲义示例一致：网络 172.20.100.0，广播 172.20.101.255，主机 510 台。）
+（与讲义示例一致：网络`172.20.100.0`，广播`172.20.101.255`，主机 510 台。）
 
 ---
 ### 8) CIDR (Classless Inter-Domain Routing) / 无类域间路由
-- Why: Class-based assignment wastes space; many orgs wanted a whole Class B though they needed “a bit more than C”。
-原因：有类地址粒度粗 → 浪费；很多机构只比 C 稍大却要 B 类。
-- What: No classes; explicitly write prefix length /n (network bits from the left).
-做法：取消类；用 /前缀长度 明示网络位数。
-- Notation rules
-  - A.B.C.D/n → first n bits are network; remaining are **host**。
-  - The trailing .0 in a network address can be omitted in the last octet only（如 172.20/16 代表 172.20.0.0/16）。
+-** Why**: Class-based assignment wastes space; many orgs wanted a whole Class B though they needed “a bit more than **C**”。
+**原因**：有类地址粒度粗 → 浪费；很多机构只比 C 稍大却要 B 类。
+- **What**: No classes; explicitly write prefix length`/n`(network bits from the left).
+**做法：取消类**；用`/前缀长度` 明示网络位数。
+- **Notation rules**
+  - `A.B.C.D/n` → first n bits are network; remaining are **host**。
+  - The trailing`.0 `in a network address can be omitted in the last octet only（如`172.20/16` 代表 `172.20.0.0/16`）。
   - **Aggregation** is possible: combine contiguous blocks that share a common prefix.
 CIDR Examples（from slides）
-- 172.20.100.52/26: first 26 bits are network → host bits = 6。
-对应网络 172.20.100.0/26，广播 172.20.100.63/26。
-- Aggregate 2 class-C: 203.183.224.0/23
+-`172.20.100.52/26`: first 26 bits are network → host bits = 6。
+对应网络`172.20.100.0/26`，广播`172.20.100.63/26`。
+- **Aggregate 2 class-C**:`203.183.224.0/23`
 ```
 Hosts usable = 2^(32−23) − 2 = 510
 Range: 203.183.224.1  …  203.183.225.254
 ```
-- Aggregate 8 class-C: 202.244.160.0/21
+- **Aggregate 8 class-C**:`202.244.160.0/21`
 ```
 Hosts usable = 2^(32−21) − 2 = 2046
 Range: 202.244.160.1  …  202.244.167.254
@@ -167,11 +165,11 @@ Range: 202.244.160.1  …  202.244.167.254
 --- 
 ## Key Points
 - IPv4 地址 = 网络部 + 主机部；路由器按网络部查表并转发。
-- Class A/B/C/D：识别首比特，掌握各类数值范围与可分配主机数。
-- 广播地址（主机位全 1）与 网络地址（主机位全 0）不可分配；127.0.0.1 为 loopback。
-- 私有地址：10/8, 172.16/12, 192.168/16；Internet 不路由，常配合 NAT 使用。
-- 子网掩码把“主机位的一部分”变为“网络位”；路由器用 IP AND Mask 求网络地址。
-- CIDR 用 /prefix 显式指定网络位数，可聚合连续网段（/23、/21 等），比 classful 更灵活、节省地址空间。
+- **Class A/B/C/D**：识别首比特，掌握各类数值范围与可分配主机数。
+- **广播地址**（主机位全 1）与 **网络地址**（主机位全 0）**不可分配**；`127.0.0.1` 为 loopback。
+- **私有地址**：`10/8`, `172.16/12`, `192.168/16`；Internet 不路由，常配合** NAT **使用。
+- **子网掩码**把“主机位的一部分”变为“网络位”；路由器用** IP AND Mask **求网络地址。
+- **CIDR** 用`/prefix `显式指定网络位数，可聚合连续网段（/23、/21 等），比 classful 更灵活、节省地址空间。
 
 ---
 
