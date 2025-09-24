@@ -4,7 +4,7 @@
 - Instructor:Prof. Shinji Tomita (富田眞治)  
 
 ---
-## 2
+## Lecture 2
 
 ---
 - ## ⚪ Lecture Content   讲座内容
