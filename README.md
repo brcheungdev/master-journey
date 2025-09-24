@@ -9,7 +9,7 @@ This repository will include insights, code examples, demos, and reflections fro
 ---
 
 ## About My Master's Program  
-- **Degree**: Master of Science in Information Technology (M.S. in IT)
+- **Degree**: Master of Science in Information Technology (MS in IT)
 - **University**: Kyoto College of Graduate Studies for Informatics (KCGI)  
 - **Major**: Applied Information Technology  
 - **GPA**: 3.58 / 4.0  
