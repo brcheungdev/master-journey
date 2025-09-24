@@ -267,6 +267,6 @@ L \le 585.2\,m
 
 ## ※※ Supplementary Notes (Lecture 5)  
 - [Collision Timing & 10BASE5 Length Derivation](./figs/lecture05_collision_timing.md)  
-- [CSMA/CD Operation Flow & Timing](./figs/lecture_csma_cd_flow.md)
+- [CSMA/CD Operation Flow & Timing](./figs/lecture05_csma_cd_flow.md)
 
 ---
