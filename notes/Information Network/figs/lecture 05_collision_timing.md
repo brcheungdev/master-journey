@@ -41,30 +41,23 @@ Total cable length = **3L**; two repeaters, each delay \(t_r\)。
 ---
 
 ## ⚪ Timing Equations 时间方程
-1. **A → B near-end** (frame head travel):  
-   \[
-   t_1 = \frac{3L}{v_g} + 2t_r
-   \]
+(1) A → B-near (frame head travel):
+    t1 = (3L / vg) + 2 * tr
 
-2. **B → A return jam**:  
-   \[
-   t_2 = \frac{3L}{v_g} + 2t_r
-   \]
+(2) B → A (jam return):
+    t2 = (3L / vg) + 2 * tr
 
-3. **Total delay for detection**:  
-   \[
-   t_{total} = t_1 + t_2 = 2\left(\frac{3L}{v_g} + 2t_r\right)
-   \]
+(3) Total time to detect collision:
+    t_total = t1 + t2
+            = 2 * (3L / vg + 2 * tr)
 
-**Constraint**:  
-\[
-t_{total} \le T_{min}
-\]
+Constraint (must detect before min frame ends):
+    t_total ≤ T_min
 
 ---
 
 ## ⚪ ASCII Timing Diagram 时间线示意
-
+```
 A: |---- Send Frame ----->|         (collision)          |
                           v                             |
 B:                         X <- Detect Collision -> Jam -|
@@ -72,29 +65,37 @@ B:                         X <- Detect Collision -> Jam -|
 A: <----------------------|--------- Jam ---------------|
           t1                        t2
 Total = t1 + t2  ≤  T_min (64B sending time)
-
+```
 
 
 ---
 
 ## ⚪ Solve for \( L \) 推导 L
-Substitute parameters:  
-\[
-2\left(\frac{3L}{0.77c} + 2t_r\right) \le 51.2\,μs
-\]
+Given:
+  vg = 0.77 * c = 2.31e8 m/s
+  tr = 9 μs
+  T_min = 51.2 μs
 
-Given \(c = 3×10^8\,m/s\), \(t_r = 9\,μs\):  
-\[
-\frac{6L}{2.31×10^8} + 4×9 ≤ 51.2
-\]
+Constraint:
+  t_total = 2 * (3L / vg + 2 * tr) ≤ 51.2 μs
 
-Solve:  
-\[
-\frac{6L}{2.31×10^8} ≤ 51.2 - 36
-\]
-\[
-L ≤ 585.2\,m
-\]
+Expand:
+  (6L / vg) + 4 * tr ≤ 51.2 μs
+
+Plug numbers:
+  (6L / 2.31e8) + 4 * 9 ≤ 51.2
+  (6L / 2.31e8) + 36 ≤ 51.2
+  (6L / 2.31e8) ≤ 15.2
+
+Solve L:
+  L ≤ (15.2e-6 s * 2.31e8 m/s) / 6
+    = (3511.2) / 6
+    = 585.2 m  (theoretical upper bound per segment)
+
+Engineering margin:
+  Considering attenuation, tolerances, etc.
+  → Standard chooses 500 m (10BASE5 max segment length).
+
 
 ---
 
