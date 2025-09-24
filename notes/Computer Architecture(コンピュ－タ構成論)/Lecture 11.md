@@ -13,7 +13,7 @@ Memory hierarchy, locality, virtual memory (paging/segmentation, TLB), page repl
 
 ---
 
-## ⚪ Lecture Overview 讲座概览
+## ⚪ Lecture Overview 
 - Memory performance metrics: **access time / cycle time / latency / bandwidth**  
   内存性能指标：访问时间 / 周期时间 / 延迟 / 带宽  
 - Why **memory hierarchy** works: **temporal & spatial locality**, system integration  
