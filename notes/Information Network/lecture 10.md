@@ -154,3 +154,16 @@ nslookup www.kcg.ac.jp
 RIP2：携带掩码、支持认证、默认多播，报文字段含 **Next Hop/Metric(1–15)**。
 - **域名/DNS**：树状层级（gTLD/ccTLD），`label ≤ 64`、`FQDN ≤ 253`；
 **Name Server/Root **分层管理，**正引/逆引**与**缓存**机制；生产上至少两台 NS（主/从、区传）。
+
+---
+
+## ※※ Supplementary Cheat Sheets | 速查单
+
+### RIP v2 & DNS Quick Reference
+- [RIP v2 Packet Fields | RIP v2 报文字段速查](./figs/lecture10_rip2_packet_fields.md)  
+  *RIP v2 报文结构、字段说明与主要改进*
+
+- [DNS Resolution Flow | DNS 名称解析流程速查](./figs/lecture10_dns_resolution_flow.md)  
+  *DNS 递归/迭代解析过程、服务器角色与冗余设计*
+
+
