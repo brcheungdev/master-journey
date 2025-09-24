@@ -5,16 +5,24 @@
 
 ---
 ## Lecture 2
+C Programming Structure, Integer Arithmetic, Debugging in Visual Studio  <br/>
+C 程序结构、整数运算、Visual Studio 调试 
+---
+## ⚪ Lecture Content  
+- C Program Structure  
+  C 程序结构  
+- Integer Addition and Division Examples  
+  整数加法与除法示例  
+- Visual Studio Environment and Key Terms  
+  Visual Studio 环境与关键术语  
+- Debugging Methods: Breakpoints, Step Execution  
+  调试方法：断点、单步执行  
+- Keyboard Input and Error Handling  
+  键盘输入与错误处理  
+- Assignment with Mathematical Functions  
+  数学函数作业练习  
 
 ---
-## ⚪ Lecture Content   讲座内容
-C Programming Structure, Integer Arithmetic, Debugging in Visual Studio
-- C Program Structure
-- Integer Addition and Division Examples
-- Visual Studio Environment and Key Terms
-- Debugging Methods: Breakpoints, Step Execution
-- Keyboard Input and Error Handling
-- Assignment with Mathematical Functions
 
 ### 1) C Program Structure  C程序基本结构
 - 指定部（头文件）：`#include <...>`
@@ -114,6 +122,9 @@ int main(void){
 ```
 ---
 ### Key Points
-- 掌握 C 程序三段式：include → 声明 → main
-- 用 VS 的 断点 + 单步 定位逻辑问题，观察变量
-- 注意 整数/浮点 类型、标准双引号、\n 的反斜杠位置
+- Master C program's three-section structure: include → declarations → main  
+  掌握 C 程序的三段式结构：include → 声明 → main  
+- Use Visual Studio breakpoints + step execution to locate logic errors and observe variables  
+  在 Visual Studio 中使用断点 + 单步执行定位逻辑问题，观察变量变化  
+- Pay attention to integer vs floating types, standard quotes, and `\n` newline syntax  
+  注意整数 / 浮点类型、标准双引号以及 `\n` 换行符的用法  
