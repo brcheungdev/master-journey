@@ -5,8 +5,8 @@
 
 ---
 # Lecture 6: Recursion, Performance, I/O, Structs & Dynamic Memory   
-Recursive functions & iteration, time measurement, `printf/scanf_s`, structs, dynamic memory, lists, paradigms (procedural/declarative, Lisp), compiler vs interpreter
-
+Recursive functions & iteration, time measurement, `printf/scanf_s`, structs, dynamic memory, lists, paradigms (procedural/declarative, Lisp), compiler vs interpreter <br/>
+递归函数与迭代、时间测量、`printf/scanf_s` 函数、结构体、动态内存、列表、范式（过程式/声明式、Lisp）、编译器与解释器
 ---
 
 ## ⚪ Lecture Overview
