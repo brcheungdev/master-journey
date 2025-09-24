@@ -10,25 +10,26 @@ Stored-program concept, ENIAC/EDSAC, microprocessor evolution, memory & endianne
 存储程序概念、ENIAC/EDSAC、微处理器的发展、内存与字节序、指令格式、栈式机器、CISC 与 RISC、系统层次结构、模拟与数字、非冯·诺依曼结构
 ---
 
-## ⚪ Lecture Overview
-- **Stored-program** model & its characteristics vs. **wired programming**
-- Historical machines: **ENIAC** (1946), **EDSAC** (1949)
-- **Memory addressing**, **linear vs associative**, **little/big endian**
-- **Clocked synchronous** execution & (intro to) **pipelining**
-- Instruction formats: **3-addr / 2-addr / 1-addr / 0-addr (stack)**
-- **CISC vs RISC** ideas & examples
-- Evolution: **Intel 4004 → 8086 → 80386 → Pentium 4 → Core i7 → Apple M1**
-- Performance & parallelism trends; **Fugaku** supercomputer
-- **System hierarchy**; **analog vs digital**; **non-von-Neumann**
-- 存储程序模型及其特点与有线编程模型的对比
-- 历史上的计算机：**ENIAC**（1946 年），**EDSAC**（1949 年）
-- 内存寻址、线性寻址与关联寻址、小端序与大端序
-- 时钟同步执行及（入门介绍）流水线技术
-- 指令格式：**三址指令 / 二址指令 / 一址指令 / 无址指令（栈）**
-- CISC 与 RISC 的理念及示例
-- 发展历程：**英特尔 4004 → 8086 → 80386 → 奔腾 4 → 酷睿 i7 → 苹果 M1**
-- 性能与并行性趋势；**富士通超级计算机 Fugaku**
-- 系统层次结构；模拟与数字；非冯·诺依曼结构
+## ⚪ Lecture Overview 
+- **Stored-program** model & its characteristics vs. **wired programming**  
+  存储程序模型及其特点与有线编程模型的对比  
+- Historical machines: **ENIAC** (1946), **EDSAC** (1949)  
+  历史上的计算机：ENIAC（1946 年），EDSAC（1949 年）  
+- **Memory addressing**, **linear vs associative**, **little/big endian**  
+  内存寻址、线性寻址与关联寻址、小端序与大端序  
+- **Clocked synchronous** execution & (intro to) **pipelining**  
+  时钟同步执行及流水线技术入门  
+- Instruction formats: **3-addr / 2-addr / 1-addr / 0-addr (stack)**  
+  指令格式：三址指令 / 二址指令 / 一址指令 / 无址指令（栈式）  
+- **CISC vs RISC** ideas & examples  
+  CISC 与 RISC 的理念及示例  
+- Evolution: **Intel 4004 → 8086 → 80386 → Pentium 4 → Core i7 → Apple M1**  
+  发展历程：英特尔 4004 → 8086 → 80386 → 奔腾 4 → 酷睿 i7 → 苹果 M1  
+- Performance & parallelism trends; **Fugaku** supercomputer  
+  性能与并行性趋势；富岳超级计算机  
+- **System hierarchy**; **analog vs digital**; **non-von-Neumann**  
+  系统层次结构；模拟与数字；非冯·诺依曼结构  
+
 ---
 
 ## ⚪ Lecture Content 讲座内容
@@ -140,10 +141,17 @@ Stored-program concept, ENIAC/EDSAC, microprocessor evolution, memory & endianne
 ---
 
 ## Key Points 
-- **Stored-program + PC + clock** 是现代计算机的核心抽象；线性内存与兼容性推动其延续  
-- **ENIAC/EDSAC** 展示了从接线式到存储程序、从十进到二进、从纸带到电子延时线的关键过渡  
-- 理解 **寻址/端序**、**同步/流水** 与 **指令格式** 光谱（3/2/1/0-addr）  
-- **RISC vs CISC** 是设计取舍：简化译码/靠编译优化 vs 强指令/多寻址  
-- 性能提升：从 **ILP** 到 **多核/GPU/超算**，功耗与存储层次成为瓶颈  
-- 体系结构与实现层级：**RT → 门 → 器件** 的自上而下/自下而上统一视角
+- **Stored-program + PC + clock** form the core abstraction of modern computers; linear memory and compatibility drive its persistence  
+  **存储程序 + 程序计数器 + 时钟** 构成现代计算机的核心抽象；线性内存与兼容性推动其延续  
+- **ENIAC/EDSAC** demonstrate the transition from wired programming to stored-program, from decimal to binary, from paper tape to electronic delay lines  
+  **ENIAC/EDSAC** 展示了从接线式到存储程序、从十进制到二进制、从纸带到电子延时线的关键过渡  
+- Understanding **addressing / endianness**, **synchronous / pipelining**, and the **instruction format** spectrum (3/2/1/0-addr)  
+  理解 **寻址 / 端序**、**同步 / 流水线** 与 **指令格式** 光谱（3/2/1/0-addr）  
+- **RISC vs CISC** is a design trade-off: simplified decoding / compiler optimization vs complex instructions / multiple addressing modes  
+  **RISC vs CISC** 是设计取舍：简化译码 / 靠编译优化 vs 强指令 / 多寻址模式  
+- Performance scaling: from **ILP** to **multicore / GPU / supercomputers**, power and memory hierarchy become bottlenecks  
+  性能提升：从 **指令级并行 (ILP)** 到 **多核 / GPU / 超算**，功耗与存储层次成为瓶颈  
+- Architecture & implementation layers: a unified top-down/bottom-up view from **RT → Gate → Device**  
+  体系结构与实现层级：**寄存器传输级 → 门级 → 器件级** 的自上而下 / 自下而上的统一视角  
+
 
