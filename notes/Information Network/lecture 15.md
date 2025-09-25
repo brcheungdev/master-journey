@@ -104,4 +104,13 @@
 - **证书 & CA**：服务器密钥对 → 申请/签发证书（CA 私钥签名）→ 客户端以**CA 公钥**验真 → 建立会话密钥。**根 CA / 中间 CA**共同形成**信任链**。
 - **HTTPS** = HTTP + TLS/SSL：**加密传输 + 完整性 + 身份认证**，浏览器预装**根证书**。
 
+---
 
+## ※※Supplementary Cheat Sheets | 速查单
+
+### NAPT & TLS Quick Reference
+- [NAPT Translation Table | NAPT 转换表速查](./figs/lecture15_napt_translation_table.md)  
+  *NAPT 表项结构、生命周期与多主机并发访问机制*
+
+- [TLS Handshake & Certificate Chain | TLS 握手与证书链速查](./figs/lecture15_tls_handshake_certificate_chain.md)  
+  *TLS 握手流程、证书链验证与密钥交换机制*
