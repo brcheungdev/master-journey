@@ -162,3 +162,14 @@ ACK for 1..1000 arrives → slide window right by 1000, send 3001..4000
 - **SSH 取代 Telnet**：远程登录应使用加密的 SSH；FTP 明文，需**FTPS(TLS/SSL)**保护。
 - **邮件链路**：**SMTP** 外发（配**Submission + AUTH**）；**POP3/IMAP**接收；**POP3S/IMAPS**通过 TLS/SSL 加密。
 - **TCP 可靠性**：首部含**SEQ/ACK/窗口/控制位**；三次握手建连、四次挥手断连；**RTO 动态、滑动窗口**提速；**重复 ACK≥3**触发**快速重传**；具**流量/拥塞控制**。
+
+---
+
+## ※※Supplementary Cheat Sheets | 速查单
+
+### TCP Quick Reference
+- [TCP Header & Flags | TCP 首部与控制位速查](./figs/lecture12_tcp_header_flags.md)  
+  *TCP 首部结构、控制位功能与连接管理*
+
+- [TCP Sliding Window & Fast Retransmit | 滑动窗口与快速重传速查](./figs/lecture12_tcp_sliding_window_fast_retx.md)  
+  *滑动窗口机制、快速重传与超时重传策略*
