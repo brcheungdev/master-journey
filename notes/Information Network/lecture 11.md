@@ -54,10 +54,14 @@
 arp -a
 ```
 列出当前缓存的 IP ↔ MAC（“物理地址”即 MAC）。
+ 
+---
 
 ### 2) RARP — Reverse ARP
 用途 / Purpose
 - 与 ARP 相反：已知** MAC**，向 **RARP 服务器**查询应分配的**IP**。常用于**无盘/嵌入式**设备早期上电自动获取地址。须在服务器上**预配置**该设备的 MAC ↔ IP 对。
+ 
+---
 
 ### 3) ICMP — Internet Control Message Protocol 
 作用 / What it provides
@@ -79,6 +83,8 @@ arp -a
 - **Code 0**：无到该目的 IP 的路由
 - **Code 1**：目的主机未接入网络
 - **路由器丢弃后**，给源主机回送“不可达”以便调整（例如缩小分片、改目的等）。
+ 
+---
 
 ### 4) DHCP — Dynamic Host Configuration Protocol
 功能 / Function
@@ -98,6 +104,8 @@ A  ACK       : 服务器确认分配，携带租约等参数
 ```
 Windows 设置提示 / Windows Hint
 - 勾选“自动获取 IP / DNS”即可使用 DHCP；参数由服务器下发。
+ 
+---
 
 ### 5) TCP/IP 模型中的传输层：TCP 与 UDP
 **IP 特性 / IP Properties**
@@ -106,6 +114,8 @@ Windows 设置提示 / Windows Hint
 - **可靠传输**：有**顺序控制、重传控制、流量控制、拥塞控制**。适合必须可靠的应用。
 **UDP（无连接）**
 - **尽力而为**、开销小、实时性强；常用于**IP 语音/多播/广播**、以及**RIP、DHCP**等协议。
+ 
+---
 
 ### 6) 端口与会话识别 / Ports & Session Identification
 **会话五元组 / 5-tuple**
@@ -130,3 +140,17 @@ Windows 设置提示 / Windows Hint
 - **DHCP**：自动配置 IP/Mask/GW/DNS；**DORA**交互与租约管理，广播用于多服务器场景。
 - **TCP vs UDP**：TCP 可靠（顺序/重传/流/拥塞控制）；UDP 轻量（适合实时/多播/广播）。
 - **Ports**：用五元组识别会话；端口分**well-known/registered/dynamic**，由**IANA**管理。
+
+---
+
+## ※※Supplementary Cheat Sheets | 速查单
+
+### ICMP & DHCP Quick Reference
+- [ICMP Types & Codes | ICMP 报文类型与代码速查](./figs/lecture11_icmp_types_codes.md)  
+  *常见 ICMP 类型、不可达代码、TTL 超时与重定向*
+
+- [DHCP DORA Flow | DHCP DORA 流程速查](./figs/lecture11_dhcp_dora_flow.md)  
+  *DHCP Discover/Offer/Request/ACK 四步流程与租约管理*
+
+
+  
