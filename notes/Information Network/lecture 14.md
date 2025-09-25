@@ -156,3 +156,13 @@ Reverse Proxy:
 - **VPN（IPsec）**：**传输模式**不保护 IP 头；**隧道模式**连同 IP 头也受保护；均依赖**隧道+加密/认证**。
 - **Proxy/Reverse Proxy**：正向代理偏**出网控制/缓存/审计**；反向代理偏**入口防护/SSL卸载/统一接入**。
 
+
+---
+## ※※ Supplementary Cheat Sheets | 速查单
+
+### WLAN & VPN Quick Reference
+- [RTS/CTS Timeline | RTS/CTS 时序速查](./figs/lecture14_rts_cts_timeline.md)  
+  *隐藏终端问题与 RTS/CTS 时序解决方案*
+
+- [VPN Modes & IPsec | VPN 模式与 IPsec 速查](./figs/lecture14_vpn_modes_ipsec.md)  
+  *传输模式/隧道模式、IPsec 组件与报文结构*
