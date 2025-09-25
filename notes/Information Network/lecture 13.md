@@ -138,6 +138,16 @@ Then B → (DIFS sensing) → B backoff & send DATA → ...
 - **CSMA/CA**：通过**DIFS/SIFS/ACK/Backoff**回避冲突，无 CD 能力。
 
 
+---
+
+## ※※Supplementary Cheat Sheets | 速查单
+
+### TCP & CSMA/CA Quick Reference
+- [TCP Congestion Control | TCP 拥塞控制速查](./figs/lecture13_tcp_cwnd_ssthresh.md)  
+  *TCP 拥塞窗口、慢启动、拥塞避免与快速重传处理*
+
+- [CSMA/CA Timing | CSMA/CA 时序速查](./figs/lecture13_csma_ca_timing.md)  
+  *CSMA/CA DIFS/SIFS/ACK/Backoff 时序机制与碰撞回避*
 
 
 
