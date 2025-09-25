@@ -35,7 +35,7 @@
 
 ---
 
-## ⚪ Key Points
+## Key Points
 
 - 三次握手：SYN → SYN+ACK → ACK
 - 四次挥手：FIN → ACK → FIN → ACK
