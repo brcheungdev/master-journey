@@ -33,27 +33,38 @@ Translating C to machine code, register allocation, loops/arrays, index addressi
 
 ## ⚪ Lecture Content 讲座内容
 
-### 1) From C to Assembly: Registers, Labels, Data
+### 1) From C to Assembly: Registers, Labels, Data  
+从 C 到汇编：寄存器、标签与数据布局  
 **Data layout (example)**  
+数据布局（示例）  
 - `ZERO@0x30 = 0`, `ONE@0x34 = 1`  
-- `A@0x30`, `B@0x34`, `C@0x38`, `D@0x3C`, `E@0x40` (4-byte 2’s-complement ints)
+- `A@0x30`, `B@0x34`, `C@0x38`, `D@0x3C`, `E@0x40` (4-byte 2’s-complement ints)  
+  `A@0x30`、`B@0x34`、`C@0x38`、`D@0x3C`、`E@0x40`（4 字节补码整数）  
 
-**Register conventions (typical for this lecture)**
+**Register conventions (typical for this lecture)**  
+寄存器约定（本课示例）  
 - `R1`: accumulator / partial sum `s`  
+  `R1`：累加器 / 临时和 `s`  
 - `R3`: loop index `i`  
+  `R3`：循环变量 `i`  
 - `R0`: loop bound `imax` or constants  
-- `R15`: **index register** (when using indexed addressing)
+  `R0`：循环上界 `imax` 或常量寄存器  
+- `R15`: **index register** (when using indexed addressing)  
+  `R15`：**索引寄存器**（用于索引寻址）  
 
 ---
 
-### 2) Example: `E = (A+B) * (C+D)`
-**C (for reference)**
+### 2) Example: `E = (A+B) * (C+D)`  
+示例：`E = (A+B) * (C+D)`  
+**C (for reference)**  
+**C 代码（仅作参考）**  
 ```c
 int a=16, b=3, c=10, d=17, e;
 e = (a+b) * (c+d);
 ```
 
 **Assembly (2-byte/inst; code @0x00)**  
+**汇编（2 字节/条；代码从 0x00 开始）**  
 ```
 00  LOAD  R1, A
 02  LOAD  R2, B
@@ -68,7 +79,8 @@ e = (a+b) * (c+d);
 
 ---
 
-### 3) Example: Conditional (`if A>B ... else ...`)
+### 3) Example: Conditional (`if A>B ... else ...`)  
+示例：条件分支（`if A>B ... else ...`）  
 **C**
 ```c
 if (a > b) e = a + b + c;
@@ -76,6 +88,7 @@ else       e = a * b * c;
 ```
 
 **Assembly (idea)**  
+**汇编思路**  
 ```
 LOAD R1, A
 LOAD R2, B
@@ -95,7 +108,8 @@ STOP
 
 ---
 
-### 4) Loop: Sum of integers 1..10
+### 4) Loop: Sum of integers 1..10  
+循环：计算 1..10 的和  
 **C**
 ```c
 int s=0;
@@ -103,7 +117,8 @@ for (int i=1; i<=10; i++) s += i;
 printf("%d\n", s);
 ```
 
-**Assembly (branch on condition codes)**
+**Assembly (branch on condition codes)**  
+**汇编（基于条件码分支）**  
 ```
 LOAD R1, ZERO      ; s=0
 LOAD R3, ONE       ; i=1
@@ -123,10 +138,13 @@ STOP
 
 ---
 
-### 5) Array Sum A[0..9] — three approaches
+### 5) Array Sum A[0..9] — three approaches  
+数组求和 A[0..9] —— 三种方法  
 
-#### (a) Naïve (賢くない方法)
-> 逐条 `LOAD A[k]` 然后 `ADD`，写 10 次，非常冗长，不可扩展。
+#### (a) Naïve (賢くない方法)  
+#### (a) 朴素法（不聪明的办法）  
+> Load and add each element explicitly; verbose and not scalable.  
+> 逐条 `LOAD A[k]` 然后 `ADD`，写 10 次，非常冗长，不可扩展。  
 ```
 LOAD R1, ZERO
 LOAD R3, A[0];  ADD R1, R1, R3
@@ -137,15 +155,20 @@ STORE R1, SUM
 STOP
 ```
 
-#### (b) Dangerous: **self-modifying** by patching the data address
-> 通过给一个 `LOAD` 指令的“数据地址字段”每轮 `+4` 来访问 `A[k+1]`。  
-> **风险**：溢出会覆盖指令中的寄存器字段；复制到别处不可移植；软件工程上**不推荐**修改指令流。
+#### (b) Dangerous: **self-modifying** by patching the data address  
+#### (b) 危险方法：**自修改代码**（修改数据地址字段）  
+> Each iteration increments the encoded data address (e.g., +4 for next int).  
+> 每轮将指令中的“数据地址字段”加 4 以访问下一个元素。  
+> **Risk**: corrupts instruction fields; poor portability; not recommended.  
+> **风险**：可能破坏其他指令字段；可移植性差；不建议。  
 
-#### (c) Proper: **index addressing** with `R15`
-> 讲义引入 **indexed load/store**：`LOADX Rd, A` 等价于从 `M(Addr(A)+R15)` 读。  
-> 每次把 `R15 += 4`（4 字节元素）即可扫描数组。
+#### (c) Proper: **index addressing** with `R15`  
+#### (c) 正确方法：使用 `R15` 的**索引寻址**  
+> `LOADX Rd, A` ≈ read from `M(Addr(A)+R15)`; bump `R15 += 4` per element.  
+> `LOADX Rd, A` 近似表示从 `M(Addr(A)+R15)` 读取；每次元素后 `R15 += 4`。  
 
-**Assembly**
+**Assembly**  
+**汇编**  
 ```
 LOAD  R0, REPEAT    ; 10
 LOAD  R1, ZERO      ; s=0
@@ -168,13 +191,19 @@ STOP
 
 ---
 
-### 6) Repeating a Sum Many Times: **Function call vs naïve**
-- **Naïve**：把“求和 1..N”的指令序列复制粘贴多处 → 代码大、维护难  
-- **函数化**：使用 `BAL` (Branch-and-Link) / `RTN` (Return)  
-  - 调用点：`BAL Rrtn, SUM`；函数末尾：`RTN Rrtn`  
-  - 调用时保存/恢复必要寄存器（callee saves），并以寄存器传参/返回
+### 6) Repeating a Sum Many Times: **Function call vs naïve**  
+多次重复求和：**函数调用** vs 朴素复制  
+- **Naïve**: copy-paste the sum loop everywhere → big and hard to maintain  
+  **朴素**：把“求和 1..N”的指令序列到处复制 → 体积大、难维护  
+- **Function**: use `BAL` (Branch-and-Link) / `RTN` (Return)  
+  **函数化**：使用 `BAL`（带返回地址跳转）与 `RTN`（返回）  
+  - Call site: `BAL Rrtn, SUM`; function end: `RTN Rrtn`  
+    调用点：`BAL Rrtn, SUM`；函数尾：`RTN Rrtn`  
+  - Save/restore registers; pass/return via registers  
+    需要保存/恢复寄存器；通过寄存器传参与返回  
 
-**C (reference)**
+**C (reference)**  
+**C 代码（参考）**  
 ```c
 int sum(int n){ int s=0; for(int i=1;i<=n;i++) s+=i; return s; }
 
@@ -184,6 +213,7 @@ int sum2 = sum(a-b);   // 15
 ```
 
 **Assembly sketch (call-by-value)**  
+**汇编草图（值传递）**  
 ```
 ; caller
 LOAD R1, A
@@ -220,14 +250,19 @@ L2:  LOAD R6, ZERO
 
 ---
 
-### 7) Parameter Passing: **by value** vs **by reference**
-- **值传递（Call-by-Value）**：把 `n` 的**拷贝**传给函数，函数内部改不回原变量  
-- **引用传递（Call-by-Reference）**：把**地址**传给函数，在函数内通过地址读写原变量  
+### 7) Parameter Passing: **by value** vs **by reference**  
+参数传递：**值传递** vs **引用传递**  
+- **Call-by-Value**: pass a copy of `n`; callee cannot modify the original  
+  **值传递（Call-by-Value）**：把 `n` 的**拷贝**传给函数，函数内部改不回原变量
+
+- **Call-by-Reference**: pass an address and access via LOADX/STOREX  
+  **引用传递（Call-by-Reference）**：把**地址**传给函数，在函数内通过地址读写原变量  
   - 讲义给出两种把地址传给函数的方法：  
     1) 新增 `LOADA`（Load-Address）把 `&C` 装入寄存器（如 `R15`），函数中用 `LOADX/STOREX` 访问  
-    2) 在数据区**预先存放**指针变量 `PNTC= &C`，调用前把 `PNTC` 装入 `R15` 作为索引基址
+    2) 在数据区**预先存放**指针变量 `PNTC= &C`，调用前把 `PNTC` 装入 `R15` 作为索引基址  
 
-**C (reference form)**
+**C (reference form)**  
+**C 代码（参考形式）**  
 ```c
 int sum_ref(int *n){
   int s=0; for(int i=1;i<=*n;i++) s+=i; return s;
@@ -235,7 +270,8 @@ int sum_ref(int *n){
 sum_ref(&c); sum_ref(&d);
 ```
 
-**Assembly (reference idea)**
+**Assembly (reference idea)**  
+**汇编（引用思路）**  
 ```
 ; caller sets argument as an ADDRESS
 LOADA R15, C        ; R15 = &C      (or LOAD R15, PNTC)
@@ -249,12 +285,14 @@ LOADX R5, 0         ; R5 = *(&C) = C
 
 ---
 
-### 8) Notes: Disassembly in Visual Studio
-- Debug → Windows → **Disassembly**：可观察编译器生成的真实机器码/指令序列，帮助理解 **C→机器语言** 的降级路径与优化。
+### 8) Notes: Disassembly in Visual Studio  
+注：在 Visual Studio 中查看反汇编  
+- Debug → Windows → **Disassembly** shows compiler-generated code paths.  
+  Debug → Windows → **Disassembly** 可以观察编译器生成的机器码/指令序列，帮助理解 C 到机器语言的映射与优化路径。  
 
 ---
 
-### Key Points 关键要点
+### Key Points
 - Learn to decompose C programs into: **data area**, **register allocation**, **control flow (labels/branches)**, **arithmetic/memory instructions**  
   学会将 C 程序拆分成：**数据区**、**寄存器分配**、**控制流（标签/分支）**、**算术/访存指令**  
 - **Indexed addressing (`LOADX/STOREX`)** is the scalable array traversal method; **self-modifying code** has portability and security risks  
