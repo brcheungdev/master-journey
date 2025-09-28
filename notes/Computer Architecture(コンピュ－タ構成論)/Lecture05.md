@@ -1,9 +1,10 @@
 #  My notes
-- This folder contains my notes, thoughts and learning summaries during my master's degree study.
+- This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
-- Instructor:Prof. Shinji Tomita (富田眞治)  
+- Instructor : Prof. Shinji Tomita (富田眞治)  
 
 ---
+
 # Lecture 5: Functions, Parameter Passing & Pointers in C  
 Functions, parameter passing (by value / by reference), pointers, globals, arrays & strings <br/> 函数、参数传递（按值传递/按引用传递）、指针、全局变量、数组和字符串
 
@@ -32,12 +33,12 @@ Functions, parameter passing (by value / by reference), pointers, globals, array
 ## ⚪ Lecture Content 讲座内容
 
 ### 1) What is a Function?  什么是函数
-- 将“对不同数据执行相同处理”的逻辑抽成**函数**，主程序通过**实引数**传给函数的**形参**，函数计算后以**返回值**`return`结果给主程序使用。  
+- 将“对不同数据执行相同处理”的逻辑抽象为**函数**：主程序把**实际参数**传给函数的**形式参数**，函数计算后通过**返回值** `return` 把结果交还主程序使用。  
 - **优点**：  
-  - 代码体积更小、结构清晰（分而治之）  
-  - 易于测试与复用（小规模单元易验证）  
-  - 便于维护与修改  
-- **缺点**：参数传递/调用会有开销，可能 **略微降低速度**。
+  - 代码更精简、结构更清晰（便于模块化与分而治之）  
+  - 便于测试与复用（小单元更容易验证）  
+  - 维护修改成本更低  
+- **缺点**：参数传递与函数调用存在开销，可能**略微影响性能**。
 
 ---
 
@@ -57,11 +58,12 @@ int main(void) {
     /* statements ... */
     return 0;   /* 可省略，但建议保留 */
 }
-
 ```
-※ 不能在函数内部再声明另一个函数（C 无函数嵌套）。void 用于“无返回值函数”或“无形参声明”（int main(void)）。
+※ 不能在函数内部再声明另一个函数（C 无函数嵌套）。`void` 用于“无返回值函数”或“无形参”（如 `int main(void)`）。
 
-### 3) Simple Function Example 简单函数例
+---
+
+### 3) Simple Function Example  简单函数示例
 计算 1～n 的总和并返回：
 ```c
 #include <stdio.h>
@@ -77,12 +79,17 @@ int main(void) {
     int a = 10, b = 5;
     int sum1 = sum(a + b);   // 实参可为表达式
     int sum2 = sum(a - b);
-    printf("sum(a+b) = %d\n", sum1); // 120
-    printf("sum(a-b) = %d\n", sum2); // 15
+    printf("sum(a+b) = %d
+", sum1); // 120
+    printf("sum(a-b) = %d
+", sum2); // 15
     return 0;
 }
 ```
-### 4) Parameter Passing 参数传递：值传递 vs 引用传递
+
+---
+
+### 4) Parameter Passing  参数传递：值传递 vs 引用传递
 Call by Value（值传递）：把值的拷贝传入函数，函数内修改形参不影响实参。
 ```c
 #include <stdio.h>
@@ -96,12 +103,14 @@ int add_then_change_i(int i, int j) {
 int main(void) {
     int a = 10, b = 5;
     int s = add_then_change_i(a, b);
-    printf("a+b = %d\n", s);         // 15
-    printf("a (unchanged) = %d\n", a); // 10
+    printf("a+b = %d
+", s);         // 15
+    printf("a (unchanged) = %d
+", a); // 10
     return 0;
 }
 ```
-Call by Reference（引用传递）：传入地址，在函数内通过*解引用直接修改外部变量。
+Call by Reference（引用传递）：传入地址，在函数内通过*解引用*直接修改外部变量。
 ```c
 #include <stdio.h>
 
@@ -114,29 +123,36 @@ int add_and_set_i100(int *i, int *j) {
 int main(void) {
     int a = 10, b = 5;
     int s = add_and_set_i100(&a, &b);
-    printf("a+b = %d\n", s);     // 15
-    printf("a (changed) = %d\n", a); // 100
+    printf("a+b = %d
+", s);     // 15
+    printf("a (changed) = %d
+", a); // 100
     return 0;
 }
 ```
-※ &x 取地址，*p 取指针指向内容。传数组实参时无需 &（见第 6 节）。
+※ `&x` 取地址，`*p` 取指针指向内容。传数组实参时无需 `&`（见第 6 节）。
 
-### 5) scanf_s Input 输入：数值 vs 字符串
-数值输入必须传地址：
+---
+
+### 5) scanf_s Input  输入：数值 vs 字符串
+数值输入必须传**地址**：
 ```c
 int a;  scanf_s("%d", &a);
 double x; scanf_s("%lf", &x);
 ```
-字符串输入（数组名即地址），并需传缓冲区大小**：
+字符串输入（数组名即地址），并需传**缓冲区大小**：
 ```c
 char name[16];
-scanf_s("%s", name, 16);  // VS 安全扩展：必须写入缓冲区大小
-printf("name = %s\n", name);
+scanf_s("%s", name, 16);  // VS 安全扩展：必须提供缓冲区大小
+printf("name = %s
+", name);
 ```
-※ 若对数值忘记写 &，将无法把输入写回变量。字符串（char[]）为数组名，隐式按引用传递；未提供大小将报错（VS 的 _s 系列）。
+※ 若对数值忘记写 `&`，将无法把输入写回变量。字符串（`char[]`）为数组名，隐式按引用传递；未提供大小将报错（VS 的 `_s` 系列）。
 
-### 6) Arrays as Parameters 数组作形参（隐式按引用）
-推荐：携带长度参数的通用写法
+---
+
+### 6) Arrays as Parameters  数组作形参（隐式按引用传递）
+推荐：**携带长度参数**的通用写法
 ```c
 #include <stdio.h>
 
@@ -149,8 +165,10 @@ int sum_array(int A[], int m) {
 int main(void) {
     int B[] = {3,5,1,4,9,2,6,10,8,7};
     int C[] = {3,5,1,4,9,2,6,10,8,7,11};
-    printf("sum(B) = %d\n", sum_array(B, 10));
-    printf("sum(C) = %d\n", sum_array(C, 11));
+    printf("sum(B) = %d
+", sum_array(B, 10));
+    printf("sum(C) = %d
+", sum_array(C, 11));
     return 0;
 }
 ```
@@ -162,27 +180,34 @@ int sum_array_ptr(int *pB, int m) {
     return s;
 }
 ```
-※ sum_array(&B, n) ❌（类型不匹配）；应传 B 或 &B[0]。把形参写成固定长度 int A[10] 会限制适用性；携带 m 更通用。
+※ `sum_array(&B, n)` ❌（类型不匹配）；应传 `B` 或 `&B[0]`。把形参写成固定长度 `int A[10]` 会限制适用性；携带 `m` 更通用。
 
-### 7) Pointer Basics & Pointer Arithmetic 指针基础
+---
+
+### 7) Pointer Basics & Pointer Arithmetic  指针基础
 变量与指针的最小示例：
 ```c
 int a = 123;
 int *p = &a;      // p 保存 a 的地址
 int c = *p + 1;   // 读出 a 的值做计算（等同 c = a + 1）
 ```
-指针与数组（以 int 为例）：
-- int A[10]; int *p = &A[0];
-- p+1 实际向前移动 sizeof(int) 个字节（通常为 4）。
-- *p 读取当前元素内容；*(p+1) 读取下一个元素。
-字符与字符串：
-- char *s = "ABC"; printf("%s\n", s);
-- 字符串以**'\0' 结尾**；二维字符数组可存放多行短字符串。
-- 注意 %p 用于打印地址，%s 打印以 '\0' 结尾的字符串。
+指针与数组（以 `int` 为例）：
+- `int A[10]; int *p = &A[0];`
+- `p + 1` 实际向前移动 `sizeof(int)` 个字节（通常为 4）。
+- `*p` 读取当前元素内容；`*(p+1)` 读取下一个元素。
 
-### 8) Global Variables 大域变量
-特性：所有函数可共享同一份数据，读写方便但降低封装性、可能让程序更难理解与维护。
-示例：函数调用次数计数
+字符与字符串：
+- `char *s = "ABC"; printf("%s
+", s);`
+- 字符串以 **'\0' 结尾**；二维字符数组可存放多行短字符串。
+- 注意 `%p` 用于打印地址，`%s` 打印以 `'\0'` 结尾的字符串。
+
+---
+
+### 8) Global Variables  全局变量
+特性：所有函数可共享同一份数据，读写方便，但会降低封装性，可能让程序更难理解与维护。
+
+示例：**记录函数调用次数**
 ```c
 #include <stdio.h>
 
@@ -195,13 +220,15 @@ int sum2(int i, int j) {
 
 int main(void) {
     int a = 10, b = 5;
-    printf("%d\n", sum2(a, b));   // 15
+    printf("%d
+", sum2(a, b));   // 15
     g_count += 2;                  // 主程序也可修改
-    printf("g_count = %d\n", g_count);
+    printf("g_count = %d
+", g_count);
     return 0;
 }
 ```
-用全局变量“返回”结果的方式（不推荐作为常规做法）：
+用全局变量“返回”结果的方式（**不推荐**作为常规做法）：
 ```c
 #include <stdio.h>
 
@@ -214,25 +241,30 @@ void sum_to_gc(void) { // 无形参、无显式返回值
 
 int main(void) {
     int a = 10, b = 5;
-    gc = a + b; sum_to_gc(); printf("sum(a+b) = %d\n", gs);
-    gc = a - b; sum_to_gc(); printf("sum(a-b) = %d\n", gs);
+    gc = a + b; sum_to_gc(); printf("sum(a+b) = %d
+", gs);
+    gc = a - b; sum_to_gc(); printf("sum(a-b) = %d
+", gs);
     return 0;
 }
 ```
-※ 优先使用 返回值 或 引用传递 返回结果；全局变量留作必要时使用。
-
-### 9) Ways to Return Results 返回结果的三种方式
-- return 单一返回值（简单清晰；不能直接返回数组）
-- 引用传递（通过指针“输出多个值”或“返回数组内容”）
-- 全局变量（共享快速，但不利封装与测试）
+※ 优先使用**返回值**或**引用传递**返回结果；全局变量仅在确有需要时使用。
 
 ---
+
+### 9) Ways to Return Results  返回结果的三种方式
+- `return` 单一返回值（简单清晰；不能直接返回数组）  
+- **引用传递**（通过指针“输出多个值”或“返回数组内容”）  
+- **全局变量**（共享快速，但不利封装与测试）  
+
+---
+
 ### Key Points 
 - Master function declaration, calling, return values, and standard `main` structure  
   掌握函数的声明、调用、返回以及 `main` 函数的规范写法  
 - Understand the essence of Call by Value vs Call by Reference (copy vs address)  
   理解值传递与引用传递的本质（拷贝 vs 地址）  
-- Familiarize with relationship between pointers and arrays, plus pointer arithmetic  
+- Familiarize with the relationship between pointers and arrays, plus pointer arithmetic  
   熟悉指针与数组的关系以及指针算术运算  
 - Remember the difference in `scanf_s` for numeric vs string arguments  
   记住 `scanf_s` 在数字与字符串参数上的不同写法  
@@ -240,3 +272,4 @@ int main(void) {
   数组作为函数形参时默认按引用传递；同时传递长度参数更通用  
 - Use global variables cautiously; prefer return values or reference returns  
   谨慎使用全局变量；优先考虑返回值或引用返回  
+
