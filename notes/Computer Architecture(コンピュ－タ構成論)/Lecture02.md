@@ -101,7 +101,8 @@ Debug：带调试运行（断点、单步、变量观察）
 - Variable windows:
   
 变量窗口：
-    - Auto: variables related to breakpoints
+
+- Auto: variables related to breakpoints
 
 Auto（自动变量）：与断点相关的变量
     - Local: local variables in the current function
