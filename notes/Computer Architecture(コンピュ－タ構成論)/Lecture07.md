@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -188,3 +190,7 @@ int main(void) {
   IEEE-754 的规格 / 特殊值 / 舍入会影响数值计算结果
 - Correctly write and print numeric literals of various types in C  
   在 C 中正确书写与打印不同类型的数值
+
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture06.md) · [→ Next Lecture / 下一章](./Lecture08.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
