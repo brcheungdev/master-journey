@@ -81,14 +81,13 @@ Why learn C:
   
 Example: **Hello World!** Program  
 示例：Hello World! 程序  
-
-  ```c
+```c
   #include <stdio.h>
   int main(void) {
       printf("Hello World!\n");
       return 0;
   }
-  
+```
 ---
 ### Key Points 
 - Understand software/hardware layering  
