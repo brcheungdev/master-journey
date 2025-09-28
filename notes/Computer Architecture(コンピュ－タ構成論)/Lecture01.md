@@ -100,4 +100,5 @@ Example: **Hello World!** Program
   
 <h2></h2>
 
-[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes / 笔记首页](../) · [Repo Home / 仓库首页](../../README.md)
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
