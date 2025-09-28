@@ -46,15 +46,15 @@
 
 | 课程名称 | 简介 | 链接 |
 |-------------|-------------|------|
-| **计算机结构（コンピュータ構成論）** | 关于计算机系统设计、架构的讲义与笔记 | [点我跳转](https://github.com/brcheungdev/master-journey/tree/main/notes/Computer%20Architecture(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%EF%BC%8D%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96)) |
-| **信息网络** | 计算机网络基础知识、分层模型、通信协议等 | [点我跳转](https://github.com/brcheungdev/master-journey/tree/main/notes/Information%20Network) |
-| **Web 系统开发** | 关于 Web 开发的核心概念与实际操作笔记 | [点我跳转](https://github.com/brcheungdev/master-journey/tree/main/notes/Web%20system%20development) |
+| **计算机结构（コンピュータ構成論）** | 关于计算机系统设计、架构的讲义与笔记 | [去看看](https://github.com/brcheungdev/master-journey/tree/main/notes/Computer%20Architecture(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%EF%BC%8D%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96)) |
+| **信息网络** | 计算机网络基础知识、分层模型、通信协议等 | [去看看](https://github.com/brcheungdev/master-journey/tree/main/notes/Information%20Network) |
+| **Web 系统开发** | 关于 Web 开发的核心概念与实际操作笔记 | [去看看](https://github.com/brcheungdev/master-journey/tree/main/notes/Web%20system%20development) |
 
 ### 代码
 
 | 文件夹 | 简介 | 链接 |
 |--------|-------------|------|
-| **code** | 正在整理的项目合集，包括强化学习调度原型等 | [点我跳转](./code/) |
+| **code** | 正在整理的项目合集，包括强化学习调度原型等 | [去看看](./code/) |
 
 <br>
 
@@ -73,6 +73,6 @@
 这个仓库还会持续更新，敬请期待！
 
 <p>
-  <a href="https://github.com/brcheungdev">跳转到我的 GitHub 主页</a>
+  <a href="https://github.com/brcheungdev">去看看我的 GitHub 主页</a>
 </p>
 
