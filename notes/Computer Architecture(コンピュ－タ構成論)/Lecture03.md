@@ -4,7 +4,6 @@
 - Instructor: Prof. Shinji Tomita (富田眞治)  
 
 ---
-
 ## Lecture 3  
 - Data Types, Binary & Hexadecimal, Control Statements, Arrays, Quadratic Equation Solver  
   数据类型、二进制与十六进制、控制语句、数组、二次方程求解  
@@ -70,8 +69,7 @@ int main(void) {
     int a, b, c;
     a = 1; b = 2;
     c = a + b;
-    printf("Sum = %d
-", c);
+    printf("Sum = %d\n", c);
     return 0;
 }
 ```
@@ -107,8 +105,7 @@ Example:
 #include <stdio.h>
 int main() {
     int a = 5, b = 2;
-    printf("Quotient = %d, Remainder = %d
-", a/b, a%b);
+    printf("Quotient = %d, Remainder = %d\n", a/b, a%b);
     return 0;
 }
 ```
@@ -123,11 +120,9 @@ int main() {
 int main() {
     int a=10, b=20;
     if (a >= b)
-        printf("a >= b
-");
+        printf("a >= b\n");
     else
-        printf("a < b
-");
+        printf("a < b\n");
     return 0;
 }
 ```
@@ -169,8 +164,7 @@ while (i < 10) {
 int A[10] = {1,2,3,4,5,6,7,8,9,10};
 int sum = 0;
 for (int i=0; i<10; i++) sum += A[i];
-printf("Sum = %d
-", sum);
+printf("Sum = %d\n", sum);
 ```
 
 - Find Max & Min:  
@@ -181,8 +175,7 @@ for (int i=1; i<10; i++) {
     if (A[i] > max) max = A[i];
     if (A[i] < min) min = A[i];
 }
-printf("Max = %d, Min = %d
-", max, min);
+printf("Max = %d, Min = %d\n", max, min);
 ```
 
 ---
@@ -192,7 +185,6 @@ printf("Max = %d, Min = %d
 
 Equation: ax² + bx + c = 0  
 方程：ax² + bx + c = 0  
-
 ```c
 #include <stdio.h>
 #include <math.h>
@@ -202,13 +194,11 @@ int main() {
     if (d >= 0) {
         ans1 = (-b + sqrt(d)) / (2*a);
         ans2 = (-b - sqrt(d)) / (2*a);
-        printf("Real roots: %lf, %lf
-", ans1, ans2);
+        printf("Real roots: %lf, %lf\n", ans1, ans2);
     } else {
         ans1 = -b / (2*a);
         ans2 = sqrt(-d)/(2*a);
-        printf("Complex roots: %lf ± %lfi
-", ans1, ans2);
+        printf("Complex roots: %lf ± %lfi\n", ans1, ans2);
     }
     return 0;
 }
@@ -225,6 +215,11 @@ int main() {
   数据类型与运算符  
 - Conditional and loop constructs  
   条件语句与循环结构  
+- Arrays, sum, min, max programs  
+  数组的求和、最大值、最小值程序  
+- Quadratic equation solver using math.h  
+  使用 math.h 进行二次方程求解  
+
 - Arrays, sum, min, max programs  
   数组的求和、最大值、最小值程序  
 - Quadratic equation solver using math.h  
