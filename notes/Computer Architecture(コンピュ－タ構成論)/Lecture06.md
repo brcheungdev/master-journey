@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -253,4 +255,9 @@ printf("Inner product = %d
 - Dynamic memory and singly linked list basics  
   动态内存与单链表基础操作  
 - Programming paradigms, compilation vs interpretation differences  
-  编程范式、编译与解释的差异  
+  编程范式、编译与解释的差异
+
+  <h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture05.md) · [→ Next Lecture / 下一章](./Lecture07.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
