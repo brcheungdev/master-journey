@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 # My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.  
 - The main topics include: **Computer Architecture(コンピュータ構成論)**.  
@@ -174,3 +176,8 @@ VA → TLB → Cache → Memory 流水线
   缓存设计：映射方式、块大小、写入策略与多级堆叠  
 - Pipeline VA→TLB→Cache→Memory explains where misses originate  
   VA→TLB→Cache→Memory 的流水线解释了未命中的来源
+
+  <h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture10.md) · [→ Next Lecture / 下一章](./Lecture12.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
