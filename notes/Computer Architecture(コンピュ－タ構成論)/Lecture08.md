@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -183,3 +185,6 @@ if(a>b) e=a+b+c; else e=a*b*c;
 - Verify correctness by mapping symbols to hexadecimal in the machine program
   通过“符号 → 十六进制”的一一对应，验证机器程序装载是否正确
 
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture07.md) · [→ Next Lecture / 下一章](./Lecture09.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
