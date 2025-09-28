@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -211,3 +213,7 @@ int main(void) {
   数组应用：求和、乘积、最大值、最小值、排序  
 - Handling duplicates in arrays & bubble sort basics  
   处理数组中的重复元素与冒泡排序基础  
+
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture03.md) · [→ Next Lecture / 下一章](./Lecture05.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
