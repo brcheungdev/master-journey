@@ -39,12 +39,12 @@
   **定义**：利用通信线路连接多台计算机，进行硬件、软件、数据共享的系统。  
 - **Core Components**:  
   **核心组成**：  
-  1) Hosts (nodes)<br>  
-    1) 主机（节点） <br>  
-  2) Communication lines  <br> 
-    2) 通信线路  <br> 
-  3) Routers/switches for packet forwarding  <br> 
-    3) 路由器/交换机用于分组转发  
+  1) Hosts (nodes) 
+    【1) 主机（节点）】
+  2) Communication lines 
+    【2) 通信线路】 
+  3) Routers/switches for packet forwarding  
+    【3) 路由器/交换机用于分组转发】  
 - **Key Idea**: Data is divided into **packets**; routers forward packets hop-by-hop until reaching destination.  
   **关键概念**：数据被分割成 **分组**，路由器逐跳转发直至到达目的地。
 
