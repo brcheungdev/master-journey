@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -225,3 +227,6 @@ int main() {
 - Quadratic equation solver using math.h  
   使用 math.h 进行二次方程求解  
 
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture02.md) · [→ Next Lecture / 下一章](./Lecture04.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
