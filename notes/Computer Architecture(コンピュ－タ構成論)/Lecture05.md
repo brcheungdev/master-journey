@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -273,3 +275,6 @@ int main(void) {
 - Use global variables cautiously; prefer return values or reference returns  
   谨慎使用全局变量；优先考虑返回值或引用返回  
 
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture04.md) · [→ Next Lecture / 下一章](./Lecture06.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
