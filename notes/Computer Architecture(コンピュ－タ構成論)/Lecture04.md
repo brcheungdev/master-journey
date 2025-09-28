@@ -1,15 +1,17 @@
 #  My notes
-- This folder contains my notes, thoughts and learning summaries during my master's degree study.
+- This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
-- Instructor:Prof. Shinji Tomita (富田眞治)  
+- Instructor: Prof. Shinji Tomita (富田眞治)  
 
 ---
-## Lecture 4
-Repetition Statements, Arrays, String Operations, Sorting Algorithms <br/>
- 重复语句、数组、字符串操作、排序算法
+
+## Lecture 4  
+Repetition Statements, Arrays, String Operations, Sorting Algorithms  
+重复语句、数组、字符串操作、排序算法  
 
 ---
-## ⚪ Lecture Overview 
+
+## ⚪ Lecture Overview  
 - Repetition Statements: for, while, do-while  
   重复语句：for、while、do-while  
 - One-dimensional and Two-dimensional Arrays  
@@ -24,9 +26,13 @@ Repetition Statements, Arrays, String Operations, Sorting Algorithms <br/>
   报告作业：带多个索引的最大/最小值问题  
 
 ---
-## ⚪ Lecture Content 讲座内容
-### 1) Repetition Statements – Loops      重复语句 - 循环
-For loop (known iteration count):         “for”循环（已知迭代次数）：
+
+## ⚪ Lecture Content  
+### 1) Repetition Statements – Loops  
+重复语句 - 循环  
+
+For loop (known iteration count):  
+“for”循环（已知迭代次数）：
 ```c
 /* Sum from 1 to 10 using for loop */
 #include <stdio.h>
@@ -40,7 +46,9 @@ int main(void) {
     return 0;
 }
 ```
-While loop (unknown iteration count):    “while”循环（未知循环次数）：
+
+While loop (unknown iteration count):  
+“while”循环（未知循环次数）：
 ```c
 /* Product of odd numbers until product >= 5000 */
 #include <stdio.h>
@@ -58,7 +66,9 @@ int main(void) {
     return 0;
 }
 ```
-Do-While loop (executes at least once):  “do-while”循环（至少会执行一次）：
+
+Do-While loop (executes at least once):  
+“do-while”循环（至少会执行一次）：
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -76,22 +86,36 @@ int main(void) {
 }
 ```
 
-### 2) One-dimensional & Two-dimensional Arrays    一维数组与二维数组
-- Declaration:
+---
+
+### 2) One-dimensional & Two-dimensional Arrays  
+一维数组与二维数组  
+
+Declaration:  
+声明：  
 ```c
 int A[10];          // 1D array
 int B[5][5];        // 2D array (5x5)
 char name[20];      // char array (string)
 ```
-- Index starts at 0
-- Initialization:
+
+Index starts at 0  
+索引从 0 开始  
+
+Initialization:  
+初始化：  
 ```c
 int A[] = {1,2,3};         // size inferred
 char str[] = "Hello";      // includes '\0'
 ```
 
-### 3) String Operations – <string.h>          字符串操作 - <string.h>
-String length & copy:
+---
+
+### 3) String Operations – <string.h>  
+字符串操作 - <string.h>  
+
+String length & copy:  
+字符串长度与拷贝：  
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -108,29 +132,40 @@ int main(void) {
     return 0;
 }
 ```
-String input:
+
+String input:  
+字符串输入：  
 ```c
 char name[10];
 scanf_s("%s", name, 10);
 printf("You entered: %s\n", name);
 ```
 
-### 4) Array Applications        数组应用
-Sum of array elements:
+---
+
+### 4) Array Applications  
+数组应用  
+
+Sum of array elements:  
+数组元素求和：  
 ```c
 int A[10], s = 0;
 for (int i = 0; i < 10; i++) A[i] = i+1;
 for (int i = 0; i < 10; i++) s += A[i];
 printf("Sum = %d\n", s);
 ```
-Product of two arrays:
+
+Product of two arrays:  
+两个数组元素乘积之和：  
 ```c
 int A[10], B[10], s = 0;
 for (int i = 0; i < 10; i++) { A[i] = i+1; B[i] = 10-i; }
 for (int i = 0; i < 10; i++) s += A[i]*B[i];
 printf("Sum of products = %d\n", s);
 ```
-Max & Min values:
+
+Max & Min values:  
+最大值与最小值：  
 ```c
 int A[] = {3,5,1,4,9,2,6,10,8,7};
 int max=A[0], min=A[0], max_i=0, min_i=0;
@@ -141,7 +176,11 @@ for (int i=1;i<10;i++){
 printf("max=%d idx=%d  min=%d idx=%d\n", max,max_i,min,min_i);
 ```
 
-### 5) Sorting Algorithm – Bubble Sort      排序算法 - 冒泡排序
+---
+
+### 5) Sorting Algorithm – Bubble Sort  
+排序算法 - 冒泡排序  
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -163,7 +202,8 @@ int main(void) {
 ```
 
 ---
-### Key Points
+
+### Key Points  
 - for, while, do-while repetition statements  
   for、while、do-while 三种循环语句  
 - One & two-dimensional arrays, string operations  
