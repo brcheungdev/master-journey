@@ -76,7 +76,7 @@ CPU/Memory/I-O, fetch–decode–execute, byte addressing & endianness, conditio
   数据：4 字节补码整数  
 - Format: [opcode | operands], Rd/Rs1/Rs2 fields  
   格式：[操作码 | 操作数]，Rd/Rs1/Rs2 字段  
-- Condition codes: Z/N/V/C set by arithmetic ops  
+- Condition codes: Z(Zero), N(Negative), V(Overflow), C(Carry) set by arithmetic ops  
   条件码：Z/N/V/C 由算术指令设置  
 
 Instruction classes 指令类别：  
@@ -84,32 +84,39 @@ Instruction classes 指令类别：
 - STORE Rs, Addr → M[Addr] ← Rs  
 - ADD/SUB/MUL/DIV Rd, Rs1, Rs2 → Rd ← Rs1 op Rs2 (DIV: quotient→Rd, remainder→Rd+1)  
 - BRU target → PC ← target  
-- BRCC cond,target → PC ← target if cond true, else PC+2  
+- BRCC cond, target → PC ← target if cond true, else PC+2
+
+> **符号/十六进制记法**在讲义中一一对应；DIV 的“商/余数寄存器”与 **溢出/进位**示例也在课堂展示。
 
 ---
 
 ### 5) LOAD/STORE & ALU Encoding 示例
+**LOAD/STORE（示例）**
 ```
 Mnemonic  Hex  Note
 LOAD R0,A  00 30  A@0x30
 STORE R1,B 21 34  B@0x34
 ```
+**ALU（示例）**
 ```
 ADD R0,R1,R10  40 1A  Rd=R0, Rs1=R1, Rs2=R10
 ```
-
+> 结果会更新 **Z/N/V/C**，以供 **BRCC** 使用；溢出可由 V 标志体现。
+> 
 ---
 
-### 6) Addressing Ambiguity 寻址歧义
-`LOAD R1,A` may mean:  
-`R1 ← M[A]` (value at A) or `R1 ← &A` (address A itself).  
-课堂统一采用前者，必要时写作 M(A) vs &A 区分。  
+### 6) Addressing Ambiguity 寻址歧义的消解
+`LOAD R1, A` may mean:  
+ LOAD R1, A 在记号层面可能指：
+①`R1 ← M[A]` (value at A/把 **地址 A 处的值** 读入 R1) 
+②`R1 ← &A` (address A itself/把 **地址 A 本身** 读入 R1).  
+课堂统一采用**①**，必要时写作 **LOAD R1, M(A)** 与 **LOAD R1, &A** 区分。
 
 ---
 
 ### 7) Example 1: E = (A+B)*(C+D)
-Data: A=0x30=16,B=0x34=3,C=0x38=10,D=0x3C=17,E@0x40  
-Program @0x00 (2B/instr):  
+**Data layout（4-byte int）**: A@0x30=16, B@0x34=3, C@0x38=10, D@0x3C=17, E@0x40=?
+**Program（2-byte/inst, code @0x00）**:  
 ```
 Addr Mnemonic      Hex
 00   LOAD R1,A     01 30
@@ -122,7 +129,7 @@ Addr Mnemonic      Hex
 0E   STORE R7,E    27 40
 10   STOP          B4 --
 ```
-Equivalent C 等价 C 代码：  
+Equivalent C     等价 C 代码：  
 ```c
 int a=16,b=3,c=10,d=17,e;
 e=(a+b)*(c+d);
@@ -147,7 +154,7 @@ Addr Mnemonic          Hex
 14 L2:STORE R5,E       25 3C
 16   STOP              B4 --
 ```
-C equivalent:  
+**C equivalent**:  
 ```c
 if(a>b) e=a+b+c; else e=a*b*c;
 ```
@@ -156,23 +163,23 @@ if(a>b) e=a+b+c; else e=a*b*c;
 
 ### 9) Notes on I/O & Buses I/O与总线
 - Storage & peripherals: HDD/SSD/DVD/BD/tape, printers, Ethernet/Wi-Fi, cameras, displays  
-  存储与外设：HDD/SSD/DVD/BD/磁带、打印机、以太网/Wi-Fi、摄像头、显示器  
+  存储与外设：HDD/SSD/DVD/BD/磁带、打印机、以太网/Wi-Fi、摄像头、显示器  等
 - Buses: PCIe x16, SATA, USB  
-  总线：PCIe x16, SATA, USB  
+  典型通道总线：PCIe x16（超高速）, SATA（高速）, USB  （低速）
 - Control: DMA, memory-mapped I/O, interrupt/polling  
-  控制：DMA、存储映射 I/O、中断/轮询  
+  控制方式：DMA、存储映射 I/O、中断/轮询  
 
 ---
 
 ### Key Points
-- Fetch–Decode–Execute: sequential 2B instructions; branches rewrite PC  
-  取指–解码–执行：顺序执行 2 字节指令，分支改写 PC  
-- Byte addressing & endianness: essential for multi-byte layout  
-  字节寻址与端序：理解多字节布局至关重要  
-- Z/N/V/C flags feed into BRCC; DIV sets quotient & remainder  
-  Z/N/V/C 标志用于 BRCC 条件分支；DIV 设置商和余数  
-- Translate formulas/branches into LOAD/STORE+ALU+BR sequence  
-  公式/分支逻辑翻译为 LOAD/STORE+ALU+BR 序列  
-- Verify program by mapping symbols to hex  
-  通过符号与十六进制映射验证程序正确性  
+- **Fetch–Decode–Execute**:sequential 2B instructions; branches rewrite PC  
+  **取指 – 解码 – 执行**：PC 所指的 2 字节指令按顺序执行，分支跳转会修改 PC
+- **Byte addressing & endianness**: understanding multi-byte integer layout is essential
+  **字节寻址与端序**：理解多字节整数的内存布局至关重要
+- **Z / N / V / C** status flags feed into **BRCC** for conditional branching; **DIV** yields quotient & remainder 
+  **Z / N / V / C** 状态标志用于 **BRCC** 条件分支；**DIV** 指令产生商与余数
+- Translate formulas/branch logic into a sequence of **LOAD / STORE + ALU + BR** 
+  将公式 / 分支逻辑翻译成 **LOAD / STORE + ALU + BR** 的指令序列 
+- Verify correctness by mapping symbols to hexadecimal in the machine program
+  通过“符号 → 十六进制”的一一对应，验证机器程序装载是否正确
 
