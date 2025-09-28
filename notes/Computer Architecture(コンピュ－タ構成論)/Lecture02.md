@@ -70,31 +70,31 @@ int main(void){
 
 ### 3) Visual Studio Terms   VS术语速记
 - Solution: container for large apps, can have multiple Projects
-  Solution：大型应用的容器，可含多个 Project
+Solution：大型应用的容器，可含多个 Project
 - Project: source code, libraries, resources container
-  Project：源代码、库、资源的容器
+Project：源代码、库、资源的容器
 - Build: compile + link → machine code
-  Build：编译 + 链接 → 生成机器码
+Build：编译 + 链接 → 生成机器码
 - Debug: run with debugging (breakpoints, step, variables)
-  Debug：带调试运行（断点、单步、变量观察）
+Debug：带调试运行（断点、单步、变量观察）
 - Common ops: Build Solution → Start Debugging
-  常用操作：Build Solution → Start Debugging
+常用操作：Build Solution → Start Debugging
 - Shortcuts: F10 Step Over, F11 Step Into
-  快捷键：F10 Step Over，F11 Step Into
+快捷键：F10 Step Over，F11 Step Into
 
 ### 4) Debugging Techniques 调试方法
 - Compile-time errors: syntax/spelling errors, caught by the compiler
-  编译期错误：语法/拼写错误，编译器直接报错
+编译期错误：语法/拼写错误，编译器直接报错
 - Runtime errors: divide by zero, type mismatch (int/float)
-  运行期错误：如除以 0、类型不当（int/float混用）
+运行期错误：如除以 0、类型不当（int/float混用）
 - Breakpoints: stop at a line to inspect the state
-  断点（Breakpoint）：在目标行停住，观察状态
+断点（Breakpoint）：在目标行停住，观察状态
 - Variable windows:
-  变量窗口：
+变量窗口：
     - Auto: variables related to breakpoints
-      Auto（自动变量）：与断点相关的变量
+Auto（自动变量）：与断点相关的变量
     - Local: local variables in the current function
-      Local（局部）：当前函数内的局部变量
+Local（局部）：当前函数内的局部变量
 
 ### 5) Keyboard Input 键盘输入示例（scanf_s）
 ```c
