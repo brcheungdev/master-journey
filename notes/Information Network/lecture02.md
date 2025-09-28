@@ -40,11 +40,11 @@
 - **Core Components**:  
   **核心组成**：  
   1) Hosts (nodes)  
-     1) 主机（节点）  
+  1) 主机（节点）  
   2) Communication lines  
-     2) 通信线路  
+  2) 通信线路  
   3) Routers/switches for packet forwarding  
-     3) 路由器/交换机用于分组转发  
+  3) 路由器/交换机用于分组转发  
 - **Key Idea**: Data is divided into **packets**; routers forward packets hop-by-hop until reaching destination.  
   **关键概念**：数据被分割成 **分组**，路由器逐跳转发直至到达目的地。
 
