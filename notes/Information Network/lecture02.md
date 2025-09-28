@@ -39,12 +39,9 @@
   **定义**：利用通信线路连接多台计算机，进行硬件、软件、数据共享的系统。  
 - **Core Components**:  
   **核心组成**：  
-  1) Hosts (nodes) 
-    【1) 主机（节点）】
-  2) Communication lines 
-    【2) 通信线路】 
-  3) Routers/switches for packet forwarding  
-    【3) 路由器/交换机用于分组转发】  
+  1) Hosts (nodes) 【1) 主机（节点）】
+  2) Communication lines 【2) 通信线路】 
+  3) Routers/switches for packet forwarding  【3) 路由器/交换机用于分组转发】  
 - **Key Idea**: Data is divided into **packets**; routers forward packets hop-by-hop until reaching destination.  
   **关键概念**：数据被分割成 **分组**，路由器逐跳转发直至到达目的地。
 
@@ -91,16 +88,11 @@
   **终端**：输入/输出设备（键盘+显示器）。  
 - **Online System Workflow**:  
   **在线系统流程**：  
-  1) Input from terminal  
-     1) 终端输入  
-  2) Data sent to host  
-     2) 数据传输至主机  
-  3) Host processes  
-     3) 主机处理  
-  4) Results returned  
-     4) 结果返回  
-  5) Displayed on terminal  
-     5) 终端显示 
+  1) Input from terminal  【终端输入】  
+  2) Data sent to host  【数据传输至主机】  
+  3) Host processes  【主机处理】  
+  4) Results returned  【结果返回】  
+  5) Displayed on terminal  【终端显示】 
 
 ---
 
