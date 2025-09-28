@@ -2,7 +2,7 @@
 
 Learning, practice, and research projects from my master's program in Applied Information Technology.
 
-[中文](./READMEzh.md) | [日本語（準備中）]
+[中文](./READMEzh.md) | [日本語（./READMEja.md）]
 
 <h2></h2>
 
