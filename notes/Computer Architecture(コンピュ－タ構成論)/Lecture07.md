@@ -104,46 +104,50 @@ Example: `0.625_{10} = 0.101_2`；`0.1_{10}` = 循环小数 `0.0001100110011..._
 ---
 
 ### 6) Numeric Data Representation  数值数据表示
-- Fixed-point: decimal point fixed position  
-  定点数：小数点位置固定  
-- Floating-point: sign × base^exponent × significand  
+- Fixed-point（整数/定点）: decimal point fixed position  
+  定点数：小数点位置固定 （像算盘） 
+- Floating-point（浮点）: sign × base^exponent × significand  
   浮点数：表示为符号×基数^指数×尾数  
 - C types: int/long long → fixed; float/double → floating  
-  C 语言类型：整数=int/long long；浮点=float/double
+  C 语言类型：整数（int/long long 等）=int/long long（定点整数）；浮点=float/double（float 单精度 / double 双精度）
 
 ---
 
 ### 7) Negative Numbers 负数表示法
-- Sign-magnitude: sign bit + magnitude  
+- Sign-magnitude（原码）: sign bit + magnitude  
   符号位+数值  
-- 1’s complement: bitwise NOT  
-  1 的补码：按位取反  
-- 2’s complement: NOT + 1  
-  2 的补码：按位取反再加 1  
+- 1’s complement（反码）: bitwise NOT  
+  1 的补码：按位取反（存在两个 0）  
+- 2’s complement（补码）: NOT + 1  
+  2 的补码：按位取反再加 1 （现代整数运算通用表示）  
 - Range (L-bit): [-2^L, 2^L−1]  
   L 位补码范围：[-2^L, 2^L−1]
 
 ---
 
-### 8) Integer Add/Sub & Overflow  加减与溢出
+### 8) Integer Add/Sub & Overflow  加减运算与溢出
 - Use (L+1)-bit adder  
-  使用 L+1 位加法器  
+  用无符号加法器在 **(L+1) 位**（含符号位）上做加减。 
 - Overflow detection: XOR of carry-in/out or sign rules  
-  溢出检测：进位入/出异或或符号规则  
-- Subtraction via addition with two’s complement  
-  减法可转为加法：加负数的补码
+  溢出检测（补码加法）：
+  - 可用**符号位“进位入”和“进位出”的 XOR** 判断；
+  - 或用**符号规则**：
+    - X>0,Y>0 且结果为负 → 溢出；
+    - X<0,Y<0 且结果为正 → 溢出。
+- 补码减法可转为加法（被减数 + 负数的补码）。
+
+- 10/9 的补数法（十进制）也在讲义中回顾，用于手算减法的等价实现思路。
 
 ---
 
-### 9) IEEE-754 Floating Point  IEEE-754 浮点数
-- Single (32-bit): sign(1) | exponent(8,bias=127) | fraction(23)  
-  单精度 (32 位)：符号(1)|指数(8,bias=127)|小数(23)  
-- Double (64-bit): sign(1) | exponent(11,bias=1023) | fraction(52)  
-  双精度 (64 位)：符号(1)|指数(11,bias=1023)|小数(52)  
-- Special: NaN, ±∞, denormals  
-  特殊值：NaN, ±∞, 非正规数  
-- Rounding: nearest-even  
-  舍入：最接近偶数
+### 9) IEEE-754 Floating Point 浮点数（单/双精度） 
+- **Single (32-bit)**：sign(1) | exponent(8, bias=127) | fraction(23)
+  - 数值（正规化区间）：(-1)^s × 2^{e-127} × (1.f)
+  - 特殊：e=255, f≠0 → NaN；e=255, f=0 → ±∞；e=0, f≠0 → 非正规数；e=f=0 → ±0
+  - 精度：二进制约 24 位（十进制约 8 位） - **Double (64-bit)**：sign(1) | exponent(11, bias=1023) | fraction(52)
+  - 数值：(-1)^s × 2^{e-1023} × (1.f)；精度二进制约 53 位（十进制约 16 位）
+  - **Half/Quad**：课程概览提及（CG/高精度计算等场景）
+  - 例：0.1_{10} 在二进制是循环小数 → 浮点表示存在舍入误差；IEEE-754 默认**四舍六入五留双（Nearest-even）**。
 
 ---
 
@@ -174,13 +178,13 @@ int main(void) {
 ---
 
 ### Key Points 
-- Positional notation & base conversion between binary, octal, decimal, hex  
-  位权制与二/八/十六进制之间的转换  
-- Exponent/log identities for complexity/numeric scaling  
-  指数/对数恒等式在复杂度和数值范围估算中常用  
-- Two’s complement unifies add/sub & overflow detection  
-  2 的补码统一加减及溢出检测  
-- IEEE-754 formats & rounding affect numerical results  
-  IEEE-754 格式与舍入会影响数值结果  
-- C literals: write & print correctly  
-  C 语言常量：正确书写与输出  
+- Master Positional notation & base conversion between binary, octal, decimal, and hexadecimal
+  掌握位权制与二 / 八 / 十六进制之间的分组转换  
+- Remember basic exponent/logarithm identities (useful in complexity estimation and numeric scaling)
+  牢记指数 / 对数的基本恒等式（在程序复杂度与数值尺度估算中常用） 
+- Use two’s complement for unified add/sub of negative numbers; detect overflow via carry XOR or sign rules
+  负数用补码统一加减（硬件实现高效），溢出用进位 XOR 或符号规则判别  
+- IEEE-754 formats, special values, and rounding affect numeric computation results  
+  IEEE-754 的规格 / 特殊值 / 舍入会影响数值计算结果
+- Correctly write and print numeric literals of various types in C  
+  在 C 中正确书写与打印不同类型的数值
