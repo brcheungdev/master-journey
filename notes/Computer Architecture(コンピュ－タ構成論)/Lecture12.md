@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -172,3 +174,7 @@ IF D EX MA S ; notify IF earlier → ~2 bubbles
   [1 位 vs 2 位饱和计数器状态机](./figs/lecture12_branch_counter_fsm.md)
 - [Two-level Branch Predictors](./figs/lecture12_two_level_predictors.md)
   [二级分支预测器](./figs/lecture12_two_level_predictors.md)
+
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture11.md) · [→ Next Lecture / 下一章](./Lecture13.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
