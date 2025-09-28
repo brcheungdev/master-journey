@@ -1,35 +1,76 @@
-# master-journey
+# 🎓 master-journey
+
 Learning, practice, and research projects from my master's program in Applied Information Technology.
 
+<h2></h2>
+
+## After several years of study, my student life has temporarily come to an end.  This is my first time documenting my journey here on GitHub.
+
+This repository contains insights, code examples, demos, and reflections from my master's program —  
+serving as both a summary of my work and a reminder to continue learning and growing.
+
 ---
 
-## After several years of study, my student life has temporarily come to an end. This is my first time documenting my journey here on GitHub.  
-This repository will include insights, code examples, demos, and reflections from my master's program, serving as a reminder and motivation for continuous learning and growth.  
+##  About My Master's Program
 
----
-
-## About My Master's Program  
-- **Degree**: Master of Science in Information Technology (MS in IT)
+- **Degree**: Master of Science in Information Technology (MS in IT)  
 - **University**: Kyoto College of Graduate Studies for Informatics (KCGI)  
 - **Major**: Applied Information Technology  
 - **GPA**: 3.58 / 4.0  
 - **Research Topic**:  
-  "AI-based adaptive adjustment strategies for online map services with multiple providers using reinforcement learning" 
+  *AI-based adaptive adjustment strategies for online map services with multiple providers using reinforcement learning*
 
-During my master's program, I mainly focused on "Artificial Intelligence" and "Web System Development", completing research on adaptive optimization strategies for online map services using Reinforcement Learning (RL).  
+During my studies, I mainly focused on **Artificial Intelligence** and **Web System Development**,  
+culminating in a research project on adaptive optimization strategies for multi-provider online map services using **Reinforcement Learning (RL)**.
 
-In 2023, I represented my university and participated in the "UN Internet Governance Forum (IGF) 2023 academic projects".  
+In 2023, I was selected to represent KCGI and participated in the **UN Internet Governance Forum (IGF) 2023 Academic Projects**.
 
----
+<br>
 
-##  Repository Contents  
+## Contents
+
 - Research experiences and reflections  
 - Code examples and demos  
 - Learning notes and project summaries  
 
----
+<br>
 
-##  Contact  
-- **Name**: brcheung  
-- **Email**: brcheungdev@gmail.com  
-- **GitHub**: https://github.com/brcheungdev  
+## Structure
+
+This repository currently contains two major parts: **lecture notes** and **code**, organized for ease of access.
+
+###  Notes
+
+| Course Name | Description | Link |
+|-------------|-------------|------|
+| **Computer Architecture** (`コンピュータ構成論`) | Notes and lecture summaries on computer system design and architecture | [📂 Go to folder](./notes/Computer%20Architecture%EF%BC%88%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96%EF%BC%89/) |
+| **Information Network** | Fundamentals of computer networks, layered architecture, protocols | [📂 Go to folder](./notes/Information%20Network/) |
+| **Web System Development** | Web system development concepts and practice | [📂 Go to folder](./notes/Web%20system%20development/) |
+
+###  Code
+
+| Folder | Description | Link |
+|--------|-------------|------|
+| **code** | Ongoing collection of practice projects, including a prototype for RL-based map scheduling | [📂 Go to folder](./code/) |
+
+<br>
+
+##  Coming Soon
+
+-  Translated versions: [中文 / Japanese]  
+-  Research project breakdown with figures and diagrams  
+-  AI prototype demonstration  
+-  Dedicated README files for each sub-project  
+
+<br>
+<h2></h2>
+##  Contact
+
+Feel free to connect or collaborate with me.  
+More content will be added as I continue developing my portfolio.
+
+
+
+<p>
+  <a href="https://github.com/brcheungdev">go to my github profile</a>
+</p>
