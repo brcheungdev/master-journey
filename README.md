@@ -52,7 +52,7 @@ This repository currently contains two major parts: **lecture notes** and **code
 
 ###  Code
 
-| Folder | Description | Link |g
+| Folder | Description | Link |
 |--------|-------------|------|
 | **code** | Ongoing collection of practice projects, including a prototype for RL-based map scheduling | [go](./code/) |
 
