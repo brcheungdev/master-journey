@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -166,4 +168,8 @@ int main(void){
 - Use Visual Studio breakpoints + step execution to locate logic errors and observe variables  
   在 Visual Studio 中使用断点 + 单步执行定位逻辑问题，观察变量变化  
 - Pay attention to integer vs floating types, standard quotes, and `\n` newline syntax  
-  注意整数 / 浮点类型、标准双引号以及 `\n` 换行符的用法  
+  注意整数 / 浮点类型、标准双引号以及 `\n` 换行符的用法
+  
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture01.md) · [→ Next Lecture / 下一章](./Lecture03.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
