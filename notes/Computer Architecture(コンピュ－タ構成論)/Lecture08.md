@@ -69,13 +69,13 @@ CPU/Memory/I-O, fetch–decode–execute, byte addressing & endianness, conditio
 - Instruction length: 2 bytes (fixed)  
   指令长度：2 字节（固定）  
 - Memory: 256 bytes (2-hex-digit address)  
-  内存：256 字节（2 位十六进制地址空间）  
-- Registers: 16, R0–R15  
-  寄存器：16 个，R0–R15  
+  内存：示例256 字节（2 位十六进制地址空间）  
+- Registers: 16, R0..R15  
+  寄存器：16 个，R0..R15  
 - Data: 4B signed int (two’s complement)  
-  数据：4 字节补码整数  
+  数据（抽象）：4 字节补码整数  
 - Format: [opcode | operands], Rd/Rs1/Rs2 fields  
-  格式：[操作码 | 操作数]，Rd/Rs1/Rs2 字段  
+  格式：[操作码 | 操作数]，操作数字段指明Rd/Rs1/Rs2 字段  
 - Condition codes: Z(Zero), N(Negative), V(Overflow), C(Carry) set by arithmetic ops  
   条件码：Z/N/V/C 由算术指令设置  
 
