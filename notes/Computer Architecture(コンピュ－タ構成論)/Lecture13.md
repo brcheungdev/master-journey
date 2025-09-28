@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -149,3 +151,7 @@ With bypass: values can be forwarded earlier; fewer bubbles; 2-issue adds parall
   **ROB + 改名**提供精确异常与回滚；深流水/超标量提升频率与并行，但放大分支与访存惩罚。  
 - Real performance depends on: hit rates, branch accuracy, dependency distance, structural bandwidth, and scheduling quality.  
   实际性能取决于：命中率、分支准确率、依赖距离、结构带宽与调度质量。  
+
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture12.md) · [← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
