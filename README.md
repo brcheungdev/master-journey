@@ -45,9 +45,10 @@ This repository currently contains two major parts: **lecture notes** and **code
 
 | Course Name | Description | Link |
 |-------------|-------------|------|
-| **Computer Architecture** (`コンピュータ構成論`) | Notes and lecture summaries on computer system design and architecture | [Go](notes/Computer Architecture(コンピュ－タ構成論)) |
-| **Information Network** | Fundamentals of computer networks, layered architecture, protocols | [Go](notes/Information Network) |
-| **Web System Development** | Web system development concepts and practice | [Go](notes/Web system development) |
+| **Computer Architecture** (`コンピュータ構成論`) | Notes and lecture summaries on computer system design and architecture | [Go](./notes/Computer%20Architecture%EF%BC%88%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96%EF%BC%89/) |
+| **Information Network** | Fundamentals of computer networks, layered architecture, protocols | [Go](./notes/Information%20Network/) |
+| **Web System Development** | Web system development concepts and practice | [Go](./notes/Web%20system%20development/) |
+
 
 ###  Code
 
