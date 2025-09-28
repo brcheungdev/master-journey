@@ -60,7 +60,7 @@ This repository currently contains two major parts: **lecture notes** and **code
 
 ##  Coming Soon
 
--  Translated versions: [中文 / Japanese]  
+-  Translated versions
 -  Research project breakdown with figures and diagrams  
 -  AI prototype demonstration  
 -  Dedicated README files for each sub-project  
