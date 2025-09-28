@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -301,3 +303,7 @@ LOADX R5, 0         ; R5 = *(&C) = C
   使用 `BAL/RTN` 进行**函数化**可显著减少重复代码；注意**寄存器保存与恢复**  
 - **Call-by-value** passes copies, **call-by-reference** passes addresses; on the model ISA, can be done via `LOADA` or pointer variables + `R15`/`LOADX`  
   **值传递**传递的是值的副本，**引用传递**传递的是地址；在模型 ISA 中可用 `LOADA` 或指针变量 + `R15`/`LOADX` 实现  
+
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture08.md) · [→ Next Lecture / 下一章](./Lecture10.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
