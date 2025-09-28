@@ -1,7 +1,7 @@
 #  My notes
-- This folder contains my notes, thoughts and learning summaries during my master's degree study.
+- This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
-- Instructor:Prof. Shinji Tomita (富田眞治)  
+- Instructor: Prof. Shinji Tomita (富田眞治)  
 
 ---
 ## Lecture 2
@@ -24,10 +24,15 @@ C 程序结构、整数运算、Visual Studio 调试
 
 ---
 
-### 1) C Program Structure  C程序基本结构
-- 指定部（头文件）：`#include <...>`
-- 声明部：变量 / 函数声明
-- 程序本体（`main` 函数）
+### 1) C Program Structure  
+C 程序基本结构  
+
+- Specified part (header files): `#include <...>`  
+  指定部（头文件）：`#include <...>`  
+- Declaration section: variables / function declarations  
+  声明部：变量 / 函数声明  
+- Main body (`main` function)  
+  程序本体（`main` 函数）  
 
 ```c
 #include <stdio.h>
@@ -43,9 +48,12 @@ int main(void) {
     return 0;
 }
 ```
-※ /* ... */ 为块注释；\n 是下排的反斜杠换行；双引号必须是标准 ASCII "（不要用 Word 的弯引号）
+※/* ... */ for block comments; \n means newline; use standard ASCII quotes ", not curly quotes.
+※ /* ... */ 为块注释；\n 是换行符；双引号必须是标准 ASCII "（不要用 Word 的弯引号）
 
-### 2) Integer Arithmetic   整数运算：加法 / 除法 / 取余
+### 2) Integer Arithmetic
+整数运算：加法 / 除法 / 取余
+
 ```c
 #include <stdio.h>
 int main(void){
@@ -56,23 +64,36 @@ int main(void){
     return 0;
 }
 ```
+※Formula: dividend = quotient × divisor + remainder (e.g., 5 = 2×2 + 1). Division by zero (b=0) causes a runtime exception.
 ※公式：被除数 = 商 × 除数 + 余数（例如 5 = 2×2 + 1） 错误示例：b=0 会触发“除以 0”异常（runtime exception）。
 
 ### 3) Visual Studio Terms   VS术语速记
-- Solution：大型应用的容器，可含多个 Project
-- Project：源代码、库、资源的容器
-- Build：编译 + 链接 → 生成机器码
-- Debug：带调试运行（断点、单步、变量观察）
-- 常用操作：Build Solution → Start Debugging
-- 快捷键：F10 Step Over，F11 Step Into
+- Solution: container for large apps, can have multiple Projects
+  Solution：大型应用的容器，可含多个 Project
+- Project: source code, libraries, resources container
+  Project：源代码、库、资源的容器
+- Build: compile + link → machine code
+  Build：编译 + 链接 → 生成机器码
+- Debug: run with debugging (breakpoints, step, variables)
+  Debug：带调试运行（断点、单步、变量观察）
+- Common ops: Build Solution → Start Debugging
+  常用操作：Build Solution → Start Debugging
+- Shortcuts: F10 Step Over, F11 Step Into
+  快捷键：F10 Step Over，F11 Step Into
 
 ### 4) Debugging Techniques 调试方法
-- 编译期错误：语法/拼写错误，编译器直接报错
-- 运行期错误：如除以 0、类型不当（int/float混用）
-- 断点（Breakpoint）：在目标行停住，观察状态
-- 变量窗口：
-    - Auto（自动变量）：与断点相关的变量
-    - Local（局部）：当前函数内的局部变量
+- Compile-time errors: syntax/spelling errors, caught by the compiler
+  编译期错误：语法/拼写错误，编译器直接报错
+- Runtime errors: divide by zero, type mismatch (int/float)
+  运行期错误：如除以 0、类型不当（int/float混用）
+- Breakpoints: stop at a line to inspect the state
+  断点（Breakpoint）：在目标行停住，观察状态
+- Variable windows:
+  变量窗口：
+    - Auto: variables related to breakpoints
+      Auto（自动变量）：与断点相关的变量
+    - Local: local variables in the current function
+      Local（局部）：当前函数内的局部变量
 
 ### 5) Keyboard Input 键盘输入示例（scanf_s）
 ```c
@@ -91,15 +112,19 @@ int main(void){
     return 0;
 }
 ```
+Input two values at once:
 一次输入两个值：
 ```c
 scanf_s("%d%d", &a, &b);
 printf("a=%d, b=%d\n", a, b);
 ```
 ### 6) Report Task   作业
-- 从键盘输入 a=2, b=3
-- 计算 c = a^3 + b^4（使用 pow() 需要 #include <math.h>）
-- 输出 c / 8 的商和余数
+- Input a=2, b=3 from keyboard
+  从键盘输入 a=2, b=3
+- Compute c = a^3 + b^4 (use pow(), need #include <math.h>)
+  计算 c = a^3 + b^4（使用 pow() 需要 #include <math.h>）
+- Output quotient and remainder of c / 8
+  输出 c / 8 的商和余数
   
 ```c
 #include <stdio.h>
