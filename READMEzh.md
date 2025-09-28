@@ -2,7 +2,7 @@
 
 记录在攻读信息技术硕士期间的学习、实践与研究项目
 
-[English](./README.md) | [日本語（準備中）]
+[English](./README.md) | [日本語](./READMEja.md)
 
 <h2></h2>
 
