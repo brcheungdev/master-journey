@@ -1,3 +1,4 @@
+[← Back to Course README / 返回课程目录](./README.md#toc) · [Notes / 笔记首页](../) · [Repo Home / 仓库首页](../../README.md)
 #  My notes
 - This folder contains my notes, thoughts and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -94,6 +95,7 @@ Example: **Hello World!** Program
   理解软硬件分层结构  
 - Learn C as a bridge between high-level programming and system architecture  
   学习 C 语言作为高级编程与系统体系结构之间的桥梁  
-- Practice with Visual Studio environment  
+- Practice with the Visual Studio environment  
   在 Visual Studio 环境中进行实践
-
+<h2></h2>
+[← Back to Course README / 返回课程目录](./README.md#toc) · [Notes / 笔记首页](../) · [Repo Home / 仓库首页](../../README.md)
