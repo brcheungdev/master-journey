@@ -123,18 +123,21 @@ Note: recursion adds call overhead; iteration is usually faster.
 
 ---
 
-### 4) printf & scanf_s I/O
+### 4) printf & scanf_s I/O   printf 常用说明
 printf common specifiers: %d, %f, %lf, %c, %s, %p; precision like %.2lf.  
 printf 常用控制符：%d, %f, %lf, %c, %s, %p；精度控制示例：%.2lf → 小数点后两位。
 
 scanf_s in VS: numbers need `&`, strings need buffer length.  
 在 VS 中，scanf_s 数值参数需 `&`，字符串需指定缓冲区长度：
+
+数值一定要传地址：scanf_s("%d", &a);、scanf_s("%lf", &x);
+字符串传数组名（即地址）且必须提供缓冲区大小：
 ```c
 char name[16];
 scanf_s("%s", name, (unsigned)_countof(name));
 ```
 Missing & (numbers) or buffer length (strings) causes errors.  
-缺少 &（数值）或缓冲区长度（字符串）会导致错误。
+忘记写 &（数值）或忘记写缓冲区大小（字符串，在 VS 的 _s 系列）会出错。
 
 ---
 
