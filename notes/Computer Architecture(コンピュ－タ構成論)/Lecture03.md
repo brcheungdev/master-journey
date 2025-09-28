@@ -1,7 +1,7 @@
 #  My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
-- Instructor :Prof. Shinji Tomita (富田眞治)  
+- Instructor: Prof. Shinji Tomita (富田眞治)  
 
 ---
 
