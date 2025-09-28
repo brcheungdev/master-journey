@@ -65,6 +65,7 @@ int main(void){
 }
 ```
 ※Formula: dividend = quotient × divisor + remainder (e.g., 5 = 2×2 + 1). Division by zero (b=0) causes a runtime exception.
+
 ※公式：被除数 = 商 × 除数 + 余数（例如 5 = 2×2 + 1） 错误示例：b=0 会触发“除以 0”异常（runtime exception）。
 
 ### 3) Visual Studio Terms   VS术语速记
