@@ -1,3 +1,5 @@
+[← Back to Course Directory / 返回课程目录](./README.md#toc) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
+
 #  My notes
 - This folder contains my notes, thoughts, and learning summaries during my master's degree study.
 - The main topics include: **Computer Architecture(コンピュ-タ構成論)**.
@@ -198,4 +200,7 @@ Stored-program concept, ENIAC/EDSAC, microprocessor evolution, memory & endianne
 - Architecture & implementation layers: a unified top-down/bottom-up view from **RT → Gate → Device**  
   体系结构与实现层级：**寄存器传输级 → 门级 → 器件级** 的自上而下 / 自下而上的统一视角  
 
+<h2></h2>
+
+[← Previous Lecture / 上一章](./Lecture09.md) · [→ Next Lecture / 下一章](./Lecture11.md) · [Notes Home / 笔记首页](../) · [Repository Home / 仓库首页](../../README.md)
 
