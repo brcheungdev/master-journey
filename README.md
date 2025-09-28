@@ -2,6 +2,8 @@
 
 Learning, practice, and research projects from my master's program in Applied Information Technology.
 
+[中文](./READMEzh.md) | [日本語（準備中）]
+
 <h2></h2>
 
 ## After several years of study, my student life has temporarily come to an end.  This is my first time documenting my journey here on GitHub.
@@ -43,15 +45,15 @@ This repository currently contains two major parts: **lecture notes** and **code
 
 | Course Name | Description | Link |
 |-------------|-------------|------|
-| **Computer Architecture** (`コンピュータ構成論`) | Notes and lecture summaries on computer system design and architecture | [📂 Go to folder](./notes/Computer%20Architecture%EF%BC%88%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96%EF%BC%89/) |
-| **Information Network** | Fundamentals of computer networks, layered architecture, protocols | [📂 Go to folder](./notes/Information%20Network/) |
-| **Web System Development** | Web system development concepts and practice | [📂 Go to folder](./notes/Web%20system%20development/) |
+| **Computer Architecture** (`コンピュータ構成論`) | Notes and lecture summaries on computer system design and architecture | [Go](./notes/Computer%20Architecture%EF%BC%88%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96%EF%BC%89/) |
+| **Information Network** | Fundamentals of computer networks, layered architecture, protocols | [Go](./notes/Information%20Network/) |
+| **Web System Development** | Web system development concepts and practice | [Go](./notes/Web%20system%20development/) |
 
 ###  Code
 
 | Folder | Description | Link |
 |--------|-------------|------|
-| **code** | Ongoing collection of practice projects, including a prototype for RL-based map scheduling | [📂 Go to folder](./code/) |
+| **code** | Ongoing collection of practice projects, including a prototype for RL-based map scheduling | [Go](./code/) |
 
 <br>
 
@@ -64,12 +66,11 @@ This repository currently contains two major parts: **lecture notes** and **code
 
 <br>
 <h2></h2>
+
 ##  Contact
 
 Feel free to connect or collaborate with me.  
 More content will be added as I continue developing my portfolio.
-
-
 
 <p>
   <a href="https://github.com/brcheungdev">go to my github profile</a>
