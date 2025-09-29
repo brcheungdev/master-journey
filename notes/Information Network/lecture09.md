@@ -255,5 +255,5 @@ Operation | Version | Address Family Identifier | IP Address | Metric
 <h2></h2>
 
 
-[← Previous / 上一章](./lecture08.md) ·[Next / 下一章：Lecture 10] ·[Course README / 课程目录](./README.md#toc)(./lecture10.md) ·[Notes Home / 笔记首页](../) ·[Repository Home / 仓库首页](../../README.md)
+[← Previous / 上一章](./lecture08.md) ·[Next / 下一章：Lecture 10](./lecture10.md) ·[Course README / 课程目录](./README.md#toc) ·[Notes Home / 笔记首页](../) ·[Repository Home / 仓库首页](../../README.md)
 
