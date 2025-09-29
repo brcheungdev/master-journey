@@ -222,7 +222,7 @@ Operation | Version | Address Family Identifier | IP Address | Metric
   **抑制定时器**：一段时间内拒绝接受更差的路由，抑制抖动。  
 </details>
 
-> **In the slides** the process is illustrated via interactions among **R1/R2/R3**. RIP limits divergence with **max hop count = 16**, but there is still a period of **needless advertisements** and **routing-table oscillations** during convergence.
+> the process is illustrated via interactions among **R1/R2/R3**. RIP limits divergence with **max hop count = 16**, but there is still a period of **needless advertisements** and **routing-table oscillations** during convergence.
 > **注**：讲义中以 **R1/R2/R3** 的交互说明该过程；RIP 通过 **“最大跳数 = 16”** 限制发散，但仍会造成一段时间的**无谓广播**与**表项震荡**。  
  
 ---
