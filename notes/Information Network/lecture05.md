@@ -297,4 +297,7 @@ L \le 585.2\,m
 - [CSMA/CD Operation Flow & Timing](./figs/lecture05_csma_cd_flow.md)
   *CSMA/CD 工作流程、退避算法与时序图解*
 
----
+
+<h2></h2>
+
+[← Previous / 上一章](./lecture04.md) · [Next / 下一章](./lecture06.md) · [Back to Course README / 返回课程目录](./README.md#toc)
