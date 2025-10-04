@@ -32,7 +32,9 @@
 
 ### 1) Hidden Terminal Problem & RTS/CTS 隐藏终端与 RTS/CTS
 **Hidden Terminal 概念 | Definition**  
+
 - Because of **obstacles or distance**, station **B** cannot hear station **A**, while the **AP (Access Point)** can hear both A and B. As a result, **B** may transmit without knowing the medium is already busy, causing a **collision**. Such stations that are both reachable by the AP but **not** by each other are called **hidden terminals**. To avoid these collisions, the **RTS/CTS (Request To Send / Clear To Send)** mechanism is introduced.
+  
   由于**障碍物或距离**的影响，终端 **B** 听不到终端 **A** 的信号，而 **AP（Access Point，接入点）** 能同时听到 A 与 B 的信号。结果是 **B** 在**不知道信道已被占用**的情况下发起发送，从而引发**碰撞**。这类**对 AP 可达但彼此不可达**的终端称为**隐藏终端**。为避免这类碰撞，标准引入了 **RTS/CTS（Request To Send / Clear To Send，发送请求 / 允许发送）** 机制。
 
 ```
@@ -56,16 +58,19 @@
    收到 ACK 后解除发送禁止，再参与竞争
 ```
 **Key point:** The **AP** “announces” the reserved timeslot to all stations that can hear it via **CTS/ACK**, so **hidden terminals** avoid transmitting concurrently with **A**.
-**要点：** AP 以**CTS/ACK**向所有能听到它的站点“宣告占用时隙”，**隐藏终端**据此避免与 A 同时发送。
 
+**要点：** AP 以**CTS/ACK**向所有能听到它的站点“宣告占用时隙”，**隐藏终端**据此避免与 A 同时发送。
 
 ---
 
 ### 2) Handover & Roaming / 切换与漫游
 
-- **Handover**: While moving across cell or WLAN **AP coverage boundaries**, the device **switches to a new base station/AP** **without dropping the connection**. The **IP address is preserved** (or session continuity is maintained), so ongoing sessions do not break.  
+- **Handover**: While moving across cell or WLAN **AP coverage boundaries**, the device **switches to a new base station/AP** **without dropping the connection**. The **IP address is preserved** (or session continuity is maintained), so ongoing sessions do not break.
+ 
   **切换（Handover）**：终端在移动穿越蜂窝或 WLAN 的 **AP 覆盖边界** 时，**无缝切换到新的基站/接入点而不断线**；**IP 地址保持/会话不中断**。
-**Roaming**: Communication continues **across different operators’ networks** using the **same device and number** (e.g., **international roaming**: your phone attaches to a local operator abroad and keeps working).  
+  
+- **Roaming**: Communication continues **across different operators’ networks** using the **same device and number** (e.g., **international roaming**: your phone attaches to a local operator abroad and keeps working).
+    
   **漫游（Roaming）**：在 **不同运营商网络之间** 仍可使用 **同一终端与号码** 继续通信（如 **国际漫游**：在国外接入当地运营商网络继续使用）。
 
 ---
@@ -98,10 +103,15 @@
   
 **Pairing Flow / 使用流程提示**
 - **First pairing**: put the device into **pairing** mode → discover it from the host (phone/PC) → select and **pair** → (if required) enter PIN/passkey → negotiate the target **Profile** (e.g., hands-free headset **HFP**, stereo audio **A2DP**, keyboard/mouse **HID**) → connected.
+  
   **首次配对**：将设备置于**配对模式** → 在主机（手机/电脑）中搜索 → 选择并**配对** →（如需）输入 PIN/配对码 → 协商目标**配置文件 Profile**（如免提 **HFP**、立体声 **A2DP**、键鼠 **HID**）→ 连接完成。
+  
 - **Reconnect**: after the first pairing, devices usually auto-reconnect when in range and Bluetooth is on.
+  
   **重新连接**：首次配对后，设备在进入覆盖范围且蓝牙开启时通常会自动重连。
+  
 - **Tips**: keep only one device in pairing mode to avoid confusion; if the connection fails, delete old pairing records and retry.
+  
   **提示**：一次只让一个设备进入配对模式以免混淆；连接异常可先删除旧的配对记录再重试。
 
 ---
@@ -111,27 +121,38 @@
 
 **Firewall (Perimeter Access Control) / 防火墙（边界访问控制）**
 - Separates **external (Internet)** and **internal (intranet)** networks, **blocking disallowed traffic** (especially inbound to internal).
-- 将**外部（互联网侧）** 与**内部（内网侧）** 分隔，**阻断不允许的通信**（尤其从外到内）。
+  
+ 将**外部（互联网侧）** 与**内部（内网侧）** 分隔，**阻断不允许的通信**（尤其从外到内）。
 - Typical policies: **default deny**, **allowlist**, stateful packet inspection; placed at the network **edge and in front of the DMZ**.
-- 常见策略：**默认拒绝**、**白名单**、**有状态检测**；部署在**网络边界**与 **DMZ 之前**。
+  
+  常见策略：**默认拒绝**、**白名单**、**有状态检测**；部署在**网络边界**与 **DMZ 之前**。
 - Can filter by **L3/L4 (IP/port/protocol)** and **L7 (application)**, and log events for auditing.
-- 可按 **L3/L4（IP/端口/协议）** 与 **L7（应用）** 过滤，并记录日志用于审计。
+  
+ 可按 **L3/L4（IP/端口/协议）** 与 **L7（应用）** 过滤，并记录日志用于审计。
 
 **IDS / IPS**
 - **IDS (Intrusion Detection System):** detects and **alerts** after observing suspicious activity; **IPS (Intrusion Prevention System):** can **actively block** suspicious traffic.
-- **IDS（入侵检测系统）：** 检测后**告警**；**IPS（入侵防御系统）：** 可**主动阻断**可疑流量。
+  
+ **IDS（入侵检测系统）：** 检测后**告警**；**IPS（入侵防御系统）：** 可**主动阻断**可疑流量。
 - Detection methods include **signature-based** (known patterns) and **anomaly-based**(behavioral/statistical).
-- 检测方式包括**基于特征**（已知特征库）与**基于异常**（行为/统计）。
+  
+  检测方式包括**基于特征**（已知特征库）与**基于异常**（行为/统计）。
+  
 - Deployment: IDS often on a **SPAN/tap (out-of-band)**; IPS **inline** to drop traffic; tune to reduce **false positives/negatives**.
-- 部署：IDS 常接**镜像/分光口（带外）**；IPS **串联在链路上**以丢弃流量；需要调优以降低**误报/漏报**。
+  
+ 部署：IDS 常接**镜像/分光口（带外）**；IPS **串联在链路上**以丢弃流量；需要调优以降低**误报/漏报**。
 
 **Antivirus (AV) / 杀毒软件**
 - **Server-side** (mail/file servers) and **endpoint** (PCs) editions defend against malware at different points.
-- **服务器版**（邮件/文件服务器）与**客户端版**（PC），分别在服务器与终端侧防御恶意代码。
+  
+**服务器版**（邮件/文件服务器）与**客户端版**（PC），分别在服务器与终端侧防御恶意代码。
 - Engines combine **signatures** + **heuristics** + **behavior monitoring**; keep **definitions/engines updated** and enable **real-time protection**.
-- 引擎结合**特征库** + **启发式** + **行为监控**；保持**病毒库/引擎更新**并启用**实时防护**。
+  
+ 引擎结合**特征库** + **启发式** + **行为监控**；保持**病毒库/引擎更新**并启用**实时防护**。
+ 
 - Pair AV with **email/web gateways** and endpoint EDR for layered defense.
-- 配合**邮件/网页网关**与终端**EDR**实现分层防护。
+  
+  配合**邮件/网页网关**与终端**EDR**实现分层防护。
 
 ---
 
