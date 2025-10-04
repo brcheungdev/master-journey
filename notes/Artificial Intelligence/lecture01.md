@@ -1,5 +1,8 @@
 [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
 
+## My notes
+- This file contains my notes, thoughts, and learning summaries during my master's degree study.
+
 # Artificial Intelligence Software Utilization I — Lecture 01 / 人工知能ソフトウェア活用Ⅰ — 第1讲
 
 
