@@ -10,7 +10,7 @@
 
 This repository contains per-lecture Markdown notes, bilingual terminology, and quick-reference sheets. All content is derived from class notes, with added two-language terms, key concept derivations, and explanations of common pitfalls.
 
-Notes are for study/reference only.
+Notes are for study / reference only.
 
 ---
 
