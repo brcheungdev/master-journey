@@ -46,9 +46,10 @@
 
 | 课程名称 | 简介 | 链接 |
 |-------------|-------------|------|
-| **计算机结构（コンピュータ構成論）** | 关于计算机系统设计、架构的讲义与笔记 | [去看看](https://github.com/brcheungdev/master-journey/tree/main/notes/Computer%20Architecture(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%EF%BC%8D%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96)) |
+| **计算机构成论** | 关于计算机系统设计、架构的讲义与笔记 | [去看看](https://github.com/brcheungdev/master-journey/tree/main/notes/Computer%20Architecture(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%EF%BC%8D%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96)) |
 | **信息网络** | 计算机网络基础知识、分层模型、通信协议等 | [去看看](https://github.com/brcheungdev/master-journey/tree/main/notes/Information%20Network) |
 | **Web 系统开发** | 关于 Web 开发的核心概念与实际操作笔记 | [去看看](https://github.com/brcheungdev/master-journey/tree/main/notes/Web%20system%20development) |
+| **人工智能活用** | 双语整理的 AI 实践笔记：Python/NumPy/Pandas/Matplotlib；回归/聚类/分类/SVM；神经网络（DNN/CNN/RNN）；CNN 铸件缺陷识别项目等 | [去看看](https://github.com/brcheungdev/master-journey/tree/main/notes/Artificial%20Intelligence) |
 
 ### 代码
 
@@ -60,7 +61,7 @@
 
 ## 即将上线
 
-- 多语言版本：日文版（待制作）  
+- 多语言版本 
 - 研究项目的图示与分析文档  
 - AI 原型项目展示  
 - 每个子项目都将配有专属 README 页面  
