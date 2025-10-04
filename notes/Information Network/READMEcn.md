@@ -15,7 +15,7 @@ Fundamentals of Information Network
 ---
 
 # 目录
-l
+
 - **lecture 01**
   
   ↳ [lecture01.md](./lecture01.md)
