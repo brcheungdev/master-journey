@@ -3,7 +3,7 @@
 ## My notes
 - This file contains my notes, thoughts, and learning summaries during my master's degree study.
   
-# Artificial Intelligence Software Utilization I — Lecture 10 / 人工知能ソフトウェア活用Ⅰ — 第10讲
+# Artificial Intelligence Software Utilization I — Lecture 9 / 人工知能ソフトウェア活用Ⅰ — 第9讲
 **Topic:** Neural Networks Overview — DNN · CNN · RNN · Autoencoder · GAN · DQN (+ Spiral Classification Practice)  
 **主题：** 神经网络总览 —— DNN · CNN · RNN · 自编码器 · 生成对抗网络 · DQN（含螺旋数据分类实操）
 
@@ -130,4 +130,4 @@ plt.title("NN on Spiral"); plt.xlabel("x1"); plt.ylabel("x2"); plt.show()
 
 <h2></h2>
 
-[← Previous Lecture / 上一讲](./lecture09.md) · [Next Lecture / 下一讲 →](./lecture11.md) · [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
+[← Previous Lecture / 上一讲](./lecture08.md) · [Next Lecture / 下一讲 →](./lecture10.md) · [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
