@@ -49,7 +49,7 @@ A_plus = A + bias                  # broadcast to (3,4)
 (255,255,255) (127,127,127) (163,73,164)
 ```
 **Examples of RGB triplets (Blue, Green, Red, Black, Gray, Orange, White, Mid‑Gray, Purple).**  
-**RGB 三元组示例（蓝、绿、红、黑、灰、橙、白、中灰、紫）。** fileciteturn3file0
+**RGB 三元组示例（蓝、绿、红、黑、灰、橙、白、中灰、紫）。
 
 - **Interpretation:** an image is a **numeric tensor**; resizing is resampling; cropping is slicing.  
 **要点：** 图像是**数值张量**；缩放是重采样；裁剪是切片。**
