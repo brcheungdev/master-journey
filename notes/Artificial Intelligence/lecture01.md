@@ -101,7 +101,7 @@ Data → Augmentation → Model (CNN/ViT) → Loss → Optimizer → Metrics
 
 ## “Intelligent” Components / “智能”构成
 - **Recognition, Inference, Language use, Creation.**  
-- **识别、推论、语言运用、创造。**
+**识别、推论、语言运用、创造。**
 
 ## Recognition (Quizzes) / 识别（提问）
 - **Rule‑based object recognition in images is extremely hard.**  
@@ -118,15 +118,15 @@ Data → Augmentation → Model (CNN/ViT) → Loss → Optimizer → Metrics
 </details>
 
 - **Quiz 1: Summarize the features of a given fruit in words.**  
-- **提问 1：用语言归纳某种水果的特征。**
+**提问 1：用语言归纳某种水果的特征。**
 - **Examples: “Red and round”, “Has a stem”, “Glossy surface” … but ambiguity remains.**  
-- **例如：“红且圆”“有果梗”“有光泽”……但仍存在歧义。**
+**例如：“红且圆”“有果梗”“有光泽”……但仍存在歧义。**
 - **Even for apples, rule‑based discrimination is hard.**  
-- **即使是“苹果”这样简单的对象，基于规则的判别也很难。**
+**即使是“苹果”这样简单的对象，基于规则的判别也很难。**
 - **Quiz 2: Why do you know it’s an apple?**  
-- **提问 2：你为何知道它是“苹果”？**
+**提问 2：你为何知道它是“苹果”？**
 - **Answer: Because we were taught so.**  
-- **答案：因为**被教导**如此。**
+**答案：因为**被教导**如此。**
 
 ## From Teaching to Machine Learning / 从“被教”到机器学习
 - **Label many varied examples ⇒ model learns a mapping X→Y.**  
@@ -212,9 +212,9 @@ Pixel Grid → Flatten/Conv → Features → Classifier
 ## **Set up your programming environment.**  
 ## **完成编程环境搭建。**
 - **Default: Google Colab.**  
-- **默认：使用 **Google Colab**。**
+**默认：使用 **Google Colab**。**
 - **Optional local install: Anaconda + Jupyter Notebook.**  
-- **本地可选：安装 **Anaconda + Jupyter Notebook**。**
+**本地可选：安装 **Anaconda + Jupyter Notebook**。**
 
 ### Step‑by‑Step: Colab Onboarding / Colab 入门分步
 1. **Sign in to Google; open `colab.new`.**  
