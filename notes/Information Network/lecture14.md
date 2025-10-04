@@ -266,48 +266,77 @@ Notes
 ### IDS/IPS：特征匹配（Signature-based） vs 异常检测（Anomaly-based）—— 入侵检测/防御两大方法
 
 - **Signature-based:**
+  
   **特征匹配（Signature-based）：**
+  
 - Match traffic against known attack **signatures/patterns**; **on match → alert or block**.
+  
   将流量与已知攻击的**特征/模式**进行匹配；**匹配时 → 告警或阻断**。
+  
 - **Pros**: High accuracy for known threats.
+  
   **优点**：对已知威胁命中率高。
+  
 - **Limits**: Weak against **novel/zero-day** attacks; requires frequent signature updates.
+
   **限制**：对**新型/零日攻击**识别能力弱；需要频繁更新签名库。
+  
 - **Anomaly-based:**
+  
   **异常检测（Anomaly-based）：**
+  
 - Build a baseline of normal behavior and flag deviations → alert or block.
+  
   以**正常行为/流量**建立基线并检测偏离 → **告警**或**阻断**。
+  
 - **Pros:** Can surface previously **unknown** attacks.
+  
   **优点：** 能够发现先前**未知**的攻击。
+  
 - **Limits:** Baseline tuning is hard; mis-tuning leads **to false positives/negatives**.
+  
   **限制：** 基线调优困难；调优不当会**导致误报/漏报**。
+  
 - **Combined use:** Deploy both to balance coverage and precision; correlate results for better efficacy.
+  
   **组合使用：** 联合部署两种方法以平衡覆盖面与精度；通过关联分析提升效果。
 
 ---
 ### 7) VPN & IPsec 虚拟专网与安全机制
+
 **Why VPN is Needed / 为何需要 VPN**
 - **Traditional leased lines** prevent data leakage but **are expensive**; a **VPN** carries private traffic over the **public Internet** to **reduce cost**, while **confidentiality** and **integrity** are ensured via **tunneling** plus **encryption/authentication**.
+  
   传统专线可防泄漏但成本高 → 通过**互联网**承载的**虚拟私网（VPN）以降低成本**，**同时靠隧道（tunneling）与加密/认证**保证机密性/完整性。
   
 **Core Technologies / 核心技术**
+
 - **Tunneling** (encapsulation) + **Encryption/Authentication**.
+  
   **Tunneling**（封装）+ **Encryption/Authentication**（加密/认证）。
+  
 - Example framework: **IPsec (Security Architecture for IP)**.
+  
   示例框架：**IPsec（IP 安全体系结构，Security Architecture for IP）**。
 
 **Two IPsec Modes: Transport vs Tunnel**
+
 **两种模式：Transport（传输模式）与 Tunnel（隧道模式）**
 
 - **Transport Mode / Transport（传输模式）**：
+  
   - **Only the L4 header (TCP/UDP) and payload** are protected by ESP; the **original IP header stays in clear** (not encrypted). As a result, you **cannot detect tampering of the outer IP header** with ESP alone. *(AH could add header integrity, but is rarely used due to NAT issues.)*
+    
     **仅传输层头（TCP/UDP）与数据**由 ESP 保护；**原始 IP 头保持明文**（未加密）。因此，仅用 ESP 时**无法检测外层 IP 头是否被篡改**。*（可用 AH 增加 IP 头完整性校验，但因与 NAT 不兼容而较少部署。）*
     
 - **Tunnel Mode / Tunnel（隧道模式）**：
+  
   - Encapsulate the **entire inner IP packet** via the **VPN router**; the **IP header is encrypted/protected as well**, therefore **tampering of the IP header can be detected**.
+    
     通过**VPN 路由器**将**内层 IP 包**整体封装；**连同 IP 头也被加密/保护**，因此能**检测 IP 头篡改**。
     
 **ASCII Sketch (abstract) / 图示（抽象示意）**
+
 ```
 Transport Mode
 
@@ -321,26 +350,37 @@ Outer: [ IP_out | ESP/AH | (Encrypted Inner Packet) ]
 内层： [ IP_in | TCP/UDP | Data ]
 外层： [ IP_out | ESP/AH | （加密后的内层数据包）]
 ```
+
 > Lecture note: In **Tunnel mode**, the **IP header is protected**; in **Transport mode**, the **original IP header is not protected** (left in clear).
+
 > 讲义明确：在**隧道模式**中，**IP 头也能得到保护**；在**传输模式**中，**IP 头本身不被保护**（保持明文）。
 
 ---
 
 ### 8) Proxy / Reverse Proxy 代理与反向代理
 
-**Forward Proxy（正向代理）**  
-- Used by **internal clients** to access the **external Internet** via a proxy; origins on the Internet see the **proxy’s IP**, not the client’s.  
-  由**内网客户端**经 **代理服务器** 访问 **外部网站**；外部仅看到**代理的 IP**，看不到内网终端的真实 IP。  
-- Purposes: **Security** (hide internal IPs) / **Caching** (reuse fetched content) / **User authentication** (allow only authorized users) / **Filtering** (block sites/categories).  
+**Forward Proxy（正向代理）** 
+
+- Used by **internal clients** to access the **external Internet** via a proxy; origins on the Internet see the **proxy’s IP**, not the client’s.
+  
+  由**内网客户端**经 **代理服务器** 访问 **外部网站**；外部仅看到**代理的 IP**，看不到内网终端的真实 IP。
+  
+- Purposes: **Security** (hide internal IPs) / **Caching** (reuse fetched content) / **User authentication** (allow only authorized users) / **Filtering** (block sites/categories).
+  
   目的：“**安全**”（隐藏内部地址）/“**缓存**”（复用已取内容，提速省带宽）/“**用户认证**”（仅允许通过认证的用户上网）/“**过滤**”（按策略限制访问某些站点/类别）。
 
 **Reverse Proxy（反向代理）**  
-- External clients connect to the **reverse proxy**, which **handles/forwards** requests to backend web servers; clients **don’t reach** backends directly.  
-  由**外部客户端**访问**反向代理**，由其**代替后端 Web 服务器**处理/转发请求；外部**不直接**接触后端。  
-- Benefits: **Shield backends** (hide topology) / **SSL termination/offload** / **Unified ingress** (access control, WAF, load balancing).  
+
+- External clients connect to the **reverse proxy**, which **handles/forwards** requests to backend web servers; clients **don’t reach** backends directly.
+  
+  由**外部客户端**访问**反向代理**，由其**代替后端 Web 服务器**处理/转发请求；外部**不直接**接触后端。
+  
+- Benefits: **Shield backends** (hide topology) / **SSL termination/offload** / **Unified ingress** (access control, WAF, load balancing).
+  
   好处：**保护后端**（隐藏具体服务器/结构，降低被直接攻击的机会）/ **SSL 终止/卸载**（反代承担 TLS 握手与加解密）/ **统一接入**（可做访问控制、WAF、负载分担）。
   
 **Text topology diagrams / 文字拓扑示意**
+
 ```
 Forward Proxy:
  Client → Proxy → Internet (Web Servers)
@@ -362,18 +402,30 @@ Reverse Proxy:
 ## Key Points 
 
 - **RTS/CTS** uses **CTS/ACK** “coverage announcements” so **hidden terminals** know the medium is busy and avoid collisions.
+  
   **RTS/CTS** 通过 **CTS/ACK** 的“覆盖宣告”让**隐藏终端**知晓占用，从而回避碰撞。
+  
 - **Handover** = seamless **AP/base-station switch** within the same network; **Roaming** = keeping service across **different operators**.
+  
   **Handover**＝同网内**AP/基站切换**不断线；**Roaming**＝跨**运营商网络**延续同一终端/号码通信。
+  
 - **Bluetooth**: versions (1.1→5.0), **Class (power/range)**, **Profiles & pairing**; more power-efficient and typically one-to-one vs **Wi-Fi**.
+  
   **Bluetooth**：版本演进（1.1→5.0）、**Class 功率/范围、Profile 与配对**；相较 **Wi-Fi** 更省电，通常为一对一。
+  
 - **Firewall / IDS / IPS / Antivirus**: perimeter blocking, detect/prevent intrusions, and malware defense; **DMZ** hosts outward-facing services, isolated from the intranet.
+  
   **Firewall / IDS / IPS / Antivirus**：边界拦截、入侵检测/防御与恶意代码防护；**DMZ** 放置对外服务并与内网隔离。
 - **Signature vs Anomaly (IDS/IPS)**: signature excels at **known** threats but needs updates; anomaly detects **unknowns** but needs baselines and handles false positives—**use both**.
+  
   **签名法 vs 异常法（IDS/IPS）**：签名法擅长**已知威胁**但需持续更新；异常法可发现**未知异常**但需基线并权衡误报——**组合更佳**。
+  
 - **VPN (IPsec)**: **Transport mode** does **not** protect the IP header; **Tunnel mode** protects **including** the IP header; both rely on **tunneling + encryption/authentication**.
+  
   **VPN（IPsec）**：**传输模式**不保护 IP 头；**隧道模式**连同 IP 头也受保护；二者均依赖**隧道 + 加密/认证**。
+
 - **Proxy / Reverse Proxy**: forward proxy for **egress control, caching, auditing**; reverse proxy for **edge protection, SSL offload, unified entry**.
+  
   **正向代理 / 反向代理**：正向代理侧重**出网控制、缓存、审计**；反向代理侧重**入口防护、SSL 卸载、统一接入**。
 
 ---
