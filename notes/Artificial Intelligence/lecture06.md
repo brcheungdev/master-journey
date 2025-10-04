@@ -19,7 +19,6 @@
 - [Putting It Together / 综合流程](#putting-it-together--综合流程)
 - [Hands‑on Exercises / 上机练习](#handson-exercises--上机练习)
 - [Homework / 课后作业](#homework--课后作业)
-- [Notes & Assumptions / 说明与假设](#notes--assumptions--说明与假设)
 
 ---
 
