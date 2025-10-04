@@ -49,6 +49,7 @@
 | **コンピュータ構成論** | コンピュータシステム設計とアーキテクチャに関する講義ノート | [見に行く](https://github.com/brcheungdev/master-journey/tree/main/notes/Computer%20Architecture(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%EF%BC%8D%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96)) |
 | **情報ネットワーク** | コンピュータネットワークの基礎知識、階層モデル、通信プロトコル | [見に行く](https://github.com/brcheungdev/master-journey/tree/main/notes/Information%20Network) |
 | **Webシステム開発** | Web開発の基礎概念と実践的なノート | [見に行く](https://github.com/brcheungdev/master-journey/tree/main/notes/Web%20system%20development) |
+| **人工知能ソフトウェア活用** | Python を中心とした AI 実践ノート：NumPy/Pandas/Matplotlib、回帰・クラスタリング・分類・SVM、ニューラルネット（DNN/CNN/RNN）、鋳造欠陥分類プロジェクト | [見に行く](https://github.com/brcheungdev/master-journey/tree/main/notes/Artificial%20Intelligence) |
 
 ### コード
 
