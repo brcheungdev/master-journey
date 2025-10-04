@@ -83,22 +83,30 @@
 
 **Bluetooth Version Highlights (per slides) / 版本要点（讲义表）**
 - **1.1**: First broadly adopted release. **1.2**: Added interference mitigation with **802.11b/g** (adaptive frequency hopping, etc.).
+  
   **1.1**：开始普及；**1.2**：增加与 **802.11b/g** 干扰对策（自适应跳频等）。
 - **2.0**: Optional **EDR (Enhanced Data Rate)**; data rate up to **3 Mbps**.
+  
   **2.0**：可选 **EDR（增强数据速率）**，速率至 **3 Mbps**。
 - **2.1**: Simplified pairing and **NFC** support; added **Sniff Subrating** to extend battery life for low-activity devices.
+  
   **2.1**：简化配对，支持 **NFC**；加入 **Sniff Subrating** 以延长低活跃设备电池寿命。
 - **3.0**: Optional **HS (High Speed)** mode with throughput up to **~24 Mbps**; strengthened power management for energy savings.
+  
   **3.0**：可选 **HS（高速）**，速率至 **约 24 Mbps**，并强化电源管理以省电。
 - **4.0**: Added **BLE (Bluetooth Low Energy)** for **significantly lower power**; typical PHY rate around **1 Mbps**.
+  
   **4.0**：支持 **BLE（低功耗蓝牙）**，**大幅省电**（速率约 **1 Mbps**）。
 - **5.0**: PHY rates **2 / 1 / 0.125 Mbps**; the **125 kbps** mode enables **longer range** (e.g., up to **~400 m** in favorable conditions).
+  
   **5.0**：速率 **2 / 1 / 0.125 Mbps**，其中 **125 kbps** 对应更长距离（示例：可达 **~400 m** 级别）。
 
 **Power Classes / 功率等级（覆盖范围）**
 - Slides example: **100 mW / 10 mW / 1 mW**; higher transmit power generally means **longer range** but **higher energy use**.
+  
   讲义示例：**100 mW / 10 mW / 1 mW**；发射功率越高通常**覆盖更远**但**耗电更大**。
 - Typical mapping (for reference): **Class 1 ≈ 100 mW (~100 m)**, **Class 2 ≈ 2.5–10 mW (~10 m)**, **Class 3 ≈ 1 mW (~1 m)**.
+  
   常见映射（参考）：**Class 1 ≈ 100 mW（~100 m）**、**Class 2 ≈ 2.5–10 mW（~10 m）**、**Class 3 ≈ 1 mW（~1 m）**。
   
 **Pairing Flow / 使用流程提示**
