@@ -240,12 +240,14 @@ drive.mount('/content/drive')
 **安装 Anaconda（Python 3.x）。**
 2. **Create env & install libs.**  
 **创建环境并安装库。**
+
 ```
 conda create -n aisoft python=3.10 -y
 conda activate aisoft
 pip install numpy pandas matplotlib scikit-learn notebook
 ```
 **创建并激活虚拟环境，安装必需库。**
+
 3. **Launch Jupyter Notebook.**  
 **启动 Jupyter Notebook。**
 
