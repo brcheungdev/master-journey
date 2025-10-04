@@ -175,14 +175,10 @@ plt.figure(); plt.hist(df["height"], bins=8); plt.title("Height"); plt.show()
 plt.figure(); plt.boxplot(df["weight"], vert=True, labels=["Weight"]); plt.title("Weight"); plt.show()
 plt.figure(); plt.scatter(df["height"], df["weight"]); plt.title("Height vs Weight"); plt.xlabel("H"); plt.ylabel("W"); plt.show()
 ```
-**Template aligns with in‑class examples from the slides.**  
-**模板与幻灯中的课堂示例一致。**
 
 ---
 
 ## Homework / 课后作业
-- **Produce a boxplot for Weight and a 5‑bin histogram for Weight (per slide instruction).**  
-**按幻灯要求：输出体重（Weight）的箱线图与 5 阶级直方图。** fileciteturn3file0
 - **Optional:** add a scatter of Height vs Weight and a BMI category bar chart.  
 **可选：补充身高‑体重散点图与 BMI 分类条形图。**
 
