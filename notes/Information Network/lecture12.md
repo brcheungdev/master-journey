@@ -213,10 +213,15 @@ ACK        ---------------------------->
 ### 数据传输与确认
 
 - **Sequence Number (SEQ)**: A continuous, **byte-based** numbering that marks each byte’s position in the stream.
+  
   **序号（SEQ）**：以**字节**为单位的连续编号，用于标识数据在字节流中的位置。
+  
 - **Acknowledgment Number (ACK)**: **The next byte index expected** from the peer (i.e., “I have received up to N−1”).
+  
   **确认号（ACK）**：表示**期望接收的下一个字节序号**（即“我已成功接收到 N−1 为止的字节”）。
+  
 - **ACK-based reliability**: The receiver sends ACKs to confirm receipt; the sender **slides its window** forward and **drops acknowledged data** from its retransmission buffer.
+  
   **基于 ACK 的可靠性**：接收方通过 ACK 确认已收数据；发送方据此**滑动窗口**并从重传缓冲中**删除已确认的数据**。
 
 ```
@@ -236,9 +241,13 @@ Sender: SEQ=101..200 → Receiver ACK=201
 
 ### 11) Retransmission & Timeout  
 ### 重传与超时
+
 - **Round-Trip Time (RTT)**: The elapsed time from sending a segment to receiving its ACK; the sender **continuously measures** it.
+  
   **往返时延（RTT）**：从发送一个报文段到收到其 ACK 的用时；发送端会**持续测量**该指标。
+  
 - **Retransmission Timeout (RTO)**: If an **ACK is not received before timeout**, the sender **retransmits**. RTO is **dynamically adapted** based on the measured RTT (kept **slightly larger** than RTT).
+  
   **超时重传（RTO）**：若在**超时时间到达前未收到 ACK**，则触发**重传**。RTO 会依据测得的 RTT **动态调整**（通常**略大于** RTT）。
 
 ---
@@ -247,15 +256,25 @@ Sender: SEQ=101..200 → Receiver ACK=201
 ### 滑动窗口
 
 - **Goal**: Improve **throughput** by allowing multiple segments in flight (i.e., **don’t wait** for an ACK after every single segment).
+  
   **目的**：通过允许多个报文段“在途”，**提高吞吐**（即**不必**每发送一段就等待 ACK）。
+  
 - **Window (bytes)**: The amount of data the sender may transmit **before receiving ACKs**; as ACKs arrive, the window **slides forward**.
+  
   **窗口（字节）**：在收到 ACK 之前**允许连续发送**的数据量；随着 ACK 抵达，窗口**向前滑动**。
+  
 - **Sender buffering**: The sender must **buffer unacknowledged data**; once acknowledged, those bytes are **removed** from the buffer and the window **advances** (right-shifts).
+  
   **发送端缓存**：发送端需**缓存未被确认的数据**；一旦被确认，已确认数据从缓存**删除**，窗口**右移**。
+  
 - **MSS (Maximum Segment Size)**: Upper bound on a single TCP segment’s payload; constrained by path MTU and options.
+  
   **MSS（最大报文段）**：单个 TCP 报文段可承载的**最大有效负载**；受路径 MTU 与选项限制。
+  
 - **Flow control interaction**: The **receiver-advertised window** (rwnd) limits how much the sender can send; the **effective window** is `min(cwnd, rwnd)`.
+  
   **与流量控制的关系**：接收端通告的**窗口（rwnd）**限制发送速率；**有效窗口**为 `min(cwnd, rwnd)`（拥塞窗口与接收窗口取较小值）。
+  
 
 **Example / 示例**
 
@@ -274,11 +293,17 @@ ACK for 1..1000 arrives → slide window right by 1000, send 3001..4000
 ### 13) Fast Retransmit / 高速再送
 
 - **Conventional retransmission** waits for a **timeout** before resending, which adds latency.
+  
   **常规重传**需要等待**超时**才会重发，时延较大。
+  
 - **Fast retransmit**: when the receiver detects a gap (a segment lost) it keeps sending **duplicate ACKs** for the last in-order byte. Upon receiving **≥ 3 duplicate ACKs**, the sender **immediately retransmits** the missing segment (no timeout needed).
+  
   **快速重传**：当接收端检测到序号缺口（丢段）时，会对已按序收到的最后一个字节持续返回**重复 ACK**。发送端一旦收到**≥3 个重复 ACK**，**无需等待超时**就**立刻重传**缺失的报文段。
+  
 - (lecture phrasing): Receiving **3+ identical ACK numbers** makes the sender assume that segment didn’t arrive and **retransmit that segment (and subsequent ones as needed)** — i.e., **Go-Back-N semantics**.
+  
   （讲义表述）：当收到**3 次以上相同确认号**时，发送端认定该段未达，并对**该序号及其后的分段**执行**重传**（具 **Go-Back-N** 语义）。
+  
 **Example / 示例**
 ```
 ... receive duplicate ACK x3 for ACK=1001 → fast retransmit the missing segment(s)
@@ -292,18 +317,26 @@ ACK for 1..1000 arrives → slide window right by 1000, send 3001..4000
 ### 14) Flow & Congestion Control / 流量与拥塞控制
 
 - **Flow Control** — The receiver **advertises a window** (rwnd) to limit the sender’s rate and **prevent receive-buffer overflow**.
+  
   **流量控制（Flow Control）**——接收端通过**窗口通告（rwnd）**限制发送速率，避免**接收缓冲溢出**。
+  
 - **Congestion Control** — The sender adjusts its sending rate based on **congestion signals** (e.g., loss, delay/RTT growth), aiming to **avoid network collapse**. *(This lecture: high-level overview.)*
+  
   **拥塞控制（Congestion Control）**——发送端根据**网络拥塞迹象**（如丢包、时延/RTT 增长）**调节发送速率**，以**避免网络崩溃**。（本讲为概述层面）
 
 ---
 ## Key Points 
 
 - **Use SSH instead of Telnet** for remote login; FTP is plaintext and should be protected with **FTPS (TLS/SSL)**.
+  
   **SSH 取代 Telnet**：远程登录应使用加密的 SSH；FTP 为明文，需使用 **FTPS（TLS/SSL）** 保护。
+  
 - **Email path** — use **SMTP** (with **Submission + AUTH**) to send; **POP3/IMAP** to receive; secure with **POP3S/IMAPS** (TLS/SSL).
+  
   **邮件链路**：外发用 **SMTP**（配 **Submission + AUTH**）；接收用 **POP3/IMAP**；用 **POP3S/IMAPS（TLS/SSL）** 加密。
+  
 - **TCP reliability** — header includes **SEQ/ACK/window/flags**; **3-way handshake** to connect, **4-way FIN** to terminate; **adaptive RTO** and **sliding window** improve throughput; **fast retransmit** on **≥3 duplicate ACKs**; plus **flow** and **congestion control**.
+  
   **TCP 可靠性**：首部含 **SEQ/ACK/窗口/控制位**；**三次握手**建连、**四次挥手**断连；**自适应 RTO** 与 **滑动窗口**提升吞吐；**重复 ACK ≥ 3** 触发**快速重传**；并具备**流量控制**与**拥塞控制**。
 
 ---
