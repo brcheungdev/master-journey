@@ -27,6 +27,17 @@
   5. **Python? What’s that?**  
      **Python?那是啥?**
 
+<details><summary>Placement advice by level / 分层学习建议</summary>
+
+- **Levels 1–2:** start from **NumPy/Pandas quickstart** below; finish Week‑1 checklist.  
+**1–2 级：** 从下文 **NumPy/Pandas 快速上手** 开始；完成第 1 周清单。
+- **Level 3:** refresh **Python syntax + plotting**; then ML pipeline.  
+**3 级：** 复习 **Python 语法 + 画图**；随后进入 ML 流程。
+- **Levels 4–5:** finish **Colab onboarding** first; use notebooks as guided worksheets.  
+**4–5 级：** 先完成 **Colab 环境**；用示例笔记本作为引导式习题。
+
+</details>
+
 ## Course Goals / 课程目标
 - **This is not a Windows‑software introduction course; it is a programming course.**  
 - **本课并非 Windows 工具使用介绍，而是**编程课程**。**
@@ -34,10 +45,10 @@
 - **（可选）掌握 Python 基础语法。**
 - **Become familiar with libraries used in AI programming.**  
 - **熟悉用于人工智能编程的常用库。**
-- **Grasp the basic workflow of simple AI programming.**  
-- **理解简易 AI 编程的基本流程。**
-- **Be able to analyze simple datasets with machine learning.**  
-- **能用**机器学习**分析简易数据集。**
+- **Understand the minimal workflow of simple AI projects.**  
+**理解简易 AI 项目的最小工作流。**
+- **Be able to analyze simple datasets with ML.**  
+**能用机器学习分析入门数据集。**
 
 ## AI: Current Trend / 当下的“人工智能”
 - **Typical examples:** Face recognition, Autonomous driving, Speech recognition, etc.  
