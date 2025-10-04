@@ -208,7 +208,7 @@ Modern browsers **preinstall** root certificates (containing CA public keys) to 
 
 ---
 
-## Key Points（EN / 中文）
+## Key Points
 
 - **NAT** performs **IP↔IP translation**, while **NAPT** additionally uses **port multiplexing** to allow many internal hosts to make **concurrent outbound connections** behind one public IP. NAPT table entries are typically created on **SYN** and removed after **FIN-ACK**.
   
