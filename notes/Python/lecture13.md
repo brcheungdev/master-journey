@@ -127,4 +127,4 @@ print(M00W0000([2,2,0, 1,0,0, 0,1,0], 1))  # expect 2
 <h2></h2>
 
 
-[← Previous Lecture / 上一讲](./lecture12.md) · [Next Lecture / 下一讲 →](./lecture14.md) · [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
+[← Previous Lecture / 上一讲](./lecture12.md) · [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
