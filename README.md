@@ -49,6 +49,7 @@ This repository currently contains two major parts: **lecture notes** and **code
 | **Information Network** | Fundamentals of computer networks, layered architecture, protocols | [go](https://github.com/brcheungdev/master-journey/tree/main/notes/Information%20Network) |
 | **Web System Development** | Web system development concepts and practice | [go](https://github.com/brcheungdev/master-journey/tree/main/notes/Web%20system%20development) |
 | **Artificial Intelligence** | Bilingual notes & lecture summaries on Python-based AI: NumPy/Pandas/Matplotlib; Regression/Clustering/Classification/SVM; Neural Networks (DNN/CNN/RNN), CNN casting defect project | [go](https://github.com/brcheungdev/master-journey/tree/main/notes/Artificial%20Intelligence) |
+| **Python** | Bilingual lecture-by-lecture notes for Python programming: fundamentals, control flow, data structures, functions, OOP, prime sieves, Tic-Tac-Toe AI, experiments (with linked source files) | [go](https://github.com/brcheungdev/master-journey/tree/main/notes/Python) |
 
 
 ###  Code
