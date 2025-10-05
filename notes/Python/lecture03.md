@@ -3,7 +3,8 @@
 ## My notes
 - This file contains my notes, thoughts, and learning summaries during my master's degree study.
 
-# Computer Programming (Python) — Lecture 03 Notes / 计算机编程（Python）——第 03 讲笔记
+# Computer Programming (Python) — Lecture 03 Notes 
+# 计算机编程（Python）——第 03 讲笔记
 
 ---
 
