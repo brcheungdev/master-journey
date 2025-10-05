@@ -131,22 +131,22 @@ print(game_control(count=1000, player_1=player_L2, player_2=player_L2))
 
 ## Source Files / 源码文件
 
-- [`Python/src/player_L0.py`](./src/player_L0.py) 
+- [`Python/src/player_L0.py`](./src/player_L0.py)
 **说明：**分组优先（中>角>边），组内随机。
 
-- [`Python/src/player_L1.py`](./src/player_L1.py) 
+- [`Python/src/player_L1.py`](./src/player_L1.py)
 **说明：**一步取胜优先，否则退回 L0。
 
-- [`Python/src/player_L2.py`](./src/player_L2.py)  
+- [`Python/src/player_L2.py`](./src/player_L2.py)
 **说明：**取胜→阻挡→退回 L0。
 
-- [`Python/src/Test_player_L0.py`](./src/Test_player_L0.py) 
+- [`Python/src/Test_player_L0.py`](./src/Test_player_L0.py)
 **说明：**L0 对 Random 的胜率测试。
 
-- [`Python/src/Test_player_L1.py`](./src/Test_player_L1.py) 
+- [`Python/src/Test_player_L1.py`](./src/Test_player_L1.py)
 **说明：**L1 对 L0 的胜率测试。
 
-- [`Python/src/Test_player_L2.py`](./src/Test_player_L2.py) 
+- [`Python/src/Test_player_L2.py`](./src/Test_player_L2.py)
 **说明：**L2 对 L1/L0 的胜率测试。
 
 <h2></h2>
