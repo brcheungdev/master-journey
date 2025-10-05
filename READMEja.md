@@ -46,16 +46,17 @@
 
 | コース名 | 説明 | リンク |
 |-------------|-------------|------|
-| **コンピュータ構成論** | コンピュータシステム設計とアーキテクチャに関する講義ノート | [見に行く](https://github.com/brcheungdev/master-journey/tree/main/notes/Computer%20Architecture(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%EF%BC%8D%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96)) |
-| **情報ネットワーク** | コンピュータネットワークの基礎知識、階層モデル、通信プロトコル | [見に行く](https://github.com/brcheungdev/master-journey/tree/main/notes/Information%20Network) |
-| **Webシステム開発** | Web開発の基礎概念と実践的なノート | [見に行く](https://github.com/brcheungdev/master-journey/tree/main/notes/Web%20system%20development) |
-| **人工知能ソフトウェア活用** | Python を中心とした AI 実践ノート：NumPy/Pandas/Matplotlib、回帰・クラスタリング・分類・SVM、ニューラルネット（DNN/CNN/RNN）、鋳造欠陥分類プロジェクト | [見に行く](https://github.com/brcheungdev/master-journey/tree/main/notes/Artificial%20Intelligence) |
+| **コンピュータ構成論** | コンピュータシステム設計とアーキテクチャに関する講義ノート | [見る](https://github.com/brcheungdev/master-journey/tree/main/notes/Computer%20Architecture(%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%EF%BC%8D%E3%82%BF%E6%A7%8B%E6%88%90%E8%AB%96)) |
+| **情報ネットワーク** | コンピュータネットワークの基礎知識、階層モデル、通信プロトコル | [見る](https://github.com/brcheungdev/master-journey/tree/main/notes/Information%20Network) |
+| **Webシステム開発** | Web開発の基礎概念と実践的なノート | [見る](https://github.com/brcheungdev/master-journey/tree/main/notes/Web%20system%20development) |
+| **人工知能ソフトウェア活用** | Python を中心とした AI 実践ノート：NumPy/Pandas/Matplotlib、回帰・クラスタリング・分類・SVM、ニューラルネット（DNN/CNN/RNN）、鋳造欠陥分類プロジェクト | [見る](https://github.com/brcheungdev/master-journey/tree/main/notes/Artificial%20Intelligence) |
+| **Python** | 講義ごとに整理した二言語対応の Python プログラミングノート：基礎、制御構造、データ構造、関数、OOP、素数ふるい、三目並べAI、実験（ソースへのリンク付き） | [見る](https://github.com/brcheungdev/master-journey/tree/main/notes/Python) |
 
 ### コード
 
 | フォルダ | 説明 | リンク |
 |--------|-------------|------|
-| **code** | 強化学習を用いたスケジューリングプロトタイプなど、進行中のプロジェクト集 | [見に行く](./code/) |
+| **code** | 強化学習を用いたスケジューリングプロトタイプなど、進行中のプロジェクト集 | [見る](./code/) |
 
 <br>
 
