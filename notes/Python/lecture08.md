@@ -316,26 +316,26 @@ print(Path("poem.txt").read_text(encoding="utf-8").splitlines()[0])
 
 ## Source Files / 源码文件
 
-- [`Python/src/is_prime.py`](./Python/src/is_prime.py)  —  [Download / 下载](sandbox:/mnt/data/Python/src/is_prime.py)  
+- [`Python/src/is_prime.py`](./src/is_prime.py)  —  [Download / 下载](sandbox:/mnt/data/src/is_prime.py)  
 **说明：**单点素数判定。
 
-- [`Python/src/prime_list_1.py`](./Python/src/prime_list_1.py)  —  [Download / 下载](sandbox:/mnt/data/Python/src/prime_list_1.py)  
+- [`Python/src/prime_list_1.py`](./src/prime_list_1.py)  —  [Download / 下载](sandbox:/mnt/data/src/prime_list_1.py)  
 **说明：**基线生成器（试除法）。
 
-- [`Python/src/prime_list_2.py`](./Python/src/prime_list_2.py)  —  [Download / 下载](sandbox:/mnt/data/Python/src/prime_list_2.py)  
+- [`Python/src/prime_list_2.py`](./src/prime_list_2.py)  —  [Download / 下载](sandbox:/mnt/data/src/prime_list_2.py)  
 **说明：**埃氏筛，更快。
 
-- [`Python/src/Timeit-1.py`](./Python/src/Timeit-1.py)  —  [Download / 下载](sandbox:/mnt/data/Python/src/Timeit-1.py)  
+- [`Python/src/Timeit-1.py`](./src/Timeit-1.py)  —  [Download / 下载](sandbox:/mnt/data/src/Timeit-1.py)  
 **说明：**对 `prime_list_1` 在 n=1000..10000 的 `%timeit` 基准脚本。
 
-- [`Python/src/Timeit-2.py`](./Python/src/Timeit-2.py)  —  [Download / 下载](sandbox:/mnt/data/Python/src/Timeit-2.py)  
+- [`Python/src/Timeit-2.py`](./src/Timeit-2.py)  —  [Download / 下载](sandbox:/mnt/data/src/Timeit-2.py)  
 **说明：**对 `prime_list_2` 在 n=1000..10000 的 `%timeit` 基准脚本。
 
 ---
 
 ## Plot Script / 绘图脚本
 
-- [`Python/src/plot_graph_1-2.py`](./Python/src/plot_graph_1-2.py) — [Download / 下载](sandbox:/mnt/data/Python/src/plot_graph_1-2.py)  
+- [`Python/src/plot_graph_1-2.py`](./src/plot_graph_1-2.py) — [Download / 下载](sandbox:/mnt/data/src/plot_graph_1-2.py)  
 **说明：**直接导入 `prime_list_1/2`，在 `n = 1000..10000` 基准测试后生成：
   - `outputs/plots/prime_timeit.csv`（CSV 数据）  
   - `outputs/plots/prime_timeit.json`（JSON 数据）  
