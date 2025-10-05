@@ -271,7 +271,7 @@ def prime_list_2(n: int):
 ```
 
 **Minimal tests / 最小对拍**  
-- Use provided benches `test_prime_list_1.py` and `test_prime_list_2.py`.  
+- Use provided benches `prime_list_1.py` and `prime_list_2.py`.  
 **用提供的测试脚本**进行对拍。 
 
 **I/O demo with `poem.txt`**  
