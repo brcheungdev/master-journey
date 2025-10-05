@@ -3,8 +3,8 @@
 ## My notes
 - This file contains my notes, thoughts, and learning summaries during my master's degree study.
 
-# Computer Programming (Python) — Lecture 04 Notes  
-# 计算机编程（Python）——第 04 讲笔记
+# Computer Programming (Python) — Lecture 05 Notes 
+# / 计算机编程（Python）——第 05 讲笔记
 
 ---
 
@@ -12,219 +12,196 @@
 
 - [Today’s Agenda / 今日教学安排](#todays-agenda--今日教学安排)
 - [Learning Objectives / 学习目标](#learning-objectives--学习目标)
-- [Creating Strings / 创建字符串](#creating-strings--创建字符串)
-- [Comments / 注释](#comments--注释)
-- [Escapes with Backslash / 反斜杠转义](#escapes-with-backslash--反斜杠转义)
-- [Raw Strings / 原始字符串](#raw-strings--原始字符串)
-- [Concatenation / 字符串连接](#concatenation--字符串连接)
-- [Repetition / 字符串重复](#repetition--字符串重复)
-- [Indexing & Slicing / 索引与切片](#indexing--slicing--索引与切片)
-- [Search: find vs rfind vs index / 搜索：find、rfind 与 index](#search-find-vs-rfind-vs-index--搜索findrfind-与-index)
-- [Prefix/Suffix: startswith & endswith / 前后缀判断](#prefixsuffix-startswith--endswith--前后缀判断)
-- [Counting & Character Tests / 计数与字符类别判断](#counting--character-tests--计数与字符类别判断)
-- [Formatting Basics / 字符串格式化基础](#formatting-basics--字符串格式化基础)
-- [Exercises Overview / 演习总览（find/rfind、join、split）](#exercises-overview--演习总览findrfindjoinsplit)
-- [Appendix: Common Pitfalls / 附录：常见陷阱](#appendix-common-pitfalls--附录常见陷阱)
+- [Containers Overview / 容器概览](#containers-overview--容器概览)
+- [Lists — Part 1 / 列表（第一部分）](#lists--part-1--列表第一部分)
+- [Tuples / 元组](#tuples--元组)
+- [Lists vs Tuples / 列表与元组对比](#lists-vs-tuples--列表与元组对比)
+- [Lists — Part 2 / 列表（第二部分）](#lists--part-2--列表第二部分)
+- [List Comprehensions / 列表内包表记](#list-comprehensions--列表内包表记)
+- [Exercises / 演习](#exercises--演习)
+- [Appendix — Quick Reference / 附录——速查](#appendix--quick-reference--附录速查)
 
 ---
 
 ## Today’s Agenda / 今日教学安排
 
-- Strings — creation, comments, escapes, raw strings, concatenation, repetition, indexing, slicing, search.  
-字符串——创建、注释、转义、原始字符串、连接、重复、索引、切片、搜索。
+- Lists & Tuples — creation, access, mutation, slicing, search, comparison; assignment & copies; iteration; `zip()`; list-of-lists; comprehensions.  
+列表与元组——创建、访问、修改、切片、搜索、比较；赋值与拷贝；迭代；`zip()`；列表的列表；列表内包。
 
-- **Exercises:** 4‑1 **find & rfind**, 4‑2 **join**, 4‑3 **split**.  
-**演习：**4‑1 **find 与 rfind**，4‑2 **join**，4‑3 **split**。
+- **Exercises:** Square numbers, pentagonal numbers, generalized polygonal numbers.  
+**演习：**四角数、五角数、多角数一般化。
 
 ---
 
 ## Learning Objectives / 学习目标
 
-- Understand how to **create and represent** strings with different quotation styles and `str()`.  
-**理解**如何使用不同引号风格与 `str()` **创建与表示**字符串。
+- Understand Python **containers** and the differences between **mutable** and **immutable** ones.  
+**理解 Python 的**容器**及其**可变/不可变**差异。
 
-- Use **escapes** and **raw strings** correctly; know when escapes are processed.  
-**正确使用**转义**与**原始字符串**；理解何时会解析转义。
+- Create and manipulate **lists**: build, index, slice, append/insert/extend, replace, delete, search, compare.  
+**掌握对**列表**的操作：构建、索引、切片、追加/插入/扩展、替换、删除、搜索、比较。
 
-- Manipulate strings via **concatenation**, **repetition**, **indexing**, **slicing**.  
-**掌握**通过**连接**、**重复**、**索引**、**切片**操作字符串。
+- Create and use **tuples**: literal forms, singleton tuple, unpacking, swapping, iteration, comparison.  
+**掌握**元组**：字面量、单元素元组、拆包、交换、迭代、比较。
 
-- Search and test substrings; distinguish `find/rfind` vs `index/rindex`.  
-**学会**搜索与判定子串；区分 `find/rfind` 与 `index/rindex`。
+- Know **assignment vs copy**, shallow vs deep copy, and their effects on nested containers.  
+**理解**赋值与拷贝**、浅拷贝与深拷贝**，及其对嵌套容器的影响。
 
-- Implement `find/rfind`, `join`, and `split` manually (per exercises).  
-**能手写**`find/rfind`、`join`、`split`（按照演习要求）。
-
----
-
-## Creating Strings / 创建字符串
-
-- Single `'...'`, double `"..."`, triple `'''...'''` or `"""..."""` (multi‑line).  
-**单引号 `'...'`、双引号 `"..."`、三引号 `'''...'''` 或 `"""..."""`（可多行）。**
-
-- Triple quotes preserve newlines and quotes without escaping.  
-**三引号可直接包含换行与引号而无需转义。**
-
-- `str(x)` converts an object to its textual form.  
-**`str(x)`** 将任意对象转换为文本表示。
+- Use **`zip()`** for parallel iteration and building lists/dicts; master **list comprehensions**.  
+**会用**`zip()`**进行并行迭代与构建列表/字典；掌握**列表内包**。
 
 ---
 
-## Comments / 注释
+## Containers Overview / 容器概览
 
-- Line comments start with `#`, everything to the line end is ignored.  
-**行注释以 `#` 开头**，直到行尾的内容都会被忽略。
+- **Definition:** container holds **collections of objects**; umbrella for ADTs/classes like list, tuple, dict, set.  
+**定义：**容器存放**对象的集合**；是列表、元组、字典、集合等抽象数据类型/类的总称。
 
-- Keep comments **brief and precise**; prefer explaining **why** instead of **what**.  
-**注释应**简明且准确**；优先解释**为什么**而非**做了什么**。
+- **Kinds in Python:** **list**, **tuple**, **dict**, **set**.  
+**Python 中的类型：** **list（列表）**、**tuple（元组）**、**dict（字典）**、**set（集合）**。
 
----
+- **Access modes:** list by **offset**; dict by **key**; set tests **membership** only.  
+**访问方式：**列表按**偏移量**；字典按**键**；集合只支持**成员性**测试。
 
-## Escapes with Backslash / 反斜杠转义
-
-- Common escapes: `\n` newline, `\t` tab, `\'` / `\"` quotes, `\\` backslash.  
-**常见转义：**`\n` 换行、`\t` 制表、`\'`/`\"` 引号、`\\` 反斜杠。
-
-- Use escapes when the same quote is used inside a quoted string.  
-**当内外使用相同引号时可用转义**来包含引号本身。
-
-- In triple‑quoted strings, fewer escapes are needed; indentation may be captured.  
-**三引号字符串**通常需要更少转义；注意会**包含缩进与换行**。
+- **Mutability:** list/dict/set are **mutable**; tuple is **immutable**.  
+**可变性：**列表/字典/集合为**可变**；元组为**不可变**。
 
 ---
 
-## Raw Strings / 原始字符串
+## Lists — Part 1 / 列表（第一部分）
 
-- Prefix `r"..."` disables escape processing: `r"\n"` has **two characters** `\` and `n`.  
-**前缀 `r"..."` 关闭转义处理：**`r"\n"` 实际是两个字符 `\` 与 `n`。
+**Creation / 创建**  
+- `[]` or `list()`; heterogeneous elements allowed; duplicates allowed.  
+**`[]` 或 `list()`；元素可异构；允许重复。
 
-- Useful for regex and Windows paths.  
-**常用于**正则表达式**与 Windows 路径。**
+- Single-element list: brackets with **no trailing comma**.  
+**单元素列表：**方括号内单个元素，**无需**末尾逗号。
 
-- **Limitation:** cannot end with a single trailing backslash.  
-**限制：****不能**以**单个反斜杠**结尾。
+- Convert via `list("abc") -> ['a','b','c']`, `list((1,2)) -> [1,2]`; `"a b c".split() -> ['a','b','c']`.  
+**转换：**`list("abc") -> ['a','b','c']`，`list((1,2)) -> [1,2]`；`"a b c".split() -> ['a','b','c']`。
+
+**Access / 访问**  
+- Indexing: `lst[i]`, negative from end; slicing: `lst[a:b:c]`.  
+**索引：**`lst[i]`，负索引从尾部；**切片：**`lst[a:b:c]`。
+
+- Slices outside range **don’t raise**; they **clip** or return `[]`.  
+**越界切片**不会报错；会**裁剪**或返回 `[]`。
+
+**Append & Insert / 追加与插入**  
+- `append(x)` adds at end; `insert(i,x)` adds at offset (no exception on large i).  
+**`append(x)`** 末尾追加；**`insert(i,x)`** 指定位置插入（过大索引也不报错）。
+
+**Extend & Concatenate / 扩展与连接**  
+- `extend(iterable)`; `+= iterable`.  
+**扩展：**`extend(iterable)`；或用 `+= iterable`。
+
+**Replace & Delete / 替换与删除**  
+- Offset: `lst[i] = x`; Slice: `lst[a:b] = iterable` (iterable **unpacks**).  
+**按位替换：**`lst[i] = x`；**切片替换：**`lst[a:b] = iterable`（会**拆成元素**）。
+
+- `del lst[i]`, `remove(x)`, `pop([i])`.  
+**删除相关：**`del lst[i]`、`remove(x)`、`pop([i])`。
+
+**Search, Count, Compare / 搜索、计数、比较**  
+- `x in lst`, `lst.index(x)`, `lst.count(x)`; lists compare **lexicographically**.  
+**成员/索引/计数/比较：**`x in lst`、`lst.index(x)`、`lst.count(x)`；列表按**字典序**比较。
 
 ---
 
-## Concatenation / 字符串连接
+## Tuples / 元组
 
-- With `+`: `"Hello, " + name`.  
-**使用 `+`：**`"Hello, " + name`。
+**Creation / 创建**  
+- `()` or `tuple()`; single-element tuple requires **trailing comma** `(x,)`.  
+**`()` 或 `tuple()`；单元素元组需在元素后加**逗号** `(x,)`。
 
-- Adjacent literals: `"Hello, " "world"` (combined at compile time).  
-**字面量相邻：**`"Hello, " "world"`（编译期合并）。
+- Parentheses help readability and disambiguation in expressions & arguments.  
+**加括号**有助于在表达式/实参中避免歧义并提升可读性。
 
-- Multi‑line via parentheses for readability:  
-**使用括号多行连接，提高可读性：**
+**Unpacking & Swap / 拆包与交换**  
+- `a, b = (1, 2)`; `x, y = y, x`.  
+**`a, b = (1, 2)`；`x, y = y, x`。
+
+**Concatenate, Repeat, Iterate, Compare / 连接、重复、迭代、比较**  
+- `t1 + t2`, `t * k`, `for x in t`, lexicographic comparison.  
+**`t1 + t2`、`t * k`、`for x in t`、按字典序比较。
+
+**Immutability & Hashability / 不可变与可哈希**  
+- Elements fixed; tuples (if elements hashable) can be **dict keys**.  
+**元素不可改；**若元素可哈希，元组可作**字典键**。
+
+---
+
+## Lists vs Tuples / 列表与元组对比
+
+- List **mutable**; Tuple **immutable**.  
+**列表**可变；**元组**不可变。
+
+- Tuple often uses **less memory**; safer from accidental edits.  
+**元组**更省内存；更不易被误改。
+
+- Tuple usable as **dict key**; consider `collections.namedtuple` for record-like data.  
+**元组**可作**字典键**；记录型数据可用 `collections.namedtuple`。
+
+---
+
+## Lists — Part 2 / 列表（第二部分）
+
+**Assignment vs Copy / 赋值与拷贝**  
+- Alias via `b = a`; shallow copy via `a.copy()`, `list(a)`, `a[:]`; deep copy via `copy.deepcopy(a)`.  
+**赋值为别名** `b = a`；**浅拷贝** `a.copy()`、`list(a)`、`a[:]`；**深拷贝** `copy.deepcopy(a)`。
+
+**Sorting / 排序**  
+- `sorted(a)` returns a new list; `a.sort()` sorts in place; use `reverse=True` for descending.  
+**`sorted(a)`** 返回新列表；**`a.sort()`** 原地排序；降序用 `reverse=True`。
+
+**Length & Iteration / 长度与迭代**  
+- `len(a)`; `for x in a:`; parallel iteration with `zip()`.  
+**`len(a)`；`for x in a:`；并行迭代用 `zip()`。
+
+**List of Lists / 列表的列表**  
+- Beware `[[0]*n]*m` aliasing; prefer `[ [0]*n for _ in range(m) ]`.  
+**注意**`[[0]*n]*m` 的别名问题；推荐 `[ [0]*n for _ in range(m) ]`。
+
+---
+
+## List Comprehensions / 列表内包表记
+
+- Basic: `[expr for x in xs]`; Conditional: `[expr for x in xs if cond(x)]`; Nested: `[f(i,j) for i in I for j in J]`.  
+**基础：**`[expr for x in xs]`；**条件：**`[expr for x in xs if cond(x)]`；**嵌套：**`[f(i,j) for i in I for j in J]`。
+
+- Example — squares & pentagonals:  
+**示例——平方数与五角数：**
 ```python
-s = (
-    "It "
-    "rains "
-    "cats and dogs."
-)
+squares = [n*n for n in range(1, 11)]
+pentagonals = [n*(3*n-1)//2 for n in range(1, 11)]
 ```
 
 ---
 
-## Repetition / 字符串重复
+## Exercises / 演习
 
-- `"ha" * 3 -> "hahaha"`.  
-**`"ha" * 3 -> "hahaha"`。**
+- **EX 5‑1** Square numbers — generate first N squares.  
+**EX 5‑1** 四角数——生成前 N 个平方数。
 
-- Useful for **padding**, simple **ASCII art**, or quick **test strings**.  
-**常用于**填充**、简单 **ASCII 图案**、快速**测试字符串**。
+- **EX 5‑2** Pentagonal numbers — `P(n) = n(3n-1)/2`.  
+**EX 5‑2** 五角数——`P(n) = n(3n-1)/2`。
 
----
-
-## Indexing & Slicing / 索引与切片
-
-- Indexing starts at **0**; negative indices from the **end** (`s[-1]` last).  
-**索引从 **0** 开始；负索引自**末尾**计（`s[-1]` 为最后一个）。**
-
-- Slicing: `s[start:stop:step]`; out‑of‑range slices **don’t raise**.  
-**切片：**`s[start:stop:step]`；越界切片**不会报错**。
-
-- Strings are **immutable** — operations return **new** strings.  
-**字符串是**不可变**的——相关操作返回**新**字符串。
+- **EX 5‑3** General polygonal numbers — `P_k(n) = ((k-2)n^2 - (k-4)n)/2`.  
+**EX 5‑3** 一般多角数——`P_k(n) = ((k-2)n^2 - (k-4)n)/2`。
 
 ---
 
-## Search: find vs rfind vs index / 搜索：find、rfind 与 index
+## Appendix — Quick Reference / 附录——速查
 
-- `s.find(sub)` → lowest index or `-1`; `s.rfind(sub)` → highest index or `-1`.  
-**`s.find(sub)`** → 最小下标或 `-1`；**`s.rfind(sub)`** → 最大下标或 `-1`。
+- **Common list methods:** `append, insert, extend, pop, remove, clear, index, count, sort, reverse, copy`.  
+**常见列表方法：**`append、insert、extend、pop、remove、clear、index、count、sort、reverse、copy`。
 
-- `s.index(sub)` / `s.rindex(sub)` → like find/rfind but **raise `ValueError`** if not found.  
-**`s.index(sub)` / `s.rindex(sub)`** → 类似 find/rfind，但未找到时**抛出 `ValueError`**。
+- **Built-ins:** `len, sorted, zip, list, tuple, dict, set`.  
+**常用内置：**`len、sorted、zip、list、tuple、dict、set`。
 
-- Empty substring: `find("") == 0`, `rfind("") == len(s)`.  
-**空子串：**`find("") == 0`，`rfind("") == len(s)`。
+- **Copy semantics:** assignment → alias; `copy()/list()/[:]` → shallow; `deepcopy()` → deep.  
+**拷贝语义：**赋值→别名；`copy()/list()/[:]`→浅拷贝；`deepcopy()`→深拷贝。
 
----
+<h2> </h2>
 
-## Prefix/Suffix: startswith & endswith / 前后缀判断
-
-- `s.startswith(prefix)` / `s.endswith(suffix)` test the beginning and ending.  
-**`s.startswith(prefix)` / `s.endswith(suffix)`** 用于判断前缀与后缀。
-
-- Accept **tuples** of prefixes/suffixes: `s.startswith(("http://","https://"))`.  
-**可接受**元组**：`s.startswith(("http://","https://"))`。
-
----
-
-## Counting & Character Tests / 计数与字符类别判断
-
-- `s.count(sub)` counts **non‑overlapping** occurrences.  
-**`s.count(sub)`** 统计**不重叠**出现次数。
-
-- Character classes: `s.isalpha()`, `s.isdigit()`, `s.isalnum()`, `s.isspace()`, etc.  
-**字符类别：**`s.isalpha()`、`s.isdigit()`、`s.isalnum()`、`s.isspace()` 等。
-
----
-
-## Formatting Basics / 字符串格式化基础
-
-- **f‑strings:** `f"{name} scored {score:.1f}"`.  
-**f 字符串：**`f"{name} scored {score:.1f}"`。
-
-- **`str.format`:** `"{0:^10s}{1:+08.2f}".format(name, value)`.  
-**`str.format`：**`"{0:^10s}{1:+08.2f}".format(name, value)`。
-
-- **Format‑spec quick view:** alignment `<^>`, sign `+ - space`, width, precision `.2f`, type `s d f` …  
-**格式说明速览：**对齐 `<^>`、符号 `+ - 空格`、宽度、精度 `.2f`、类型 `s d f` 等。
-
----
-
-## Exercises Overview / 演习总览（find/rfind、join、split）
-
-- **find/rfind:** implement lowest/highest index search; return `-1` when absent; handle empty `word`.  
-**find/rfind：**实现最小/最大起点搜索；未找到返回 `-1`；处理空子串。
-
-- **join:** implement `join(iterable, sep)` without calling `.join()`.  
-**join：**手写 `join(iterable, sep)`，**不得调用**`.join()`。
-
-- **split:** implement `split(string, sep)` using `.find()` and preserve empty fields; raise on empty `sep`.  
-**split：**使用 `.find()` 实现 `split(string, sep)`，保留空字段；空分隔符需抛异常。
-
-> For reference implementations and testbenches, see `Python/src/rfind.py`, `join.py`, `split.py` we prepared earlier.  
-> 参考实现与测试脚本见我们先前提供的 `Python/src/rfind.py`、`join.py`、`split.py`。
-
----
-
-## Appendix: Common Pitfalls / 附录：常见陷阱
-
-- **Immutability surprises:** `s[0] = 'X'` is illegal; use slicing + concatenation or `.replace()`.  
-**不可变性误区：**`s[0] = 'X'` 非法；需用切片+连接或 `.replace()`。
-
-- **Raw strings cannot end with single `\`.**  
-**原始字符串不能以单个 `\` 结尾。**
-
-- **`index/rindex` raise on missing** — prefer `find/rfind` if absence is common.  
-**`index/rindex` 未找到会抛错**——若经常找不到，优先 `find/rfind`。
-
-- **`split` with explicit `sep` preserves empty fields** (different from whitespace split behavior).  
-**显式 `sep` 的 `split` 会保留空字段**（与空白分隔的 `split()` 不同）。
-
-<h2></h2>
-
-[← Previous Lecture / 上一讲](./lecture03.md) · [Next Lecture / 下一讲 →](./lecture05.md) · [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
+[← Previous Lecture / 上一讲](./lecture04.md) · [Next Lecture / 下一讲 →](./lecture06.md) · [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
