@@ -12,36 +12,37 @@
 ## Table of Contents  
 ## 目录
 
-- World Wide Web Overview  
+- [World Wide Web Overview](#world-wide-web-overview)  
 - World Wide Web 概述
-- How Websites Work  
+- [How Websites Work](#how-websites-work)  
 - 网站的工作机制
-- Web Browsers  
+- [Web Browsers](#web-browsers)  
 - Web 浏览器
-- URL and Its Structure  
+- [URL and Its Structure](#url-uniform-resource-locator)  
 - URL 及其结构
-- Domain Names  
+- [Domain Names](#domain-names)  
 - 域名
-- Encrypted Communication: HTTP vs HTTPS (SSL/TLS)  
+- [Encrypted Communication: HTTP vs HTTPS (SSL/TLS)](#encrypted-communication-http-vs-https)  
 - 加密通信：HTTP 与 HTTPS（SSL/TLS）
-- Ways to Create Web Pages (Editors & Tools)  
+- [Ways to Create Web Pages (Editors & Tools)](#ways-to-create-web-pages)  
 - 创建网页的方法（编辑器与工具）
-- What Makes Up a Web Page (HTML/CSS/Assets)  
+- [What Makes Up a Web Page (HTML/CSS/Assets)](#what-makes-up-a-web-page)  
 - 网页由哪些部分组成（HTML/CSS/资源）
-- HTML & CSS Responsibilities  
+- [HTML & CSS Responsibilities](#html-hypertext-markup-language)  
 - HTML 与 CSS 的职责分工
-- Viewing Page Source  
+- [Viewing Page Source](#viewing-page-source)  
 - 查看页面源代码
-- HTML Document Skeleton  
+- [HTML Document Skeleton](#html-document-skeleton)  
 - HTML 文档骨架
-- Tags, Elements & Doctype  
+- [Tags, Elements & Doctype](#tags-and-elements)  
 - 标签、元素与文档类型声明
-- Core Head Elements: `<html>`, `<head>`, `<meta>`, `<title>`, `<body>`  
+- [Core Head Elements: `<html>`, `<head>`, `<meta>`, `<title>`, `<body>`](#html-tag)  
 - 核心头部与主体元素：`<html>`、`<head>`、`<meta>`、`<title>`、`<body>`
-- Authoring Workflow (VS Code → Save → Refresh)  
+- [Authoring Workflow (VS Code → Save → Refresh)](#authoring-workflow)  
 - 编写流程（VS Code → 保存 → 刷新）
-- Text Structure: `<br>`, `<p>`, Headings `<h1>`–`<h6>`, `<hr>`, `<strong>`, `<em>`  
+- [Text Structure: `<br>`, `<p>`, Headings `<h1>`–`<h6>`, `<hr>`, `<strong>`, `<em>`](#text--structure-elements)  
 - 文本结构：`<br>`、`<p>`、标题 `<h1>`–`<h6>`、`<hr>`、`<strong>`、`<em>`
+
 
 ---
 
@@ -441,11 +442,6 @@ Line 2
 </html>
 ```
 
----
-
-> Notes expand the original slides into structured, bilingual text while preserving all key points (WWW history, URL parts, domain hierarchy, HTTP/HTTPS, tools, HTML/CSS roles, document skeleton, authoring flow, and fundamental tags).  
-> 本笔记在保留要点的基础上做了结构化与双语扩展（WWW 历史、URL 组成、域名层次、HTTP/HTTPS、工具、HTML/CSS 分工、文档骨架、编写流程与基础标签）。
->  
----
+<h2></h2>
 
 [Next Lecture / 下一讲 →](./lecture02.md) · [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
