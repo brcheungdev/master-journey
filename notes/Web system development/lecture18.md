@@ -31,8 +31,8 @@
 - 通过 `element.style` 修改样式（小驼峰属性名）
 - [Quick Checklist](#quick-checklist)  
 - 快速清单
-- [Notes (Optional)](#notes-optional)  
-- 注释（可选）
+- [Notes](#notes-optional)  
+- 注释
 
 ---
 
