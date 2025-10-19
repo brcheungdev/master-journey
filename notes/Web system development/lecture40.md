@@ -169,4 +169,4 @@ login → check →（成功）→ search → logout
 
 <h2></h2>
 
-[← Previous Lecture / 上一讲](./lecture39.md) · [Next Lecture / 下一讲 →](./lecture41.md) · [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
+[← Previous Lecture / 上一讲](./lecture39.md) · [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
