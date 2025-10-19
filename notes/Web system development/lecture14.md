@@ -11,8 +11,8 @@
 ## Table of Contents  
 ## 目录
 
-- [Course Orientation (WP2)](#course-orientation-wp2)  
-- 课程导学（WP2）
+- [Course Orientation](#course-orientation-wp2)  
+- 课程导学
 - [What Is JavaScript? Role in the Web Stack](#what-is-javascript-role-in-the-web-stack)  
 - 什么是 JavaScript？在 Web 技术栈中的角色
 - [Two Ways to Include JavaScript](#two-ways-to-include-javascript)  
