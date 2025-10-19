@@ -1,7 +1,7 @@
 [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
 
-# Lecture 02: KCGI Web Server, FTP (FileZilla), and Links  
-# 第02讲：KCGI Web 服务器、FTP（FileZilla）与链接
+# Lecture 02: Web Server, FTP (FileZilla), and Links  
+# 第02讲：Web 服务器、FTP（FileZilla）与链接
 
 > This file contains my notes, thoughts, and learning summaries during my master's degree study.
 > 
