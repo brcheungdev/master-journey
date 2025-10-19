@@ -37,8 +37,8 @@
 - 快速清单
 - [Practice Tasks](#practice-tasks)  
 - 练习任务
-- [Notes & Tips (Optional)](#notes--tips-optional)  
-- 注释与小贴士（可选）
+- [Notes & Tips](#notes--tips-optional)  
+- 注释与小贴士
 
 ---
 
