@@ -1,7 +1,7 @@
 [Course Directory / 课程目录](./README.md#toc) · [Notes Home / 笔记首页](./README.md)
 
-# Lecture 40: Final Project — Security, Export, Packaging, and Demo Checklist  
-# 第40讲：期末项目 —— 安全性、导出、打包与演示清单
+# Lecture 40: Security, Export, Packaging, and Demo Checklist  
+# 第40讲：安全性、导出、打包与演示清单
 
 > This file contains my notes, thoughts, and learning summaries during my master's degree study.  
 > 该文件记录了攻读硕士期间的学习笔记、思考内容以及学习总结。
