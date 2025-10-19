@@ -33,12 +33,10 @@
 - 练习D：三个问候按钮（控制台 → HTML）
 - [Exercise E: Number Guessing Game (1–100)](#exercise-e-number-guessing-game-1100)  
 - 练习E：数当て游戏（1–100）
-- [Submission Rules](#submission-rules)  
-- 提交规范
 - [Quick Checklist](#quick-checklist)  
 - 快速清单
-- [Notes (Optional)](#notes-optional)  
-- 注释（可选）
+- [Notes](#notes-optional)  
+- 注释
 
 ---
 
